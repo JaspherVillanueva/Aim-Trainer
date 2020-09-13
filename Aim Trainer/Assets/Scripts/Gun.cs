@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //When the fire button is pressed and they arent spamming the fire button
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
@@ -25,22 +26,28 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        //play the muzzleFlash animation
         muzzleFlash.Play();
 
         RaycastHit hit;
+        //if the gun is fired...
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
             //output object shot
             Debug.Log(hit.transform.name);
 
+            //if target is hit...
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
             {
+                //make the target take damage
                 target.TakeDamage(damage);
             }
 
+            //if the object hit is rigidbody...
             if (hit.rigidbody != null)
             {
+                //make the object move back
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
         }
