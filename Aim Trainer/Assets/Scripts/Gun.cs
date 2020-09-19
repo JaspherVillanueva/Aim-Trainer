@@ -1,23 +1,34 @@
 ﻿using UnityEngine;
-//using TMPro;
+using UnityEngine.UI;
+using System.Collections;
+
 
 public class Gun : MonoBehaviour
 {
+    [SerializeField] Text textComponent;
+
     public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 60f;
+    private float nextTimeToFire = 0f;
 
-    public int bulletsLeft = 20;
+    private bool isReloading = false;
+
     public int magazineSize = 30;
+    private int bulletsLeft;
+    public float reloadTime = 1f;
 
-
-    //public TextMeshProUGUI text;
+    public Animator animator;
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
 
-    private float nextTimeToFire = 0f;
 
+    void Start()
+    {
+        bulletsLeft = magazineSize; 
+    }
+    
     private void Awake()
     {
         
@@ -26,20 +37,43 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        textComponent.text = bulletsLeft + " / " + magazineSize;
+
+        if (isReloading)
+            return;
+
+        if (bulletsLeft <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         //When the fire button is pressed and they arent spamming the fire button
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
         }
-
-        //text.SetText(bulletsLeft + " / " + magazineSize);
     }
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        Debug.Log("Reloading...");
+
+        animator.SetBool("Reloading", true);
+        yield return new WaitForSeconds(reloadTime);
+        animator.SetBool("Reloading", false);
+
+        bulletsLeft = magazineSize;
+        isReloading = false;
+    }
+
 
     void Shoot()
     {
         //play the muzzleFlash animation
         muzzleFlash.Play();
+        bulletsLeft--;
 
         RaycastHit hit;
         //if the gun is fired...
