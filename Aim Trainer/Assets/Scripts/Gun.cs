@@ -34,6 +34,12 @@ public class Gun : MonoBehaviour
         
     }
 
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -61,8 +67,9 @@ public class Gun : MonoBehaviour
         Debug.Log("Reloading...");
 
         animator.SetBool("Reloading", true);
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitForSeconds(reloadTime - .25f);
         animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(.25f);
 
         bulletsLeft = magazineSize;
         isReloading = false;
