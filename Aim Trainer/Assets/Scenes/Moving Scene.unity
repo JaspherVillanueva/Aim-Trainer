@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 42014724}
   - component: {fileID: 42014723}
   - component: {fileID: 42014722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,12 +440,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1113453680}
   speed: 12
+  jumpHeight: 3
   gravity: -9.81
   groundCheck: {fileID: 116229707}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!143 &1113453680
 CharacterController:
   m_ObjectHideFlags: 0
