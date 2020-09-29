@@ -5338,7 +5338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Score Here
 --- !u!222 &778026766
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5574,12 +5574,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1232268451}
   speed: 12
+  jumpHeight: 3
   gravity: -9.81
   groundCheck: {fileID: 1775415155}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &1602832330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5692,7 +5693,7 @@ GameObject:
   - component: {fileID: 1655430598}
   - component: {fileID: 1655430597}
   - component: {fileID: 1655430596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5817,7 +5818,7 @@ GameObject:
   - component: {fileID: 1852256172}
   - component: {fileID: 1852256171}
   m_Layer: 0
-  m_Name: Target 1
+  m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5953,7 +5954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0177cb6a131848b49bdd51a5f6acac77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnemies: 5
+  maxEnemies: 20
   xPos: 0
   zPos: 0
   enemyCount: 0

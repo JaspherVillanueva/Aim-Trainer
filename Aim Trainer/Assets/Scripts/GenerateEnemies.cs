@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public int maxEnemies = 5;
+    public int maxEnemies = 20;
     public int xPos;
     public int zPos;
     public int enemyCount = 0;
@@ -22,9 +22,9 @@ public class GenerateEnemies : MonoBehaviour
     // Update is called once per frame
     IEnumerator EnemyDrop()
     {
-        while (enemyCount < maxEnemies)
+        while (enemyCount <= maxEnemies)
         {
-            xPos = Random.Range(-40, 80);
+            xPos = Random.Range(-40, 60);
             zPos = Random.Range(-10, 40);
             Instantiate(theTarget, new Vector3(xPos, 2, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
