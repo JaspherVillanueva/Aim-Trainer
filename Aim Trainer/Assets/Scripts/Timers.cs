@@ -24,5 +24,9 @@ public class Timers : MonoBehaviour
 
         timerText.text = minutes + ":" + seconds;
         
+        if (startTime == 0)
+        {
+            Time.timeScale = 0f;
+        }
     }
 }
