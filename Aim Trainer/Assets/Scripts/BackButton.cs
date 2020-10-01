@@ -8,6 +8,10 @@ public class BackButton : MonoBehaviour
     public void Back ()
     {
         Debug.Log("Going Back to main scene...");
+<<<<<<< HEAD
         SceneManager.LoadScene("AimTrainer");
+=======
+        SceneManager.LoadScene("Main");
+>>>>>>> parent of 1fec61c... names
     }
 }
