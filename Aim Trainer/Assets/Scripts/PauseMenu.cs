@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
             if(GameIsPaused)
             {
                 Resume();
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 InGameOptionsMenu.SetActive(false);
             }
