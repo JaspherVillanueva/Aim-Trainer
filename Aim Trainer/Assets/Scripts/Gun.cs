@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using System.Collections;
 
 public class Gun : MonoBehaviour
 {
@@ -8,14 +9,29 @@ public class Gun : MonoBehaviour
     public float fireRate = 15f;
     public float impactForce = 60f;
 
+    public int maxAmmo = 5;
+    private int currentAmmo;
+    public float reloadedTime = 1f;
+
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
 
     private float nextTimeToFire = 0f;
 
+    void start()
+    {
+        currentAmmo = maxAmmo;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (currentAmmo <= 0)
+        {
+            Reload();
+            return;
+        }
+
         //When the fire button is pressed and they arent spamming the fire button
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
@@ -24,10 +40,17 @@ public class Gun : MonoBehaviour
         }
     }
 
+    void Reload()
+    {
+        Debug.Log("Reloading...");
+        currentAmmo = maxAmmo;
+    }
     void Shoot()
     {
+
         //play the muzzleFlash animation
         muzzleFlash.Play();
+        currentAmmo--;
 
         RaycastHit hit;
         //if the gun is fired...

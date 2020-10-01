@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+        Debug.Log("Moved player");
 
         controller.Move(move * speed * Time.deltaTime);
 
