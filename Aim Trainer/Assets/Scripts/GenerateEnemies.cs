@@ -7,10 +7,10 @@ using Random = UnityEngine.Random;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public int maxEnemies = 20;
+    public int maxEnemies = 10;
     public int xPos;
     public int zPos;
-    public int yPos = 2;
+    public int yPos = 1;
     public int enemyCount = 0;
     public GameObject theTarget;
 
@@ -25,8 +25,8 @@ public class GenerateEnemies : MonoBehaviour
     {
         while (enemyCount <= maxEnemies)
         {
-            xPos = Random.Range(-40, 60);
-            zPos = Random.Range(-10, 40);
+            xPos = Random.Range(30, 50);
+            zPos = Random.Range(-10, -40);
             SpawnTarget();
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;
