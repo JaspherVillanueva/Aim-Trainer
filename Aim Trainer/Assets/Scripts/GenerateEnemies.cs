@@ -10,6 +10,7 @@ public class GenerateEnemies : MonoBehaviour
     public int maxEnemies = 20;
     public int xPos;
     public int zPos;
+    public int yPos = 2;
     public int enemyCount = 0;
     public GameObject theTarget;
 
@@ -26,9 +27,14 @@ public class GenerateEnemies : MonoBehaviour
         {
             xPos = Random.Range(-40, 60);
             zPos = Random.Range(-10, 40);
-            Instantiate(theTarget, new Vector3(xPos, 2, zPos), Quaternion.identity);
+            SpawnTarget();
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;
         }
+    }
+
+    public void SpawnTarget()
+    {
+        Instantiate(theTarget, new Vector3(xPos, yPos, zPos), Quaternion.identity);
     }
 }

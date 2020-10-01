@@ -5520,7 +5520,7 @@ GameObject:
   - component: {fileID: 1232268452}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5957,5 +5957,6 @@ MonoBehaviour:
   maxEnemies: 20
   xPos: 0
   zPos: 0
+  yPos: 2
   enemyCount: 0
   theTarget: {fileID: 1852256170}
