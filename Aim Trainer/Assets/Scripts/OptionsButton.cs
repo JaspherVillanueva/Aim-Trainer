@@ -7,7 +7,7 @@ public class OptionsButton : MonoBehaviour
 {
     public void Options()
     {
-        Debug.Log("Going Back to main scene...");
+        Debug.Log("Going Back to Options Menu");
         SceneManager.LoadScene("OptionsMenu");
     }
 }

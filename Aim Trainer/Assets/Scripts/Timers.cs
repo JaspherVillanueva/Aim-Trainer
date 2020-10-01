@@ -11,17 +11,16 @@ public class Timers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startTime = 15;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float t = startTime - Time.deltaTime;
-        startTime = t;
+        startTime = startTime - Time.deltaTime;
 
-        string minutes = ((int)t / 60).ToString();
-        string seconds = ((int)t % 60).ToString();
+        string minutes = ((int)startTime / 60).ToString();
+        string seconds = ((int)startTime % 60).ToString();
 
         timerText.text = minutes + ":" + seconds;
         
@@ -29,6 +28,17 @@ public class Timers : MonoBehaviour
         {
             Time.timeScale = 0f;
             SceneManager.LoadScene("GameOver");
+            Cursor.lockState = CursorLockMode.None;
         }
+    }
+
+    public void AddTime ()
+    {
+        startTime += 30;
+    }
+
+    public void ReduceTime ()
+    {
+        startTime -=  30;
     }
 }
