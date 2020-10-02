@@ -1503,7 +1503,7 @@ GameObject:
   - component: {fileID: 160836689}
   - component: {fileID: 160836688}
   - component: {fileID: 160836687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 'Target '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12293,12 +12293,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc07d38022fbd9a499a6f731672c5cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textComponent: {fileID: 0}
   damage: 50
   range: 100
   fireRate: 15
   impactForce: 60
-  maxAmmo: 5
-  reloadedTime: 1
+  magazineSize: 30
+  reloadTime: 1
+  animator: {fileID: 0}
   fpsCamera: {fileID: 1180044666}
   muzzleFlash: {fileID: 1434426184}
 --- !u!136 &2096517254

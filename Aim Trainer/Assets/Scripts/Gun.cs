@@ -1,56 +1,34 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿
+using UnityEngine;
 using System.Collections;
-
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] Text textComponent;
-
     public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 60f;
-    private float nextTimeToFire = 0f;
 
-    private bool isReloading = false;
+    public int maxAmmo = 5;
+    private int currentAmmo;
+    public float reloadedTime = 1f;
 
-    public int magazineSize = 30;
-    private int bulletsLeft;
-    public float reloadTime = 1f;
-
-    public Animator animator;
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
 
+    private float nextTimeToFire = 0f;
 
-    void Start()
+    void start()
     {
-        bulletsLeft = magazineSize; 
-    }
-    
-    private void Awake()
-    {
-        
-    }
-
-    void OnEnable()
-    {
-        isReloading = false;
-        animator.SetBool("Reloading", false);
+        currentAmmo = maxAmmo;
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        textComponent.text = bulletsLeft + " / " + magazineSize;
-
-        if (isReloading)
-            return;
-
-        if (bulletsLeft <= 0 || Input.GetKey(KeyCode.R))
+        if (currentAmmo <= 0)
         {
-            StartCoroutine(Reload());
+            Reload();
             return;
         }
 
@@ -61,26 +39,18 @@ public class Gun : MonoBehaviour
             Shoot();
         }
     }
-    IEnumerator Reload()
+
+    void Reload()
     {
-        isReloading = true;
         Debug.Log("Reloading...");
-
-        animator.SetBool("Reloading", true);
-        yield return new WaitForSeconds(reloadTime - .25f);
-        animator.SetBool("Reloading", false);
-        yield return new WaitForSeconds(.25f);
-
-        bulletsLeft = magazineSize;
-        isReloading = false;
+        currentAmmo = maxAmmo;
     }
-
-
     void Shoot()
     {
+
         //play the muzzleFlash animation
         muzzleFlash.Play();
-        bulletsLeft--;
+        currentAmmo--;
 
         RaycastHit hit;
         //if the gun is fired...
