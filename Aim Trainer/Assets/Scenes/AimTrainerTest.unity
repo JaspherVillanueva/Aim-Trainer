@@ -10357,7 +10357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434426183}
   m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: -0.45, y: 2.72, z: 0.94}
+  m_LocalPosition: {x: -3.22, y: 2.36, z: 0.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2096517257}
@@ -11286,7 +11286,7 @@ MonoBehaviour:
   jumpHeight: 3
   gravity: -9.81
   groundCheck: {fileID: 66916676}
-  groundDistance: 0.4
+  groundDistance: 0.6
   groundMask:
     serializedVersion: 2
     m_Bits: 256
@@ -11301,7 +11301,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.7
@@ -11755,7 +11755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096517252}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 1.91, y: -0.43, z: 1.83}
+  m_LocalPosition: {x: 1.91, y: 0.76, z: 1.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1434426186}
