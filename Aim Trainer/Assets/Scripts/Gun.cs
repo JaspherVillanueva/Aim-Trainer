@@ -48,7 +48,7 @@ public class Gun : MonoBehaviour
         if (isReloading)
             return;
 
-        if (bulletsLeft <= 0)
+        if (bulletsLeft <= 0 || Input.GetKey(KeyCode.R))
         {
             StartCoroutine(Reload());
             return;
