@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityEditor.VersionControl;
 
 public class Gun : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class Gun : MonoBehaviour
     private bool isReloading = false;
 
     public int magazineSize = 30;
-    private int bulletsLeft = 0;
+    private int bulletsLeft;
     public float reloadTime = 1f;
 
     public Camera fpsCamera;
@@ -27,60 +26,71 @@ public class Gun : MonoBehaviour
 
     void start()
     {
-        //sets bullets in magazine to max magazine size
+        //set bullets left max bullets
         bulletsLeft = magazineSize;
     }
 
     void OnEnable()
     {
+        //set reloading to false
         isReloading = false;
+        //change animator boolean
         animator.SetBool("Reloading", false);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //text for ammo display
+        //change text
         textComponent.text = bulletsLeft + " / " + magazineSize;
 
+        //if reloading is true
         if (isReloading)
+            //exit
             return;
 
+        //if bullet below 0 
         if (bulletsLeft <= 0 || Input.GetKey(KeyCode.R))
         {
+            //reload
             StartCoroutine(Reload());
+            //exit
             return;
         }
 
         //When the fire button is pressed and they arent spamming the fire button
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
+            //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
+            //then shoot
             Shoot();
         }
     }
 
+    //reloading
     IEnumerator Reload()
     {
-        //sets reloading bool to true, user cant shoot with no bullets
+        //set reloading to true
         isReloading = true;
         Debug.Log("Reloading...");
 
-        //Reloading animator
+        //set animator boolean
         animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime - .25f);
+        //set animator boolean
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(.25f);
 
-        //sets reloading bool to true, sets magazine size back to max magazine size
+        //reload clip
         bulletsLeft = magazineSize;
+        //stop reloading
         isReloading = false;
     }
 
 
     void Shoot()
     {
-
         //play the muzzleFlash animation
         muzzleFlash.Play();
         bulletsLeft--;
