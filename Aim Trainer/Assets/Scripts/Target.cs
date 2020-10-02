@@ -5,21 +5,28 @@ using Debug = UnityEngine.Debug;
 public class Target : MonoBehaviour
 {
     public float health = 50f;
-    private int TargetScore = 10;
+    public int TargetScore = 10;
 
     public void TakeDamage (float amount)
     {
+        //decrease health
         health -= amount;
+        //if health below 0
         if (health <= 0f)
         {
+            //die...
             Die();
         }
     }
 
+    //when die
     void Die()
     {
+        //add score
         ScoreScript.scoreValue += TargetScore;
+        //remove object
         Destroy(gameObject);
+        //debug log
         Debug.Log("Target Destroyed");
     }
 }
