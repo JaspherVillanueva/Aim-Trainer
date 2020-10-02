@@ -29,7 +29,7 @@ public class Timers : MonoBehaviour
         {
             Time.timeScale = 0f;
             SceneManager.LoadScene("GameOver");
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;     //Unlock the mouse to use for the 
         }
     }
 
