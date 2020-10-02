@@ -9,6 +9,5 @@ public class BackButton : MonoBehaviour
     {
         Debug.Log("Going Back to main scene...");
         SceneManager.LoadScene("AimTrainerTest");
-
     }
 }
