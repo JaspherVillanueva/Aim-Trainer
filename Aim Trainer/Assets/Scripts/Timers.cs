@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timers : MonoBehaviour
 {
     public Text timerText;
+
     public float startTime;
     // Start is called before the first frame update
     void Start()
@@ -17,28 +18,39 @@ public class Timers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        startTime = startTime - Time.deltaTime;
+        if (startTime >= 0)   //if time > 0, countdown
+        {
+            startTime = startTime - Time.deltaTime; //start time - 1 second
 
-        string minutes = ((int)startTime / 60).ToString();
-        string seconds = ((int)startTime % 60).ToString();
+            string minutes = ((int)startTime / 60).ToString();  //start time minutes
+            string seconds = ((int)startTime % 60).ToString();  //start time seconds
 
-        timerText.text = minutes + ":" + seconds;
-        
-        if (startTime <= 0)
+            timerText.text = minutes + ":" + seconds;    //updates the timerText object
+        }
+        else   //if time == 0, end game
+        {
+            Time.timeScale = 0f;
+            SceneManager.LoadScene("GameOver");
+            Cursor.lockState = CursorLockMode.None;     //Unlock the mouse to use for the 
+        }
+    }
+
+    public void AddTime ()  //function to add 30 seconds to timer
+    {
+        startTime += 30;
+    }
+
+    public void ReduceTime ()  //function to reduce time by 30s
+    {
+        if (startTime > 30)
+        {
+            startTime -= 30;
+        }
+        else
         {
             Time.timeScale = 0f;
             SceneManager.LoadScene("GameOver");
             Cursor.lockState = CursorLockMode.None;
         }
-    }
-
-    public void AddTime ()
-    {
-        startTime += 30;
-    }
-
-    public void ReduceTime ()
-    {
-        startTime -=  30;
     }
 }
