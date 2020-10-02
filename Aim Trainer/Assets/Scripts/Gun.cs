@@ -1,56 +1,99 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Gun : MonoBehaviour
 {
+    [SerializeField] Text textComponent;
+
     public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 60f;
+    private float nextTimeToFire = 0f;
 
-    public int maxAmmo = 5;
-    private int currentAmmo;
-    public float reloadedTime = 1f;
+    private bool isReloading = false;
+
+    public int magazineSize = 30;
+    private int bulletsLeft;
+    public float reloadTime = 1f;
 
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
+    public Animator animator;
 
-    private float nextTimeToFire = 0f;
+
 
     void start()
     {
-        currentAmmo = maxAmmo;
+        //set bullets left max bullets
+        bulletsLeft = magazineSize;
+    }
+
+    void OnEnable()
+    {
+        //set reloading to false
+        isReloading = false;
+        //change animator boolean
+        animator.SetBool("Reloading", false);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (currentAmmo <= 0)
+        //change text
+        textComponent.text = bulletsLeft + " / " + magazineSize;
+
+        //if reloading is true
+        if (isReloading)
+            //exit
+            return;
+
+        //if bullet below 0 
+        if (bulletsLeft <= 0 || Input.GetKey(KeyCode.R))
         {
-            Reload();
+            //reload
+            StartCoroutine(Reload());
+            //exit
             return;
         }
 
         //When the fire button is pressed and they arent spamming the fire button
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
+            //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
+            //then shoot
             Shoot();
         }
     }
 
-    void Reload()
+    //reloading
+    IEnumerator Reload()
     {
+        //set reloading to true
+        isReloading = true;
         Debug.Log("Reloading...");
-        currentAmmo = maxAmmo;
+
+        //set animator boolean
+        animator.SetBool("Reloading", true);
+        yield return new WaitForSeconds(reloadTime - .25f);
+        //set animator boolean
+        animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(.25f);
+
+        //reload clip
+        bulletsLeft = magazineSize;
+        //stop reloading
+        isReloading = false;
     }
+
+
     void Shoot()
     {
-
         //play the muzzleFlash animation
         muzzleFlash.Play();
-        currentAmmo--;
+        bulletsLeft--;
 
         RaycastHit hit;
         //if the gun is fired...
