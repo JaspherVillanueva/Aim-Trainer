@@ -23,7 +23,7 @@ public class GenerateEnemies : MonoBehaviour
     // Update is called once per frame
     IEnumerator EnemyDrop()
     {
-        while (enemyCount <= maxEnemies)
+        while (enemyCount < maxEnemies)
         {
             xPos = Random.Range(30, 50);
             zPos = Random.Range(-10, -40);
