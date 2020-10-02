@@ -7,11 +7,15 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
+    public static bool OpMenu = false;
+
     public GameObject pauseMenuUI;
 
     public GameObject disableGun;
 
     public GameObject disableCrosshair;
+
+    public GameObject InGameOptionsMenu;
 
     // Update is called once per frame
     void Update()
@@ -23,12 +27,13 @@ public class PauseMenu : MonoBehaviour
                 Resume();
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                InGameOptionsMenu.SetActive(false);
             }
             else
             {
                 Pause();
-                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                InGameOptionsMenu.SetActive(false);
             }
         }
     }
@@ -44,6 +49,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OptionsMenu ()
     {
+        Debug.Log("Loading Options scene");
         SceneManager.LoadScene("OptionsMenu");
     }
 
@@ -61,5 +67,22 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
 
+    }
+
+    public void InGameOpMenu ()
+    {
+        if(OpMenu == true)
+        {
+            InGameOptionsMenu.SetActive(true);
+            pauseMenuUI.SetActive(false);
+            OpMenu = false;
+        }
+        else
+        {
+            InGameOptionsMenu.SetActive(false);
+            pauseMenuUI.SetActive(true);
+            OpMenu = true;
+        }
+        
     }
 }

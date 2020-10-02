@@ -5,10 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: ecdc5219695e240439b99a3ab6c22e22
+    path: Assets/Scenes/GameOver.unity
+    guid: 8c0f5c0b31713dd4aab275a43107e84c
   - enabled: 1
-    path: Assets/Scenes/OptionsMenu.unity
-    guid: d0d725e5d81a29b46bae00685519d120
+    path: Assets/Scenes/StartMenu.unity
+    guid: 070a27cbe406d9e43bc526697fd12b29
+  - enabled: 1
+    path: Assets/Scenes/AimTrainerTest.unity
+    guid: fc142586a911fc5488bf5db2f214dec0
   m_configObjects: {}

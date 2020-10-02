@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
     "name": "Tests",
-=======
-    "name": "EditMode",
->>>>>>> origin/Prashil
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
@@ -16,16 +12,10 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-<<<<<<< HEAD
         "nunit.framework.dll",
         ""
     ],
     "autoReferenced": true,
-=======
-        "nunit.framework.dll"
-    ],
-    "autoReferenced": false,
->>>>>>> origin/Prashil
     "defineConstraints": [
         "UNITY_INCLUDE_TESTS"
     ],
