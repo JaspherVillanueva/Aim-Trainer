@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] Text textComponent;
+    [SerializeField] Text Ammo;
 
     public float damage = 10f;
     public float range = 100f;
@@ -42,7 +42,7 @@ public class Gun : MonoBehaviour
     private void Update()
     {
         //change text
-        textComponent.text = bulletsLeft + " / " + magazineSize;
+        Ammo.text = bulletsLeft + " / " + magazineSize;
 
         //if reloading is true
         if (isReloading)
@@ -117,5 +117,6 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
         }
+        muzzleFlash.Pause();
     }
 }

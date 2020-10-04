@@ -9,9 +9,9 @@ using Debug = UnityEngine.Debug;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public int CloseEnemies;
-    public int MidEnemies;
-    public int FarEnemies;
+    public int CloseEnemies = 3;
+    public int MidEnemies = 3;
+    public int FarEnemies = 3;
     public int xPos;
     public int zPos;
     public int yPos = 1;
@@ -23,11 +23,6 @@ public class GenerateEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //amount of targets for each range
-        CloseEnemies = 3;
-        MidEnemies = 3;
-        FarEnemies = 3;
-
         //spawn close enemies
         StartCoroutine(EnemyDrop(CloseEnemies, 20, closeTarget));
         Debug.Log("Close Enemies Spawned: " + CloseEnemies);
@@ -72,9 +67,6 @@ public class GenerateEnemies : MonoBehaviour
 
     public void SpawnMultipleTargets()
     {
-        xPos = Random.Range(30, 50);
-        zPos = Random.Range(-10, -40);
-        //SpawnTarget();
-        enemyCount += 1;
+        Start();
     }
 }
