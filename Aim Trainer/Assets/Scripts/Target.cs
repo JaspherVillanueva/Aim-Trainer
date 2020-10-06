@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
     public float health = 50f;
     public int TargetScore = 10;
+    public GameObject target;
 
     public void TakeDamage (float amount)
     {
@@ -26,6 +27,7 @@ public class Target : MonoBehaviour
         ScoreScript.scoreValue += TargetScore;
         //remove object
         Destroy(gameObject);
+        Destroy(target);
         //debug log
         Debug.Log("Target Destroyed");
     }
