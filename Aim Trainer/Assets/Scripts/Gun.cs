@@ -14,7 +14,7 @@ public class Gun : MonoBehaviour
 
     private bool isReloading = false;
 
-    public int magazineSize = 30;
+    public int magazineSize;
     private int bulletsLeft;
     public float reloadTime = 1f;
 
