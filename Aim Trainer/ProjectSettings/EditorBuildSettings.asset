@@ -14,16 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 8c0f5c0b31713dd4aab275a43107e84c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu.unity
     guid: 070a27cbe406d9e43bc526697fd12b29
   - enabled: 1
-    path: Assets/Scenes/AimTrainer.unity
+    path: Assets/Scenes/Game Scenes/AimTrainer.unity
     guid: 7c2ccfe988334bd4293fb4440c849167
   - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Log In Menu.unity
+    path: Assets/Scenes/Game Scenes/Login Menu.unity
     guid: 8d712651aa5dd394797278a87f920d36
   - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Main Menu.unity
+    path: Assets/Scenes/Game Scenes/Main Menu.unity
     guid: 616ea859d4e8ea94d956197325483fe4
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Exit Menu.unity
+    guid: c3eb8486a905e6841a033aefc30793b3
   m_configObjects: {}
