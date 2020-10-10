@@ -1408,7 +1408,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1778335260}
-        m_MethodName: goToMainMenu
+        m_MethodName: playAsGuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1778335255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9775882af60de144990103665a89b6f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 19acabb9ccc55314a98ad806c2564cd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2090811103
