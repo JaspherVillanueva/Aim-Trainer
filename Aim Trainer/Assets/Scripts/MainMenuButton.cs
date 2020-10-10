@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButton : MonoBehaviour
 {
-    public void MainMenu()
+    public void goToMainMenu()
     {
-        Debug.Log("Going Back to Main Menu");
-        SceneManager.LoadScene("StartMenu");
+        Debug.Log("Going back to main menu");
+        SceneManager.LoadScene("Log In");
     }
 }
