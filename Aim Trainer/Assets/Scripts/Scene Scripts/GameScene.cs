@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayAsGuest : MonoBehaviour
+public class GameScene : MonoBehaviour
 {
-    public void playAsGuest()
+    public void goToAimTrainer()
     {
-        Debug.Log("Playing the game");
+        Debug.Log("Going to game scene");
         SceneManager.LoadScene("AimTrainer");
     }
 }
