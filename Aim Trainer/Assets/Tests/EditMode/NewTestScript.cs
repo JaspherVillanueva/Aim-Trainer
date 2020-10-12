@@ -1,35 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-using Debug = UnityEngine.Debug;
-
 namespace Tests
 {
-    public class EditModeTest
+    public class NewTestScript
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void SceneHasPlayer()
+        public void NewTestScriptSimplePasses()
         {
-
-            /*
-            Player = GameObject.FindObjectOfType<Player>();
-
-            Player play = (Player)FindObjectOfType<Player>(typeof(Player));
-            if (play)
-            {
-                Debug.Log("Player object found: " + play.name);
-            }
-            else
-            {
-                Debug.Log("No player Object could be found");
-            }
-            */
-            //Assert.That(Object.FindObjectOfType<Player>(), Is.Not.Null);
+            // Use the Assert class to test conditions
         }
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
