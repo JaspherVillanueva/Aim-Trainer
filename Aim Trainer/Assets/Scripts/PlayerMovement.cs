@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             //gravity
-            velocity.y = -2f;
+            velocity.y = -3f;
         }
 
         //move left/right
