@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public int maxEnemies = 10;
+    public int maxEnemies = 1;
     public int xPos;
     public int zPos;
     public int yPos = 1;
@@ -23,13 +23,25 @@ public class GenerateEnemies : MonoBehaviour
     // Update is called once per frame
     IEnumerator EnemyDrop()
     {
-        while (enemyCount < maxEnemies)
+        while (enemyCount <= maxEnemies)
         {
             xPos = Random.Range(30, 50);
             zPos = Random.Range(-10, -40);
             SpawnTarget();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.5f);
             enemyCount += 1;
+        }
+    }
+
+    private void Update()
+    {
+        if (enemyCount > maxEnemies)
+        {
+            StopCoroutine(EnemyDrop());
+        }
+        else if (enemyCount < maxEnemies)
+        {
+            StartCoroutine(EnemyDrop());
         }
     }
 
