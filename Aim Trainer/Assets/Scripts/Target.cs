@@ -25,6 +25,10 @@ public class Target : MonoBehaviour
     {
         //add score
         ScoreScript.scoreValue += TargetScore;
+
+        int count = GenerateEnemies.enemyCount;
+        count--;
+
         //remove object
         Destroy(gameObject);
         Destroy(target);

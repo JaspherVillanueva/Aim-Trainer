@@ -15,10 +15,11 @@ public class GenerateEnemies : MonoBehaviour
     public int xPos;
     public int zPos;
     public int yPos = 1;
-    public int enemyCount;
     public GameObject closeTarget;
     public GameObject midTarget;
     public GameObject farTarget;
+    public static int enemyCount;
+
 
     // Start is called before the first frame update
     void Start()
