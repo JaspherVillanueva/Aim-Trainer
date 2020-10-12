@@ -18,33 +18,46 @@ public class GenerateEnemies : MonoBehaviour
     public GameObject closeTarget;
     public GameObject midTarget;
     public GameObject farTarget;
-    public static int enemyCount;
+    public static int maxTargets;
+    public int enemyCount;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        int i = GetMaxTargets();
+        Debug.Log(i + " Enemies Spawned");
         //spawn close enemies
         StartCoroutine(EnemyDrop(CloseEnemies, 20, closeTarget));
-        Debug.Log("Close Enemies Spawned: " + CloseEnemies);
+        //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
 
         //spawn mid enemies
         StartCoroutine(EnemyDrop(MidEnemies, 30, midTarget));
-        Debug.Log("Mid Enemies Spawned: " + MidEnemies);
+        //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
 
         //spawn far enemies
         StartCoroutine(EnemyDrop(FarEnemies, 40, farTarget));
-        Debug.Log("Far Enemies Spawned" + FarEnemies);
+        //Debug.Log("Far Enemies Spawned" + FarEnemies);
+    }
+
+    void update(GameObject Target)
+    {
+        Debug.Log("Update in GE");
+        if(enemyCount <= maxTargets)
+        {
+            SpawnTargets(Target);
+            Debug.Log(enemyCount + " . . . " + maxTargets);
+        }
     }
 
     // Update is called once per frame
     IEnumerator EnemyDrop(int maxEnemies, int Xposition, GameObject Target)
     {
         //check to see the number of enemies and the position of it
-        Debug.Log(maxEnemies + " " + Xposition);
+        //Debug.Log(maxEnemies + " " + Xposition);
 
         //while enemy count <= maxEnemy
-        for(int enemyCount = 1; enemyCount <= maxEnemies; enemyCount++)
+        for(int counter = 1; counter <= maxEnemies; counter++)
         {
             //x= 30, 50
             //y= -10, -40
@@ -54,20 +67,37 @@ public class GenerateEnemies : MonoBehaviour
             //generate random range between 
             zPos = Random.Range(-10, -40);
             //spawn the object
-            SpawnTarget(Target);
+            enemyCount++;
+            Debug.Log(enemyCount);
+            SpawnTargets(Target);
             yield return new WaitForSeconds(0.1f);
         }
     }
 
+    public void SpawnTarget(int gameObj, int Xposition)
+    {
+        GameObject targetSpawned = null;
+
+        if(gameObj == 1)
+        {
+            targetSpawned = closeTarget;
+        }
+        //generate random range between 
+        zPos = Random.Range(-10, -40);
+        Instantiate(targetSpawned, new Vector3(Xposition, yPos, zPos), Quaternion.identity);
+    }
+
     //spawn the target
-    public void SpawnTarget(GameObject Target)
+    public void SpawnTargets(GameObject Target)
     {
         //instatiate an object
         Instantiate(Target, new Vector3(xPos, yPos, zPos), Quaternion.identity);
     }
 
-    public void SpawnMultipleTargets()
+    public int GetMaxTargets()
     {
-        Start();
+        maxTargets = CloseEnemies + MidEnemies + FarEnemies;
+        //Debug.Log(maxTargets);
+        return maxTargets;
     }
 }

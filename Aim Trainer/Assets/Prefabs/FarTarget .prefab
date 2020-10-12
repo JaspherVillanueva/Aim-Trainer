@@ -96,6 +96,9 @@ MonoBehaviour:
   health: 50
   TargetScore: 30
   target: {fileID: 7480656416249730694}
+  EnemyCounter: 0
+  Generator: {fileID: 0}
+  EnemyDistance: 3
 --- !u!64 &7480656416249730692
 MeshCollider:
   m_ObjectHideFlags: 0
