@@ -8,6 +8,6 @@ public class GameScene : MonoBehaviour
     public void goToAimTrainer()
     {
         Debug.Log("Going to game scene");
-        SceneManager.LoadScene("AimTrainer");
+        SceneManager.LoadScene("Aim Trainer");
     }
 }

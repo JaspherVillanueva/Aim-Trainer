@@ -570,7 +570,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 896910255}
-        m_MethodName: playAsGuest
+        m_MethodName: goToLoginScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 896910250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19acabb9ccc55314a98ad806c2564cd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a1c1cd8a3b7b9342a86ab519ee27115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &993553194
