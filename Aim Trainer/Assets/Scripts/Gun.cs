@@ -100,7 +100,7 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
             //output object shot
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             //if target is hit...
             Target target = hit.transform.GetComponent<Target>();
