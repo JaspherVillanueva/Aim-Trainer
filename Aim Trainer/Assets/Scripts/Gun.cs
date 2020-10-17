@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
+using System.Security.Cryptography;
+using System.Collections.Specialized;
 
 public class Gun : MonoBehaviour
 {
@@ -19,7 +21,7 @@ public class Gun : MonoBehaviour
     public int magazineSize;
     private int bulletsLeft;
     public float reloadTime = 1f;
-    public float aimSpeed = 1f;
+    public static float aimSpeed = 1f;
 
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
@@ -71,11 +73,8 @@ public class Gun : MonoBehaviour
             //then shoot
             Shoot();
         }
-
-        if (Input.GetMouseButton(1))
-        {
-            Aim();
-        }
+        
+        Aim(Input.GetMouseButton(1));
     }
 
     //reloading
@@ -130,8 +129,25 @@ public class Gun : MonoBehaviour
         muzzleFlash.Pause();
     }
 
-    public void Aim()
+    public void Aim(bool player_isAim)
     {
-        GameObject t_anchor = Weapon.selectedWeapon.transform.Find("anchor");
+        GameObject AK_Gun = GameObject.Find("AK-47");
+        Transform t_anchor = AK_Gun.transform.Find("Anchor");
+        Transform t_state_ads = AK_Gun.transform.Find("States/ADS");
+        Transform t_state_hip = AK_Gun.transform.Find("States/Hip");
+        float AK_Gun_aimSpeed = Gun.aimSpeed;
+
+
+        if (player_isAim == true)
+        {
+            //aim
+            t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_ads.position, Time.deltaTime * AK_Gun_aimSpeed);
+        }
+        else
+        {
+            //hip
+            t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_hip.position, Time.deltaTime * AK_Gun_aimSpeed);
+        }
+
     }
 }

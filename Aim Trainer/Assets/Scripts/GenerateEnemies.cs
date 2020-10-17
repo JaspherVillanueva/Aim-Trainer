@@ -26,7 +26,7 @@ public class GenerateEnemies : MonoBehaviour
     void Start()
     {
         int i = GetMaxTargets();
-        Debug.Log(i + " Enemies Spawned");
+        //Debug.Log(i + " Enemies Spawned");
         //spawn close enemies
         StartCoroutine(EnemyDrop(CloseEnemies, 20, closeTarget));
         //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
@@ -38,16 +38,6 @@ public class GenerateEnemies : MonoBehaviour
         //spawn far enemies
         StartCoroutine(EnemyDrop(FarEnemies, 40, farTarget));
         //Debug.Log("Far Enemies Spawned" + FarEnemies);
-    }
-
-    void update(GameObject Target)
-    {
-        Debug.Log("Update in GE");
-        if(enemyCount <= maxTargets)
-        {
-            SpawnTargets(Target);
-            Debug.Log(enemyCount + " . . . " + maxTargets);
-        }
     }
 
     // Update is called once per frame
@@ -68,7 +58,7 @@ public class GenerateEnemies : MonoBehaviour
             zPos = Random.Range(-10, -40);
             //spawn the object
             enemyCount++;
-            Debug.Log(enemyCount);
+            //Debug.Log(enemyCount);
             SpawnTargets(Target);
             yield return new WaitForSeconds(0.1f);
         }
