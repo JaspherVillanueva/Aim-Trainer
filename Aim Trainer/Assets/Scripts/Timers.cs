@@ -25,12 +25,19 @@ public class Timers : MonoBehaviour
             string minutes = ((int)startTime / 60).ToString();  //start time minutes
             string seconds = ((int)startTime % 60).ToString();  //start time seconds
 
-            timerText.text = minutes + ":" + seconds;    //updates the timerText object
+            if((int)startTime % 60 < 10)
+            {
+                timerText.text = minutes + ":0" + seconds;    //updates the timerText object
+            }
+            else
+            {
+                timerText.text = minutes + ":" + seconds;    //updates the timerText object
+            }
         }
         else   //if time == 0, end game
         {
             Time.timeScale = 0f;
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Exit Menu");
             Cursor.lockState = CursorLockMode.None;     //Unlock the mouse to use for the 
         }
     }
@@ -49,7 +56,7 @@ public class Timers : MonoBehaviour
         else
         {
             Time.timeScale = 0f;
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Exit Menu");
             Cursor.lockState = CursorLockMode.None;
         }
     }
