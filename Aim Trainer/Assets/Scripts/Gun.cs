@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
     {
         //set current ammo (bullets left) to max bullets
         bulletsLeft = magazineSize;
+        
     }
 
     void OnEnable()
@@ -64,7 +65,7 @@ public class Gun : MonoBehaviour
             //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
             //then shoot
-            Tracer.Play();
+            
             Shoot();
         }
     }
@@ -72,6 +73,8 @@ public class Gun : MonoBehaviour
     //reloading
     IEnumerator Reload()
     {
+        
+
         //set reloading to true
         isReloading = true;
         Debug.Log("Reloading...");
@@ -92,8 +95,9 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        //play the muzzleFlash animation
         
+        //Bullet Tracer Animation
+        Tracer.Play();
         bulletsLeft--;
 
         RaycastHit hit;
@@ -118,6 +122,6 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
         }
-        Tracer.Pause();
+        //Tracer.Pause();
     }
 }

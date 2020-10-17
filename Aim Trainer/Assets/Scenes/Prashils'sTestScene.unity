@@ -3547,7 +3547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fddeeac0ebed86c4cab4320764b5c227, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fddeeac0ebed86c4cab4320764b5c227, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3726,6 +3726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410288378}
   - component: {fileID: 410288379}
+  - component: {fileID: 410288380}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -3763,6 +3764,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+--- !u!95 &410288380
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410288377}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 603ec67b1fe28424aad1dd02255341cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &464491472
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,8 +3945,8 @@ MonoBehaviour:
   magazineSize: 45
   reloadTime: 1
   fpsCamera: {fileID: 1456169265}
-  Tracer: {fileID: 0}
-  animator: {fileID: 0}
+  Tracer: {fileID: 2075187589}
+  animator: {fileID: 410288380}
 --- !u!1 &543302915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,7 +3981,7 @@ RectTransform:
   - {fileID: 392241038}
   - {fileID: 971237969}
   m_Father: {fileID: 1456169264}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5536,7 +5556,7 @@ MonoBehaviour:
   reloadTime: 1
   fpsCamera: {fileID: 1456169265}
   Tracer: {fileID: 2075187589}
-  animator: {fileID: 841987438}
+  animator: {fileID: 410288380}
 --- !u!95 &841987438
 Animator:
   serializedVersion: 3
@@ -5588,8 +5608,8 @@ MonoBehaviour:
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 1456169265}
-  Tracer: {fileID: 0}
-  animator: {fileID: 0}
+  Tracer: {fileID: 2075187589}
+  animator: {fileID: 410288380}
 --- !u!1 &878637837
 GameObject:
   m_ObjectHideFlags: 0
@@ -9989,6 +10009,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 410288378}
+  - {fileID: 2075187590}
   - {fileID: 543302916}
   - {fileID: 1515895238}
   m_Father: {fileID: 943689838}
@@ -10539,7 +10560,7 @@ Transform:
   - {fileID: 1825010943}
   - {fileID: 948956224}
   m_Father: {fileID: 1456169264}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1515895239
 MonoBehaviour:
@@ -11143,7 +11164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eb2136a3cdea8f84bb3b2ca2d025a818, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eb2136a3cdea8f84bb3b2ca2d025a818, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -13472,7 +13493,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075187587}
   serializedVersion: 6
-  lengthInSec: 1
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -13547,7 +13568,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.8
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -13600,7 +13621,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 90
+      scalar: 120
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -18130,11 +18151,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075187587}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.00000028088027}
-  m_LocalPosition: {x: 0.015999436, y: 0.1159998, z: 0.83700055}
+  m_LocalPosition: {x: 0.86599946, y: -0.104000196, z: 1.627002}
   m_LocalScale: {x: 1, y: 1.6666666, z: 1.0526319}
   m_Children: []
-  m_Father: {fileID: 841987436}
-  m_RootOrder: 3
+  m_Father: {fileID: 1456169264}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 179.99998}
 --- !u!1 &2079140283
 GameObject:
