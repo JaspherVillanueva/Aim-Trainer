@@ -74,17 +74,32 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
-    public void SpawnTarget(int gameObj, int Xposition)
+    public void SpawnTarget(int gameObj)
     {
         GameObject targetSpawned = null;
 
         if(gameObj == 1)
         {
             targetSpawned = closeTarget;
+            xPos = 20;
+        }
+        else if(gameObj == 2)
+        {
+            targetSpawned = midTarget;
+            xPos = 30;
+        }
+        else if (gameObj == 3)
+        {
+            targetSpawned = farTarget;
+            xPos = 40;
+        }
+        else
+        {
+            Debug.Log("Error Spawn Target: Target Distance is not valid");
         }
         //generate random range between 
         zPos = Random.Range(-10, -40);
-        Instantiate(targetSpawned, new Vector3(Xposition, yPos, zPos), Quaternion.identity);
+        Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
     }
 
     //spawn the target

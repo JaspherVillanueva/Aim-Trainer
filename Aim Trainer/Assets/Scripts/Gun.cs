@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
 
 public class Gun : MonoBehaviour
 {
@@ -17,10 +19,13 @@ public class Gun : MonoBehaviour
     public int magazineSize;
     private int bulletsLeft;
     public float reloadTime = 1f;
+    public float aimSpeed = 1f;
 
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
     public Animator animator;
+
+    public WeaponSwitching Weapon;
 
 
 
@@ -65,6 +70,11 @@ public class Gun : MonoBehaviour
             nextTimeToFire = Time.time + 1f / fireRate;
             //then shoot
             Shoot();
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            Aim();
         }
     }
 
@@ -118,5 +128,10 @@ public class Gun : MonoBehaviour
             }
         }
         muzzleFlash.Pause();
+    }
+
+    public void Aim()
+    {
+        GameObject t_anchor = Weapon.selectedWeapon.transform.Find("anchor");
     }
 }
