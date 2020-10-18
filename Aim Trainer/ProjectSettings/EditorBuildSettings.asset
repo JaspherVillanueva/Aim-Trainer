@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Scenes/Login Screen.unity
     guid: 9b9acd01089e83e419c93790ab4f08ea
+  - enabled: 1
+    path: Assets/Scenes/Game Scenes/Mode Select.unity
+    guid: 89d246dcb4a71cd4b8b844e5bef21e2a
   m_configObjects: {}
