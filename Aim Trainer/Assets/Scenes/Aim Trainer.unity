@@ -18020,7 +18020,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451414614}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!20 &1456169265 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3239414534949631606, guid: 767e08167910bad40a4420f492826f60,
