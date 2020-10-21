@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class ScoresScript : MonoBehaviour
+public class SyncTime : MonoBehaviour
 {
-    public Text originalScore;
+    public Text originalTime;
 
-    public Text Score;
+    public Text menuTime;
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Score.text = originalScore.text;
+        menuTime.text = originalTime.text;
     }
 }
-
