@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     public int TargetScore = 10;
     public GameObject target;
     public int EnemyCounter;
-    public GenerateEnemies Generator;
+    //public GenerateEnemies Generator;
     public int EnemyDistance;
 
     //void Start()
@@ -39,9 +39,10 @@ public class Target : MonoBehaviour
         //remove object
         Destroy(gameObject);
         Destroy(target);
-
+        /*
         Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
-        Generator.SpawnTarget(EnemyDistance);
+        Generator.SpawnSingleTarget(EnemyDistance);
+        */
         //debug log
         Debug.Log("Target Destroyed");
     }
