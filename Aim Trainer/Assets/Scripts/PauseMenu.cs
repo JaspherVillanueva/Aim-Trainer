@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class PauseMenu : MonoBehaviour
     {
         if( Input.GetKeyDown(KeyCode.Escape))  //if user presses esc
         {
-            if(GameIsPaused) //if game is already paused
+            Debug.Log("Escape key pressed");
+            if (GameIsPaused) //if game is already paused
             {
                 Resume();   //resume game
                 Cursor.visible = false;
