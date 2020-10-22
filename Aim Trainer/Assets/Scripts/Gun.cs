@@ -19,15 +19,16 @@ public class Gun : MonoBehaviour
     public float reloadTime = 1f;
 
     public Camera fpsCamera;
-    public ParticleSystem muzzleFlash;
+    public ParticleSystem Tracer;
     public Animator animator;
 
 
 
     void start()
     {
-        //set bullets left max bullets
+        //set current ammo (bullets left) to max bullets
         bulletsLeft = magazineSize;
+        
     }
 
     void OnEnable()
@@ -50,7 +51,7 @@ public class Gun : MonoBehaviour
             return;
 
         //if bullet below 0 
-        if (bulletsLeft <= 0 || Input.GetKey(KeyCode.R))
+        if (bulletsLeft <= 0 || (Input.GetKey(KeyCode.R) && bulletsLeft < magazineSize))
         {
             //reload
             StartCoroutine(Reload());
@@ -64,6 +65,7 @@ public class Gun : MonoBehaviour
             //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
             //then shoot
+            
             Shoot();
         }
     }
@@ -71,6 +73,8 @@ public class Gun : MonoBehaviour
     //reloading
     IEnumerator Reload()
     {
+        
+
         //set reloading to true
         isReloading = true;
         Debug.Log("Reloading...");
@@ -91,8 +95,9 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        //play the muzzleFlash animation
-        muzzleFlash.Play();
+        
+        //Bullet Tracer Animation
+        Tracer.Play();
         bulletsLeft--;
 
         RaycastHit hit;
@@ -117,6 +122,6 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
         }
-        muzzleFlash.Pause();
+        //Tracer.Pause();
     }
 }
