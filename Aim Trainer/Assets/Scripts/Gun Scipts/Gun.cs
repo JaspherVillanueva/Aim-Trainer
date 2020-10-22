@@ -8,7 +8,7 @@ using System.Collections.Specialized;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] Text Ammo;
+    [SerializeField] Text Ammo = null;
 
     public float damage = 10f;
     public float range = 100f;
@@ -26,10 +26,6 @@ public class Gun : MonoBehaviour
     public Camera fpsCamera;
     public ParticleSystem Tracer;
     public Animator animator;
-
-    public WeaponSwitching Weapon;
-
-
 
     void start()
     {
@@ -75,8 +71,6 @@ public class Gun : MonoBehaviour
             
             Shoot();
         }
-        
-        Aim(Input.GetMouseButton(1));
     }
 
     //reloading
@@ -132,27 +126,5 @@ public class Gun : MonoBehaviour
             }
         }
         //Tracer.Pause();
-    }
-
-    public void Aim(bool player_isAim)
-    {
-        GameObject AK_Gun = GameObject.Find("AK-47");
-        Transform t_anchor = AK_Gun.transform.Find("Anchor");
-        Transform t_state_ads = AK_Gun.transform.Find("States/ADS");
-        Transform t_state_hip = AK_Gun.transform.Find("States/Hip");
-        float AK_Gun_aimSpeed = Gun.aimSpeed;
-
-
-        if (player_isAim == true)
-        {
-            //aim
-            t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_ads.position, Time.deltaTime * AK_Gun_aimSpeed);
-        }
-        else
-        {
-            //hip
-            t_anchor.position = Vector3.Lerp(t_anchor.position, t_state_hip.position, Time.deltaTime * AK_Gun_aimSpeed);
-        }
-
     }
 }

@@ -16,12 +16,13 @@ public class GunTests
         SceneManager.LoadScene("Aim Trainer");
     }
 
+    /*
     [UnityTest]
     public IEnumerator GunCanNotFireWithoutAmmo()
     {
 
     }
-
+    */
 }
 
 
