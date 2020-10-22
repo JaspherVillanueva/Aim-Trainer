@@ -31,16 +31,17 @@ public class GenerateEnemies : MonoBehaviour
 
         if (sceneName == "Aim Trainer")
         {
+            yPos = 1;
             //spawn close enemies
-            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, closeTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, yPos, closeTarget_Obj));
             //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
 
             //spawn mid enemies
-            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, midTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, yPos, midTarget_Obj));
             //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
 
             //spawn far enemies
-            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, farTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, yPos, farTarget_Obj));
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
@@ -55,6 +56,21 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, 40.0f));
         }
 
+        else if (sceneName == "Stair Master")
+        {
+            //spawn close enemies
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, 110, closeTarget_Obj));
+            //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
+
+            //spawn mid enemies
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, 110, midTarget_Obj));
+            //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
+
+            //spawn far enemies
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, 110, farTarget_Obj));
+            //Debug.Log("Far Enemies Spawned" + FarEnemies);
+        }
+
         else
         {
             Debug.Log("you are not in aim trainer");
@@ -62,7 +78,7 @@ public class GenerateEnemies : MonoBehaviour
     }
 
     // Update is called once per frame
-    IEnumerator SpawnRowOfTargets(int maxEnemies, int Xposition, GameObject Target)
+    IEnumerator SpawnRowOfTargets(int maxEnemies, int Xposition, int Yposition, GameObject Target)
     {
         //while enemy count <= maxEnemy
         for(int counter = 1; counter <= maxEnemies; counter++)
@@ -74,7 +90,7 @@ public class GenerateEnemies : MonoBehaviour
             //spawn the object
             enemyCount++;
             //Debug.Log(enemyCount);
-            Instantiate(Target, new Vector3(xPos, yPos, zPos), Quaternion.identity);
+            Instantiate(Target, new Vector3(xPos, Yposition, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
         }
     }

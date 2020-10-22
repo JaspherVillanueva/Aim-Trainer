@@ -8878,9 +8878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0177cb6a131848b49bdd51a5f6acac77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseEnemies: 3
-  MidEnemies: 3
-  FarEnemies: 3
+  CloseEnemies: 20
+  MidEnemies: 20
+  FarEnemies: 20
   xPos: 0
   zPos: 0
   yPos: 1

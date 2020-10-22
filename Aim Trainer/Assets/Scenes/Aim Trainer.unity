@@ -156,9 +156,9 @@ MonoBehaviour:
   xPos: 0
   zPos: 0
   yPos: 2
-  closeTarget: {fileID: 1849348074}
-  midTarget: {fileID: 697381534}
-  farTarget: {fileID: 632997197}
+  closeTarget_Obj: {fileID: 1849348074}
+  midTarget_Obj: {fileID: 697381534}
+  farTarget_Obj: {fileID: 632997197}
   enemyCount: 0
 --- !u!4 &16923404
 Transform:
@@ -1003,7 +1003,6 @@ MonoBehaviour:
   TargetScore: 30
   target: {fileID: 201849790}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!23 &221420622
 MeshRenderer:
@@ -2623,7 +2622,6 @@ MonoBehaviour:
   TargetScore: 10
   target: {fileID: 201849790}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!23 &315182327
 MeshRenderer:
@@ -2736,7 +2734,6 @@ MonoBehaviour:
   TargetScore: 50
   target: {fileID: 201849790}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!23 &327901668
 MeshRenderer:
@@ -3805,7 +3802,6 @@ MonoBehaviour:
   TargetScore: 30
   target: {fileID: 201849790}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!23 &575864182
 MeshRenderer:
@@ -4372,7 +4368,6 @@ MonoBehaviour:
   TargetScore: 0
   target: {fileID: 0}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!1 &697381534 stripped
 GameObject:
@@ -4778,7 +4773,6 @@ MonoBehaviour:
   TargetScore: 0
   target: {fileID: 0}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!1 &883733059
 GameObject:
@@ -9334,7 +9328,6 @@ MonoBehaviour:
   TargetScore: 30
   target: {fileID: 201849790}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!23 &1719936775
 MeshRenderer:
@@ -9447,7 +9440,6 @@ MonoBehaviour:
   TargetScore: 10
   target: {fileID: 201849790}
   EnemyCounter: 0
-  Generator: {fileID: 0}
   EnemyDistance: 0
 --- !u!23 &1729619764
 MeshRenderer:
