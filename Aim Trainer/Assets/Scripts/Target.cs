@@ -37,6 +37,7 @@ public class Target : MonoBehaviour
         ScoreScript.scoreValue += TargetScore;
 
         //remove object
+        Destroy(gameObject);
         Destroy(target);
 
         Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();

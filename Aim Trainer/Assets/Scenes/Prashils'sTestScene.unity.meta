@@ -1,5 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Aim Trainer/Assets/Scenes/Prashils'sTestScene.unity.meta
 guid: e726fca91f11cbe4cb9899f4e69115d7
+========
+guid: 97bc1d5bf7ddbcd468e4e585c2859d13
+folderAsset: yes
+>>>>>>>> origin/Jaspher:Aim Trainer/Assets/Guns/1911/Models/Low_Poly_1323.fbm.meta
+=======
+guid: a32d27f2e91c39e4ba2b200d9db6909c
+>>>>>>> origin/Jaspher
 DefaultImporter:
   externalObjects: {}
   userData: 
