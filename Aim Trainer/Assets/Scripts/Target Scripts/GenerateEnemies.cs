@@ -26,7 +26,7 @@ public class GenerateEnemies : MonoBehaviour
     void Start()
     {
         int i = GetMaxTargets();
-        Debug.Log(i + " Enemies Spawned");
+        //Debug.Log(i + " Enemies Spawned");
         //spawn close enemies
         StartCoroutine(EnemyDrop(CloseEnemies, 20, closeTarget));
         //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
@@ -38,16 +38,6 @@ public class GenerateEnemies : MonoBehaviour
         //spawn far enemies
         StartCoroutine(EnemyDrop(FarEnemies, 40, farTarget));
         //Debug.Log("Far Enemies Spawned" + FarEnemies);
-    }
-
-    void update(GameObject Target)
-    {
-        Debug.Log("Update in GE");
-        if(enemyCount <= maxTargets)
-        {
-            SpawnTargets(Target);
-            Debug.Log(enemyCount + " . . . " + maxTargets);
-        }
     }
 
     // Update is called once per frame
@@ -68,23 +58,38 @@ public class GenerateEnemies : MonoBehaviour
             zPos = Random.Range(-10, -40);
             //spawn the object
             enemyCount++;
-            Debug.Log(enemyCount);
+            //Debug.Log(enemyCount);
             SpawnTargets(Target);
             yield return new WaitForSeconds(0.1f);
         }
     }
 
-    public void SpawnTarget(int gameObj, int Xposition)
+    public void SpawnTarget(int gameObj)
     {
         GameObject targetSpawned = null;
 
         if(gameObj == 1)
         {
             targetSpawned = closeTarget;
+            xPos = 20;
+        }
+        else if(gameObj == 2)
+        {
+            targetSpawned = midTarget;
+            xPos = 30;
+        }
+        else if (gameObj == 3)
+        {
+            targetSpawned = farTarget;
+            xPos = 40;
+        }
+        else
+        {
+            Debug.Log("Error Spawn Target: Target Distance is not valid");
         }
         //generate random range between 
         zPos = Random.Range(-10, -40);
-        Instantiate(targetSpawned, new Vector3(Xposition, yPos, zPos), Quaternion.identity);
+        Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
     }
 
     //spawn the target
