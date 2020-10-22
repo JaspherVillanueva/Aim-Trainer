@@ -41,10 +41,8 @@ public class Target : MonoBehaviour
         Destroy(target);
 
         Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
-        Generator.SpawnTarget(EnemyDistance);
+        Generator.SpawnTarget(1, 20);
         //debug log
         Debug.Log("Target Destroyed");
     }
-
-
 }

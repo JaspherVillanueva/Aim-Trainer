@@ -232,7 +232,7 @@ MonoBehaviour:
   magazineSize: 30
   reloadTime: 1
   fpsCamera: {fileID: 0}
-  Tracer: {fileID: 7684119999477332405, guid: 071c87c1bda8112499b1afcb05634832, type: 3}
+  Tracer: {fileID: 0}
   animator: {fileID: 4097524927920038024}
 --- !u!1 &4097524928332305401
 GameObject:

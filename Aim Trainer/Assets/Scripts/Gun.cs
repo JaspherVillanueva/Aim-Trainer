@@ -1,14 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Diagnostics;
-using Debug = UnityEngine.Debug;
-using System.Security.Cryptography;
-using System.Collections.Specialized;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] Text Ammo = null;
+    [SerializeField] Text Ammo;
 
     public float damage = 10f;
     public float range = 100f;
@@ -21,11 +17,12 @@ public class Gun : MonoBehaviour
     public int magazineSize;
     private int bulletsLeft;
     public float reloadTime = 1f;
-    public static float aimSpeed = 1f;
 
     public Camera fpsCamera;
     public ParticleSystem Tracer;
     public Animator animator;
+
+
 
     void start()
     {
