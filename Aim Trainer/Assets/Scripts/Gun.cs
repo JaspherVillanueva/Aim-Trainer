@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     private bool isReloading = false;
+    private bool isAiming;
 
     public int magazineSize;
     private int bulletsLeft;
@@ -22,13 +23,17 @@ public class Gun : MonoBehaviour
     public ParticleSystem Tracer;
     public Animator animator;
 
+    private Vector3 originalPosition;
+    public Vector3 aimPosition;
+    public float adsSpeed= 8f;
 
 
     void start()
     {
         //set current ammo (bullets left) to max bullets
         bulletsLeft = magazineSize;
-        
+
+        originalPosition = transform.localPosition;
     }
 
     void OnEnable()
@@ -40,6 +45,11 @@ public class Gun : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    private void FixedUpdate()
+    {
+        animator.SetBool("Aim", isAiming);
+    }
     private void Update()
     {
         //change text
@@ -68,13 +78,13 @@ public class Gun : MonoBehaviour
             
             Shoot();
         }
+
+        AimDownSights();
     }
 
     //reloading
     IEnumerator Reload()
     {
-        
-
         //set reloading to true
         isReloading = true;
         Debug.Log("Reloading...");
@@ -123,5 +133,19 @@ public class Gun : MonoBehaviour
             }
         }
         //Tracer.Pause();
+    }
+
+    private void AimDownSights()
+    {
+        if (Input.GetButton("Fire2") && !isReloading)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * adsSpeed);
+            isAiming = true;
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * adsSpeed);
+            isAiming = false;
+        }
     }
 }
