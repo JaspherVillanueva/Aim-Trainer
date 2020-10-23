@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Debug = UnityEngine.Debug;
 
 public class ScoreScript : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class ScoreScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         score.text = " " + scoreValue;
+        //Debug.Log(scoreValue);
     }
 }

@@ -76,8 +76,6 @@ public class Gun : MonoBehaviour
     //reloading
     IEnumerator Reload()
     {
-        
-
         //set reloading to true
         isReloading = true;
         Debug.Log("Reloading...");
@@ -98,9 +96,9 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        
         //Bullet Tracer Animation
         Tracer.Play();
+        GameManager.BulletsShot++;
         bulletsLeft--;
 
         RaycastHit hit;
