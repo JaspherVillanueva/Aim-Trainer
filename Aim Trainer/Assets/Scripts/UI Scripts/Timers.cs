@@ -8,7 +8,7 @@ public class Timers : MonoBehaviour
 {
     public Text timerText;
 
-    public static float startTime;
+    public float startTime;
     // Start is called before the first frame update
     void Start()
     {
