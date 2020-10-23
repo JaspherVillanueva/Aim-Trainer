@@ -37,7 +37,7 @@ public class Timers : MonoBehaviour
         else   //if time == 0, end game
         {
             Time.timeScale = 0f;
-            SceneManager.LoadScene("Exit Menu");
+            FindObjectOfType<GameManager>().EndGame();
             Cursor.lockState = CursorLockMode.None;     //Unlock the mouse to use for the 
         }
     }
