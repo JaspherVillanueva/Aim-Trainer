@@ -46,4 +46,11 @@ public class SceneController : MonoBehaviour
         Debug.Log("Going to Pre Game Scene");
         SceneManager.LoadScene("Mode 1 Pre Game");
     }
+
+    public void goToMap1()
+    {
+        Debug.Log("Going to Map 1");
+        SceneManager.LoadScene("Aim Trainer");
+    }
+
 }
