@@ -105,9 +105,9 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        
         //Bullet Tracer Animation
         Tracer.Play();
+        GameManager.BulletsShot++;
         bulletsLeft--;
 
         RaycastHit hit;

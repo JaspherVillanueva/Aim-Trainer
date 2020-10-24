@@ -6,6 +6,11 @@ TagManager:
   tags:
   - CloseTarget
   - EnemyGenerate
+  - AK-47
+  - ADS
+  - Hip
+  - MidTarget
+  - FarTarget
   layers:
   - Default
   - TransparentFX

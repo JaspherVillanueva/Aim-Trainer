@@ -1,5 +1,7 @@
-﻿using System.Security.Cryptography;
+﻿using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class WeaponSwitching : MonoBehaviour
 {
@@ -64,6 +66,11 @@ public class WeaponSwitching : MonoBehaviour
         {
             SelectWeapon();
         }
+    }
+
+    public void createWeapon()
+    {
+        Debug.Log("Create Weapon");
     }
 
     void SelectWeapon()
