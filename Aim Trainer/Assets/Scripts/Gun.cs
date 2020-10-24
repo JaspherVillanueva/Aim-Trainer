@@ -1,14 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Diagnostics;
-using Debug = UnityEngine.Debug;
-using System.Security.Cryptography;
-using System.Collections.Specialized;
 
 public class Gun : MonoBehaviour
 {
-    [SerializeField] Text Ammo = null;
+    [SerializeField] Text Ammo;
 
     public float damage = 10f;
     public float range = 100f;
@@ -17,21 +13,27 @@ public class Gun : MonoBehaviour
     private float nextTimeToFire = 0f;
 
     private bool isReloading = false;
+    private bool isAiming;
 
     public int magazineSize;
     private int bulletsLeft;
     public float reloadTime = 1f;
-    public static float aimSpeed = 1f;
 
     public Camera fpsCamera;
     public ParticleSystem Tracer;
     public Animator animator;
 
+    private Vector3 originalPosition;
+    public Vector3 aimPosition;
+    public float adsSpeed= 8f;
+
+
     void start()
     {
         //set current ammo (bullets left) to max bullets
         bulletsLeft = magazineSize;
-        
+
+        originalPosition = transform.localPosition;
     }
 
     void OnEnable()
@@ -43,6 +45,11 @@ public class Gun : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    private void FixedUpdate()
+    {
+        animator.SetBool("Aim", isAiming);
+    }
     private void Update()
     {
         //change text
@@ -63,7 +70,7 @@ public class Gun : MonoBehaviour
         }
 
         //When the fire button is pressed and they arent spamming the fire button
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
         {
             //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
@@ -71,6 +78,8 @@ public class Gun : MonoBehaviour
             
             Shoot();
         }
+
+        AimDownSights();
     }
 
     //reloading
@@ -124,5 +133,19 @@ public class Gun : MonoBehaviour
             }
         }
         //Tracer.Pause();
+    }
+
+    private void AimDownSights()
+    {
+        if (Input.GetButton("Fire2") && !isReloading)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * adsSpeed);
+            isAiming = true;
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * adsSpeed);
+            isAiming = false;
+        }
     }
 }
