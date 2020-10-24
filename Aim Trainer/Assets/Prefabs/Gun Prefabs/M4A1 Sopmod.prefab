@@ -214,8 +214,10 @@ MonoBehaviour:
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 0}
-  Tracer: {fileID: 0}
+  Tracer: {fileID: 4766760306327148365, guid: 760f50da43a65d54d832466be3c557e9, type: 3}
   animator: {fileID: 6659806882055917800}
+  aimPosition: {x: 0, y: 0, z: 0}
+  adsSpeed: 8
 --- !u!95 &6659806882055917800
 Animator:
   serializedVersion: 3
