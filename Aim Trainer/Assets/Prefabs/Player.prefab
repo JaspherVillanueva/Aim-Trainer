@@ -1023,7 +1023,6 @@ GameObject:
   - component: {fileID: 6052847546458684353}
   - component: {fileID: 6052847546458684358}
   - component: {fileID: 6052847546458684359}
-  - component: {fileID: 6052847546458684356}
   m_Layer: 5
   m_Name: Options Menu Canvas
   m_TagString: MainCamera
@@ -1116,18 +1115,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6052847546458684356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6052847546458684346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3490a1cfc44d9a040b0d4f524da6d289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6052847546470221806
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,7 +3993,6 @@ GameObject:
   - component: {fileID: 6052847547762161317}
   - component: {fileID: 6052847547762161306}
   - component: {fileID: 6052847547762161307}
-  - component: {fileID: 6052847547762161304}
   m_Layer: 5
   m_Name: Exit to Main Menu
   m_TagString: Untagged
@@ -4114,7 +4100,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6052847547762161304}
+      - m_Target: {fileID: 0}
         m_MethodName: goToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -4125,18 +4111,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6052847547762161304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6052847547762161310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9775882af60de144990103665a89b6f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6052847547787524312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,15 +4273,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74a081f647f7461449fad6e2e9ef57db, type: 3}
---- !u!95 &606978612179768429 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6659806882055917800, guid: 74a081f647f7461449fad6e2e9ef57db,
-    type: 3}
-  m_PrefabInstance: {fileID: 6052847545692521605}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &606978612179768427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6659806882055917806, guid: 74a081f647f7461449fad6e2e9ef57db,
+    type: 3}
+  m_PrefabInstance: {fileID: 6052847545692521605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &606978612179768429 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6659806882055917800, guid: 74a081f647f7461449fad6e2e9ef57db,
     type: 3}
   m_PrefabInstance: {fileID: 6052847545692521605}
   m_PrefabAsset: {fileID: 0}

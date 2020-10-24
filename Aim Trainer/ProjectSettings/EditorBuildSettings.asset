@@ -39,6 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scenes/Create Account.unity
     guid: 320ae65b97d33d544aaaa6aadd09c627
   - enabled: 1
-    path: Assets/Scenes/Game Over.unity
+    path: Assets/Scenes/Menu Scenes/Game Over.unity
     guid: 0741393fc61976a4d87df00c08744331
   m_configObjects: {}

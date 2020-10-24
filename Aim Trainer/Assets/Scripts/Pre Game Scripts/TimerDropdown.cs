@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TimerDropdown : MonoBehaviour
 {
-    List<string> time = new List<string>() { "1 Minute", "5 Minutes", "10 Minutes" };
+    List<string> time = new List<string>() { "1 Minute", "2 Minutes", "5 Minutes" };
 
     public Dropdown timerdropDown;
     public int dropdownValue;
@@ -36,11 +36,11 @@ public class TimerDropdown : MonoBehaviour
         }
         else if (dropdownValue == 1)
         {
-            timer = 300;
+            timer = 120;
         }
         else if (dropdownValue == 2)
         {
-            timer = 600;
+            timer = 300;
         }
 
         Debug.Log(timer);
