@@ -390,7 +390,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 348518447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 137af3ec10b6ca6428753d143f2a3aa2, type: 3}
+  m_Script: {fileID: 11500000, guid: f78125cdefeb48e4cadeadceafacb008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 348518450}
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1754659200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb32d1d70e816894d8633bf59c5fb213, type: 3}
+  m_Script: {fileID: 11500000, guid: d7f1693af6f3a0e40bd00cbd4136d890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   accuracyText: {fileID: 1754659203}
