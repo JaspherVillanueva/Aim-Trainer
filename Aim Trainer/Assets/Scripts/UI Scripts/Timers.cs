@@ -12,7 +12,8 @@ public class Timers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
+        startTime = TimerDropdown.timer;
+    
     }
 
     // Update is called once per frame

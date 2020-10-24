@@ -1,28 +1,50 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TimerDropdown : MonoBehaviour
 {
-    public int time;
+    List<string> time = new List<string>() { "1 Minute", "5 Minutes", "10 Minutes" };
 
-    public void HandleInputData(int val)
+    public Dropdown timerdropDown;
+    public int dropdownValue;
+    public static int timer = 60;
+
+    void Start()
     {
-        if (val == 0)
+        timerdropDown = GetComponent<Dropdown>();
+        timerdropDown.onValueChanged.AddListener(delegate
         {
-            time = 60;
-            Debug.Log(time);
-        }
-        if (val == 1)
-        {
-            time = 600;
-            Debug.Log(time);
-        }
-        if (val == 2)
-        {
-            time = 1200;
-            Debug.Log(time);
-        }
+            DropdownValueChanged(timerdropDown);
+        });
+        timerdropDown.AddOptions(time);
+        Debug.Log("Starting Dropdown Time: "
+            + timer);
+        Debug.Log("Starting Dropdown Value: "
+            + timerdropDown.value);
+        
     }
 
+    void DropdownValueChanged(Dropdown change)
+    {
+        dropdownValue = change.value;
+
+        if (dropdownValue == 0) 
+        {
+            timer = 60;  
+        }
+        else if (dropdownValue == 1)
+        {
+            timer = 300;
+        }
+        else if (dropdownValue == 2)
+        {
+            timer = 600;
+        }
+
+        Debug.Log(timer);
+        Debug.Log(timerdropDown.value);
+    }
 
 }
