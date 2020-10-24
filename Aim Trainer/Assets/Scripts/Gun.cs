@@ -70,7 +70,7 @@ public class Gun : MonoBehaviour
         }
 
         //When the fire button is pressed and they arent spamming the fire button
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
         {
             //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
