@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MapDropdown : MonoBehaviour
 {
-    List<string> maps = new List<string>() { }
+    List<string> maps = new List<string>() { "Map 1", "Map 2", "Map 3" };
 
     
     void Start()
