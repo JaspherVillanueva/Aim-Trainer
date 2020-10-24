@@ -20,7 +20,6 @@ public class Target : MonoBehaviour
 
     public void TakeDamage (float damage)
     {
-        GameManager.TargetsHit++;
         //decrease health
         health -= damage;
         //if health below 0
