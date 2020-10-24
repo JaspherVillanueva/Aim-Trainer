@@ -16,20 +16,20 @@ public class CrosshairOptions : MonoBehaviour
         
     }
 
-    public void offetOut()
+    public void offsetOut()
     {
-        North.transform.position(transform.position.x, transform.position.y + 1, transform.position.z);
-        South.transform.position(transform.position.x, transform.position.y - 1, transform.position.z);
-        East.transform.position(transform.position.x + 1, transform.position.y, transform.position.z);
-        West.transform.position(transform.position.x - 1, transform.position.y, transform.position.z);
+        North.transform.position(North.transform.position.x, North.transform.position.y + 1, 0);
+        South.transform.position(South.transform.position.x, South.transform.position.y - 1, 0);
+        East.transform.position(East.transform.position.x + 1, East.transform.position.y, 0);
+        West.transform.position(West.transform.position.x - 1, West.transform.position.y, 0);
     }
 
-    public void offetIn()
+    public void offsetIn()
     {
-        North.transform.position(transform.position.x, transform.position.y - 1, transform.position.z);
-        South.transform.position(transform.position.x, transform.position.y + 1, transform.position.z);
-        East.transform.position(transform.position.x - 1, transform.position.y, transform.position.z);
-        West.transform.position(transform.position.x + 1, transform.position.y, transform.position.z);
+        North.transform.position(North.transform.position.x, North.transform.position.y - 1, 0);
+        South.transform.position(South.transform.position.x, South.transform.position.y + 1, 0);
+        East.transform.position(East.transform.position.x - 1, East.transform.position.y, 0);
+        West.transform.position(West.transform.position.x + 1, West.transform.position.y, 0);
     }
 
     public void thicknessOut()
