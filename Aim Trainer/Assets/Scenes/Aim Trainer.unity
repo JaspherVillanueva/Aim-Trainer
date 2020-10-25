@@ -180,7 +180,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28598
+  m_Name: pb_Mesh46364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7921,7 +7921,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28316
+  m_Name: pb_Mesh46082
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10810,11 +10810,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 160.0003
       objectReference: {fileID: 0}
+    - target: {fileID: 6052847546599895680, guid: 767e08167910bad40a4420f492826f60,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052847546967453250, guid: 767e08167910bad40a4420f492826f60,
+        type: 3}
+      propertyPath: disableUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052847546967453250, guid: 767e08167910bad40a4420f492826f60,
+        type: 3}
+      propertyPath: disableCrosshair
+      value: 
+      objectReference: {fileID: 1316224038}
     - target: {fileID: 6052847547463426578, guid: 767e08167910bad40a4420f492826f60,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 16923403}
+    - target: {fileID: 6148177224422629332, guid: 767e08167910bad40a4420f492826f60,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1456169265}
+    - target: {fileID: 6148177224422629332, guid: 767e08167910bad40a4420f492826f60,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398992234680396675, guid: 767e08167910bad40a4420f492826f60,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -10824,6 +10849,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607665179043486456, guid: 767e08167910bad40a4420f492826f60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 767e08167910bad40a4420f492826f60, type: 3}
