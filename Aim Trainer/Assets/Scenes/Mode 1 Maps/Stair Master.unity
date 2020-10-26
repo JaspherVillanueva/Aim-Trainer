@@ -445,7 +445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 968968886978893429}
         m_MethodName: Reducesense
         m_Mode: 1
         m_Arguments:
@@ -6902,7 +6902,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 968968886978893429}
         m_MethodName: Addsense
         m_Mode: 1
         m_Arguments:
