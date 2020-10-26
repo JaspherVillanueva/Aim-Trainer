@@ -13,7 +13,7 @@ public class WeaponsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))  //if user presses B
+        if (Input.GetKeyDown(KeyCode.B))  //if user presses B
         {
             //Debug.Log("escape key pressed");
             if (GameIsPaused) //if game is already paused
