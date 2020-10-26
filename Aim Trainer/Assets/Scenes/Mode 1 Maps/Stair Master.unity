@@ -4294,7 +4294,7 @@ GameObject:
   - component: {fileID: 1481332226}
   m_Layer: 0
   m_Name: GenerateEnemies
-  m_TagString: Untagged
+  m_TagString: EnemyGenerate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4314,12 +4314,13 @@ MonoBehaviour:
   CloseEnemies: 3
   MidEnemies: 3
   FarEnemies: 3
-  xPos: 0
-  zPos: 0
-  yPos: 1
   closeTarget_Obj: {fileID: 1867086574}
   midTarget_Obj: {fileID: 1767916674}
   farTarget_Obj: {fileID: 635080496}
+  xPos: 0
+  zPos: 0
+  yPos: 1
+  Center: {x: 50, y: 5, z: -50}
   enemyCount: 0
 --- !u!4 &1481332227
 Transform:
