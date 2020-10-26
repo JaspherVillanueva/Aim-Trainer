@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    public static int mapSelection;
+
     public void goToLoginMenu()
     {
         Debug.Log("Going to Login Menu Scene");
@@ -47,10 +49,44 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Mode 1 Pre Game");
     }
 
+    public void checkMapSelect()
+    {
+        mapSelection = MapDropdown.mapValue;
+
+        if (mapSelection == 0)
+        {
+            goToMap1();
+
+        }
+
+        else if (mapSelection == 1)
+        {
+            goToMap2();
+        }
+
+        else if (mapSelection == 2)
+        {
+            goToMap3();
+        }
+    }
+
+
     public void goToMap1()
     {
         Debug.Log("Going to Map 1");
-        SceneManager.LoadScene("Aim Trainer");
+        SceneManager.LoadScene("The Ring");
+    }
+
+    public void goToMap2()
+    {
+        Debug.Log("Going to Map 2");
+        SceneManager.LoadScene("Stair Master");
+    }
+
+    public void goToMap3()
+    {
+        Debug.Log("Going to Map 3");
+        SceneManager.LoadScene("The Shelf");
     }
 
 }
