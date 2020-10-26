@@ -59,15 +59,18 @@ public class GenerateEnemies : MonoBehaviour
         else if (sceneName == "Stair Master")
         {
             //spawn close enemies
-            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, 110, closeTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 26, 104, closeTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 28, 104, closeTarget_Obj));
             //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
 
             //spawn mid enemies
-            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, 110, midTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 34, 106, midTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 36, 106, midTarget_Obj));
             //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
 
             //spawn far enemies
-            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, 110, farTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 42, 107, farTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 44, 108, farTarget_Obj));
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
@@ -86,7 +89,7 @@ public class GenerateEnemies : MonoBehaviour
             //generate x axis
             xPos = Random.Range(Xposition, Xposition);
             //generate random range between 
-            zPos = Random.Range(-10, -40);
+            zPos = Random.Range(5, -40);
             //spawn the object
             enemyCount++;
             //Debug.Log(enemyCount);
