@@ -14,7 +14,7 @@ public class MouseLook : MonoBehaviour
     void Start()
     {
         //set cursor to lock
-        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame

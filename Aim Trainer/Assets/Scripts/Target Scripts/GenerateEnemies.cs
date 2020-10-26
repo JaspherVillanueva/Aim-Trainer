@@ -23,11 +23,11 @@ public class GenerateEnemies : MonoBehaviour
     public static float midTarget_radius = 30.0f;
     public static float farTarget_radius = 40.0f;
 
-    public int xPos;
-    public int zPos;
-    public int yPos = 1;
-    public Vector3 Center = new Vector3(50, 5, -50);
-    public int enemyCount;
+    private int xPos;
+    private int zPos;
+    private int yPos = 1;
+    private Vector3 Center = new Vector3(50, 5, -50);
+    private int enemyCount;
 
     // Start is called before the first frame update
     void Start()
@@ -65,15 +65,18 @@ public class GenerateEnemies : MonoBehaviour
         else if (sceneName == "Stair Master")
         {
             //spawn close enemies
-            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, 110, closeTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 26, 104, closeTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 28, 104, closeTarget_Obj));
             //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
 
             //spawn mid enemies
-            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, 110, midTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 34, 106, midTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 36, 106, midTarget_Obj));
             //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
 
             //spawn far enemies
-            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, 110, farTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 42, 107, farTarget_Obj));
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 44, 108, farTarget_Obj));
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
@@ -87,12 +90,12 @@ public class GenerateEnemies : MonoBehaviour
     IEnumerator SpawnRowOfTargets(int maxEnemies, int Xposition, int Yposition, GameObject Target)
     {
         //while enemy count <= maxEnemy
-        for(int counter = 1; counter <= maxEnemies; counter++)
+        for (int counter = 1; counter <= maxEnemies; counter++)
         {
             //generate x axis
             xPos = Random.Range(Xposition, Xposition);
             //generate random range between 
-            zPos = Random.Range(-10, -40);
+            zPos = Random.Range(5, -40);
             //spawn the object
             enemyCount++;
             //Debug.Log(enemyCount);
@@ -101,32 +104,61 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
-    public void SpawnSingleTarget(int gameObj)
+    //used to repspawn targets from the stair map
+    public void SpawnSingleStairTarget(int gameObj, int randomRow)
     {
         GameObject targetSpawned = null;
 
-        if(gameObj == 1)
+        if (gameObj == 1)
         {
             targetSpawned = closeTarget_Obj;
-            xPos = 20;
+            if (randomRow == 0)
+            {
+                xPos = 26;
+                yPos = 104;
+            }
+            else
+            {
+                xPos = 28;
+                yPos = 104;
+            }
         }
-        else if(gameObj == 2)
+        else if (gameObj == 2)
         {
             targetSpawned = midTarget_Obj;
-            xPos = 30;
+            if (randomRow == 0)
+            {
+                xPos = 34;
+                yPos = 106;
+            }
+            else
+            {
+                xPos = 36;
+                yPos = 106;
+            }
         }
         else if (gameObj == 3)
         {
             targetSpawned = farTarget_Obj;
-            xPos = 40;
+            if (randomRow == 0)
+            {
+                xPos = 42;
+                yPos = 107;
+            }
+            else
+            {
+                xPos = 44;
+                yPos = 108;
+            }
         }
         else
         {
             Debug.Log("Error Spawn Target: Target Distance is not valid");
         }
         //generate random range between 
-        zPos = Random.Range(-10, -40);
+        zPos = Random.Range(5, -40);
         Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
+        Debug.Log("STAIR SPAWNED AN ENEMY!!");
     }
 
     // Update is called once per frame
@@ -146,6 +178,7 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
+    //Used to respawn target from the ring map
     public void SpawnSingleCircularTarget(int gameObj)
     {
         GameObject targetSpawned = null;
@@ -173,9 +206,10 @@ public class GenerateEnemies : MonoBehaviour
         Vector3 pos = RandomCircle(Center, radius);
         Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
         Instantiate(targetSpawned, pos, rot);
-        Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
+        //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
     }
 
+    //used to get random vector from a circle
     Vector3 RandomCircle(Vector3 Center, float radius)
     {
         float angle = Random.value * 360;
@@ -185,5 +219,4 @@ public class GenerateEnemies : MonoBehaviour
         pos.y = Center.y;
         return pos;
     }
-
 }

@@ -6,10 +6,10 @@ using UnityEngine;
 public class PreGameMenu : MonoBehaviour
 {
     public GameObject disableWeapon;
-    public GameObject disableCrosshair;
-    public GameObject disableScore;
-    public GameObject disableAmmo;
+    public GameObject disableUI;
+
     public GameObject disableMenu;
+    public GameObject disableBuyingMenu;
     public GameObject Canvas;
 
     // Start is called before the first frame update
@@ -17,26 +17,22 @@ public class PreGameMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
-
+        disableBuyingMenu.SetActive(false);
         disableWeapon.SetActive(false);
-        disableCrosshair.SetActive(false);
-        disableScore.SetActive(false);
-        disableAmmo.SetActive(false);
+        disableUI.SetActive(false);
         disableMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
     }
 
     public void StartGame()
     {
         disableWeapon.SetActive(true);
-        disableCrosshair.SetActive(true);
-        disableScore.SetActive(true);
-        disableAmmo.SetActive(true);
+        disableUI.SetActive(true);
+        disableBuyingMenu.SetActive(true);
         disableMenu.SetActive(true);
         Canvas.SetActive(false);
 
