@@ -36,7 +36,7 @@ public class TargetTests
         yield return new WaitForSeconds(0.5f);
     }
 
-
+    /*
 
     [UnityTest]
     public IEnumerator TargetSpawnedOnStartup()
@@ -56,6 +56,6 @@ public class TargetTests
 
         yield return new WaitForSeconds(0.5f);
     }
-
+    */
 }
 
