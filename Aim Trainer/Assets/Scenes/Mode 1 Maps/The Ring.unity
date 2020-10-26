@@ -6807,6 +6807,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 160.00012
       objectReference: {fileID: 0}
+    - target: {fileID: 1612725947343283583, guid: 4587a539c1fcdf94b9d870148a87f26a,
+        type: 3}
+      propertyPath: Tracer
+      value: 
+      objectReference: {fileID: 2104939891}
+    - target: {fileID: 2512006845756475812, guid: 4587a539c1fcdf94b9d870148a87f26a,
+        type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847189026966067670, guid: 4587a539c1fcdf94b9d870148a87f26a,
+        type: 3}
+      propertyPath: Tracer
+      value: 
+      objectReference: {fileID: 2104939891}
+    - target: {fileID: 5392216724179654090, guid: 4587a539c1fcdf94b9d870148a87f26a,
+        type: 3}
+      propertyPath: Tracer
+      value: 
+      objectReference: {fileID: 2104939891}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4587a539c1fcdf94b9d870148a87f26a, type: 3}
 --- !u!1 &1254006988
@@ -8975,12 +8995,13 @@ MonoBehaviour:
   CloseEnemies: 20
   MidEnemies: 20
   FarEnemies: 20
-  xPos: 0
-  zPos: 0
-  yPos: 1
   closeTarget_Obj: {fileID: 565566692}
   midTarget_Obj: {fileID: 1709242605}
   farTarget_Obj: {fileID: 844717216}
+  xPos: 0
+  zPos: 0
+  yPos: 1
+  Center: {x: 50, y: 5, z: -50}
   enemyCount: 0
 --- !u!4 &1632965811
 Transform:
@@ -16492,6 +16513,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &2104939891 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5716360058962507111, guid: 4587a539c1fcdf94b9d870148a87f26a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1215187478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2134084585
 PrefabInstance:
   m_ObjectHideFlags: 0

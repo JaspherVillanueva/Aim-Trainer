@@ -1,8 +1,11 @@
 ﻿using System.CodeDom.Compiler;
 using System.Diagnostics;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
+using System;
 
 public class Target : MonoBehaviour
 {
@@ -39,15 +42,24 @@ public class Target : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
+        //Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
+        Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
+
         if (sceneName == "The Ring")
         {
-            Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
-            Generator.SpawnSingleTarget(EnemyDistance);
-            Debug.Log("THE RING HAS RESPAWNED A TARGET!!!");
+            //Debug.Log("THE RING HAS RESPAWNED A TARGET!!!");
+            Generator.SpawnSingleCircularTarget(EnemyDistance);
+        }
+
+        else if (sceneName == "Stair Master")
+        {
+            int randomRow = Random.Range(0, 2);
+            Debug.Log("STAIR MASTER!!!");
+            Debug.Log("Random Range: " + randomRow);
+            Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
         }
 
         /*
-        Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
         Generator.SpawnSingleTarget(EnemyDistance);
         */
         //debug log
