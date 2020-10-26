@@ -22,7 +22,6 @@ public class GenerateEnemies : MonoBehaviour
     public GameObject farTarget_Obj;
     public int enemyCount;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -129,7 +128,6 @@ public class GenerateEnemies : MonoBehaviour
     // Update is called once per frame
     IEnumerator SpawnCircleOfEnemies(int maxEnemies, Vector3 center, GameObject Target, float radius)
     {
-        
         //while enemy count <= maxEnemy
         for (int counter = 1; counter <= maxEnemies; counter++)
         {

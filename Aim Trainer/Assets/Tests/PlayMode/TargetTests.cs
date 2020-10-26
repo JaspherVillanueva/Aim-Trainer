@@ -1,7 +1,8 @@
-﻿using UnityEngine;
-using UnityEngine.TestTools;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 using System.Runtime;
 
@@ -41,18 +42,16 @@ public class TargetTests
     [UnityTest]
     public IEnumerator TargetSpawnedOnStartup()
     {
-        /*
          var enemyPrefab = Resources.Load("Tests/enemy");
-         var enemySpawner = new GameObject().AddComponent<EnemySpawner>();
-         enemySpawner.Construct(enemyPrefab, 0 , 1);
+         var GenerateEnemies = new GameObject().AddComponent<GenerateEnemies>();
+        GenerateEnemies.SpawnSingleTarget(1);
 
         yield return null;
 
         var spawnedEnemy = GameObject.FindWithTag("Enemy");
-        var prefabOfTheSpawnedEnemy = PrefabUtility.GetPrefabParent(spawnedEnemy);
+        var prefabOfTheSpawnedEnemy = PrefabUtility.GetCorrespondingObjectFromSource(spawnedEnemy);
 
         Assert.AreEqual(enemyPrefab, prefabOfTheSpawnedEnemy);
-         */
 
         yield return new WaitForSeconds(0.5f);
     }
