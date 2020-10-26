@@ -5,24 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Aim Trainer.unity
     guid: 7c2ccfe988334bd4293fb4440c849167
-  - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Login Menu.unity
-    guid: 8d712651aa5dd394797278a87f920d36
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/Main Menu.unity
     guid: 616ea859d4e8ea94d956197325483fe4
@@ -30,12 +15,33 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scenes/Exit Menu.unity
     guid: c3eb8486a905e6841a033aefc30793b3
   - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Login Screen.unity
-    guid: 9b9acd01089e83e419c93790ab4f08ea
-  - enabled: 1
     path: Assets/Scenes/Menu Scenes/Mode Select.unity
     guid: 89d246dcb4a71cd4b8b844e5bef21e2a
   - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Create Account.unity
-    guid: 320ae65b97d33d544aaaa6aadd09c627
+    path: Assets/Scenes/Menu Scenes/Game Over.unity
+    guid: 0741393fc61976a4d87df00c08744331
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Mode 1 Pre Game.unity
+    guid: 61a88b987b794fb44ac86a08da2c951e
+  - enabled: 1
+    path: Assets/Scenes/Mode 1 Maps/Stair Master.unity
+    guid: 772756d4f645ce746b2a72372b71e60d
+  - enabled: 1
+    path: Assets/Scenes/Mode 1 Maps/The Ring.unity
+    guid: b36bc13e95d65dc4fabc19a66a6395cf
+  - enabled: 1
+    path: Assets/Scenes/Mode 1 Maps/The Shelf.unity
+    guid: bd2e2d120e3e69f49b4d17d038382e5b
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Mode 2 Pre Game.unity
+    guid: c4cd869512f52af40846416290681c7d
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Mode 3 Pre Game.unity
+    guid: 53bc722ef8eb2fe44882c2a450c5b5d2
+  - enabled: 1
+    path: Assets/Scenes/Mode 3 Map/Mode 3.unity
+    guid: 3822d49944f4ca9499ae0296e21c96ba
+  - enabled: 1
+    path: Assets/Scenes/Mode 2 Map/Mode 2.unity
+    guid: d4d28963aea980047b28c3007e6a1f97
   m_configObjects: {}
