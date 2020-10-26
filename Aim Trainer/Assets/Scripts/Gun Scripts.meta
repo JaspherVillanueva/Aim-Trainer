@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Aim Trainer/Assets/Scripts/Gun Scripts.meta
 guid: 4cc94afd63f35664ea5ad39eba209a36
+=======
+guid: d993d4c08db82e14eae7a81ff76fd53e
+>>>>>>> parent of d079956... Merge branch 'Jaspher' into Tony:Aim Trainer/Assets/Scripts/Menu Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
