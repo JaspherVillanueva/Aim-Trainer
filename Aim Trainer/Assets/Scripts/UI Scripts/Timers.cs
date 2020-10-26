@@ -12,7 +12,8 @@ public class Timers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        startTime = TimerDropdown.timer;
+    
     }
 
     // Update is called once per frame
@@ -37,27 +38,8 @@ public class Timers : MonoBehaviour
         else   //if time == 0, end game
         {
             Time.timeScale = 0f;
-            SceneManager.LoadScene("Exit Menu");
+            FindObjectOfType<GameManager>().EndGame();
             Cursor.lockState = CursorLockMode.None;     //Unlock the mouse to use for the 
-        }
-    }
-
-    public void AddTime ()  //function to add 30 seconds to timer
-    {
-        startTime += 30;
-    }
-
-    public void ReduceTime ()  //function to reduce time by 30s
-    {
-        if (startTime > 30)
-        {
-            startTime -= 30;
-        }
-        else
-        {
-            Time.timeScale = 0f;
-            SceneManager.LoadScene("Exit Menu");
-            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
