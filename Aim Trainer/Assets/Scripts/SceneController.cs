@@ -56,7 +56,6 @@ public class SceneController : MonoBehaviour
         if (mapSelection == 0)
         {
             goToMap1();
-
         }
 
         else if (mapSelection == 1)
