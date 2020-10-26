@@ -50,6 +50,7 @@ public class Gun : MonoBehaviour
     {
         animator.SetBool("Aim", isAiming);
     }
+
     private void Update()
     {
         //change text

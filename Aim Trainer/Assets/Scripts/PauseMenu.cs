@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public static bool OpMenu = false; //chaeck if game is paused
+    public static bool OpMenu = true; //chaeck if game is paused
 
     public GameObject pauseMenuUI;   //the menu
 
@@ -17,6 +17,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject InGameOptionsMenu;    //options menu
 
+    public GameObject WeaponsMenu;    //options menu
+
     // Update is called once per frame
     void Update()
     {
@@ -25,42 +27,49 @@ public class PauseMenu : MonoBehaviour
             if(GameIsPaused) //if game is already paused
             {
                 Resume();   //resume game
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                InGameOptionsMenu.SetActive(false);
             }
             else
             {
                 Pause();  // pasuse game
-                Cursor.lockState = CursorLockMode.None;   //unlock cursor to use in menu
-                InGameOptionsMenu.SetActive(false);         //disable options menu if opened
             }
         }
     }
 
     public void Resume ()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        InGameOptionsMenu.SetActive(false);
         pauseMenuUI.SetActive(false);        //disable pause menu
         disableGun.SetActive(true);          //bring back gun
         disableCrosshair.SetActive(true);    //bring back crosshair
+        WeaponsMenu.SetActive(true);
+
         Time.timeScale = 1f;                 //resume time
         GameIsPaused = false;                //update value
-    }
-
-    public void QuitGame ()
-    {
-        Debug.Log("Quitting Game....");
-        Application.Quit();  //quitting game
+        
     }
 
     void Pause()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;   //unlock cursor to use in menu
+
+        InGameOptionsMenu.SetActive(false);         //disable options menu if opened
         pauseMenuUI.SetActive(true);         //bring up pause menu
         disableGun.SetActive(false);         //disable gun
         disableCrosshair.SetActive(false);   //disable crosshair
+        WeaponsMenu.SetActive(false);
+
         Time.timeScale = 0f;                 //stop time, aka pause the game
         GameIsPaused = true;                 //update value
+    }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quitting Game....");
+        Application.Quit();  //quitting game
     }
 
     public void InGameOpMenu ()   //bring up options menu
@@ -76,7 +85,6 @@ public class PauseMenu : MonoBehaviour
             InGameOptionsMenu.SetActive(false);//disable options menu
             pauseMenuUI.SetActive(true);       //bring back pause menu
             OpMenu = true;                     //update value
-        }
-        
+        } 
     }
 }
