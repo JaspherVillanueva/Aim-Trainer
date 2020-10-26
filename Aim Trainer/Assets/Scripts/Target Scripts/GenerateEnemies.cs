@@ -101,60 +101,32 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
-    public void SpawnSingleStairTarget(int gameObj, int randomRow)
+    public void SpawnSingleTarget(int gameObj)
     {
         GameObject targetSpawned = null;
 
         if(gameObj == 1)
         {
             targetSpawned = closeTarget_Obj;
-            if (randomRow == 0)
-            {
-                xPos = 26;
-                yPos = 104;
-            }
-            else
-            {
-                xPos = 28;
-                yPos = 104;
-            }
+            xPos = 20;
         }
         else if(gameObj == 2)
         {
             targetSpawned = midTarget_Obj;
-            if (randomRow == 0)
-            {
-                xPos = 34;
-                yPos = 106;
-            }
-            else
-            {
-                xPos = 36;
-                yPos = 106;
-            }
+            xPos = 30;
         }
         else if (gameObj == 3)
         {
             targetSpawned = farTarget_Obj;
-            if (randomRow == 0)
-            {
-                xPos = 42;
-                yPos = 107;
-            }
-            else
-            {
-                xPos = 44;
-                yPos = 108;
-            }
+            xPos = 40;
         }
         else
         {
             Debug.Log("Error Spawn Target: Target Distance is not valid");
         }
         //generate random range between 
-        zPos = Random.Range(5, -40);
+        zPos = Random.Range(-10, -40);
         Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
-        Debug.Log("STAIR SPAWNED AN ENEMY!!");
     }
 
     // Update is called once per frame

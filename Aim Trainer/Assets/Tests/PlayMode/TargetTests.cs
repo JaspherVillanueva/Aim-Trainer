@@ -36,24 +36,14 @@ public class TargetTests
         yield return new WaitForSeconds(0.5f);
     }
 
-<<<<<<< HEAD
 
-=======
-    /*
->>>>>>> Jaspher
 
     [UnityTest]
     public IEnumerator TargetSpawnedOnStartup()
     {
-<<<<<<< HEAD
         /*
          var enemyPrefab = Resources.Load("Tests/enemy");
          var enemySpawner = new GameObject().AddComponent<EnemySpawner>();
-=======
-        
-         var enemyPrefab = Resources.Load("Tests/enemy");
-         var enemySpawner = new GameObject().AddComponent<GenerateEnemies>();
->>>>>>> Jaspher
          enemySpawner.Construct(enemyPrefab, 0 , 1);
 
         yield return null;
@@ -62,18 +52,10 @@ public class TargetTests
         var prefabOfTheSpawnedEnemy = PrefabUtility.GetPrefabParent(spawnedEnemy);
 
         Assert.AreEqual(enemyPrefab, prefabOfTheSpawnedEnemy);
-<<<<<<< HEAD
          */
 
         yield return new WaitForSeconds(0.5f);
     }
 
-=======
-         
-
-        yield return new WaitForSeconds(0.5f);
-    }
-    */
->>>>>>> Jaspher
 }
 
