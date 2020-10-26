@@ -50,7 +50,19 @@ public class SceneController : MonoBehaviour
     public void goToMap1()
     {
         Debug.Log("Going to Map 1");
-        SceneManager.LoadScene("Aim Trainer");
+        SceneManager.LoadScene("The Ring");
+    }
+
+    public void goToMap2()
+    {
+        Debug.Log("Going to Map 2");
+        SceneManager.LoadScene("Stair Master");
+    }
+
+    public void goToMap3()
+    {
+        Debug.Log("Going to Map 3");
+        SceneManager.LoadScene("The Shelf");
     }
 
 }

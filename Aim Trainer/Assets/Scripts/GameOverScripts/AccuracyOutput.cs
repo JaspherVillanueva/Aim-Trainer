@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class AccuracyOutput : MonoBehaviour
 {
     public Text accuracyText;
-    public static float accuracy;
+    private static float accuracy;
 
     void Start()
     {
@@ -14,8 +14,20 @@ public class AccuracyOutput : MonoBehaviour
 
     void Update()
     {
+        setAccuracy();
+        showAccuracy();
+    }
+
+    void setAccuracy()
+    {
         accuracy = GameManager.Accuracy;
+    }
+
+
+    public void showAccuracy()
+    {
         accuracyText.text = accuracy.ToString() + "%";
     }
+
 
 }
