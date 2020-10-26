@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         disableCrosshair.SetActive(true);    //bring back crosshair
         Time.timeScale = 1f;                 //resume time
         GameIsPaused = false;                //update value
-        WeaponsMenu.SetActive(true);
+        WeaponsMenu.SetActive(false);
     }
 
     public void QuitGame ()

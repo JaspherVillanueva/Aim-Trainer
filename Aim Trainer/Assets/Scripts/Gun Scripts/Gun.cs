@@ -2,10 +2,16 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/*
+ * this script is used to contain the functionality
+ * off all the firearms via aiming and firing as well
+ * as the ammo/firerate
+ */
 public class Gun : MonoBehaviour
 {
     [SerializeField] Text Ammo;
 
+    //instantiating variables
     public float damage = 10f;
     public float range = 100f;
     public float fireRate = 15f;
@@ -44,13 +50,12 @@ public class Gun : MonoBehaviour
         animator.SetBool("Reloading", false);
     }
 
-    // Update is called once per frame
-
     private void FixedUpdate()
     {
         animator.SetBool("Aim", isAiming);
     }
 
+    //Update is called once per frame
     private void Update()
     {
         //change text
@@ -76,14 +81,14 @@ public class Gun : MonoBehaviour
             //stop from firing
             nextTimeToFire = Time.time + 1f / fireRate;
             //then shoot
-            
             Shoot();
         }
-
+        //Aim
         AimDownSights();
     }
 
-    //reloading
+    //this function is called when ammo reaches 0 or is less than magazine size 
+    //and when user presses the 'r' key, this sets current bullets back to max magazine size.
     IEnumerator Reload()
     {
         //set reloading to true
@@ -103,11 +108,14 @@ public class Gun : MonoBehaviour
         isReloading = false;
     }
 
-
+    //this is called when the user presses 'fire1' or 'left mouse button'
+    //the gun will shoot a raycast which will damage the targets if hit
+    //and will only shoot if ammo is more than 0
     void Shoot()
     {
         //Bullet Tracer Animation
         Tracer.Play();
+        //increment bullets shot for accuracy 
         GameManager.BulletsShot++;
         bulletsLeft--;
 
@@ -115,9 +123,6 @@ public class Gun : MonoBehaviour
         //if the gun is fired...
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
-            //output object shot
-            //Debug.Log(hit.transform.name);
-
             //if target is hit...
             Target target = hit.transform.GetComponent<Target>();
             if (target != null)
@@ -133,9 +138,11 @@ public class Gun : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * impactForce);
             }
         }
-        //Tracer.Pause();
     }
 
+    //called when user presses 'fire2' or 'right mouse button'
+    //it changes the view of the gun model so you aim down its sights
+    //when letting go of button, player will go back to standard hip fire
     private void AimDownSights()
     {
         if (Input.GetButton("Fire2") && !isReloading)

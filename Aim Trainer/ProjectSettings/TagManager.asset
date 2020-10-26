@@ -11,6 +11,7 @@ TagManager:
   - Hip
   - MidTarget
   - FarTarget
+  - M4
   layers:
   - Default
   - TransparentFX

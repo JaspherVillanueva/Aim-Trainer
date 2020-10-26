@@ -128,7 +128,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36212
+  m_Name: pb_Mesh17690
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -614,7 +614,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36270
+  m_Name: pb_Mesh17962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1151,6 +1151,7 @@ GameObject:
   - component: {fileID: 402445961}
   - component: {fileID: 402445960}
   - component: {fileID: 402445959}
+  - component: {fileID: 402445962}
   m_Layer: 0
   m_Name: Secondary 1
   m_TagString: Untagged
@@ -1220,7 +1221,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 402445960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 402445962}
+        m_MethodName: setSecondaryWeapon1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &402445960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1258,6 +1270,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402445957}
   m_CullTransparentMesh: 0
+--- !u!114 &402445962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402445957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4660be5d5f0524bb5d3d9c5b73b41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedWeapon: 0
+  Ak: 1
+  SK: 1
 --- !u!1 &403484978
 GameObject:
   m_ObjectHideFlags: 0
@@ -5333,7 +5360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: eb2136a3cdea8f84bb3b2ca2d025a818, type: 3}
       propertyPath: m_Name
-      value: Skorpion VZ
+      value: Display Skorpion VZ
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eb2136a3cdea8f84bb3b2ca2d025a818, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6141,7 +6168,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36244
+  m_Name: pb_Mesh17868
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7611,6 +7638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+  Ak: 1
+  SK: 1
 --- !u!114 &1402327607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7655,7 +7684,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1402327606}
-        m_MethodName: createWeapon
+        m_MethodName: setPrimaryWeapon1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7967,6 +7996,7 @@ GameObject:
   - component: {fileID: 1472984364}
   - component: {fileID: 1472984363}
   - component: {fileID: 1472984362}
+  - component: {fileID: 1472984365}
   m_Layer: 0
   m_Name: Primary 2
   m_TagString: Untagged
@@ -8036,7 +8066,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1472984363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1472984365}
+        m_MethodName: setPrimaryWeapon2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1472984363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8074,6 +8115,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472984360}
   m_CullTransparentMesh: 0
+--- !u!114 &1472984365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472984360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4660be5d5f0524bb5d3d9c5b73b41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedWeapon: 0
+  Ak: 1
+  SK: 1
 --- !u!1 &1481332225
 GameObject:
   m_ObjectHideFlags: 0
@@ -10928,6 +10984,7 @@ GameObject:
   - component: {fileID: 1843604238}
   - component: {fileID: 1843604240}
   - component: {fileID: 1843604239}
+  - component: {fileID: 1843604241}
   m_Layer: 0
   m_Name: Weapon Menu Canvas
   m_TagString: Untagged
@@ -11001,6 +11058,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1843604241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843604237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &1862627988
 GameObject:
   m_ObjectHideFlags: 0
@@ -11123,7 +11197,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: fddeeac0ebed86c4cab4320764b5c227, type: 3}
       propertyPath: m_Name
-      value: M4A1 Sopmod
+      value: Display M4A1 Sopmod
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fddeeac0ebed86c4cab4320764b5c227, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11299,7 +11373,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36182
+  m_Name: pb_Mesh17560
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11718,7 +11792,7 @@ PrefabInstance:
     - target: {fileID: 1951173155846920150, guid: 3f6a4906b28224a43929602c384df236,
         type: 3}
       propertyPath: m_Name
-      value: M19 Holder
+      value: Display M19 Holder
       objectReference: {fileID: 0}
     - target: {fileID: 1951173155846920153, guid: 3f6a4906b28224a43929602c384df236,
         type: 3}
@@ -11803,7 +11877,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
       propertyPath: m_Name
-      value: Ak-47
+      value: Display Ak-47
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cd8d56469cf64654eaa21e15c6ae7c18, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11959,7 +12033,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 968968887172959872}
         m_MethodName: InGameOpMenu
         m_Mode: 1
         m_Arguments:
@@ -12329,6 +12403,7 @@ GameObject:
   - component: {fileID: 2139217349}
   - component: {fileID: 2139217348}
   - component: {fileID: 2139217347}
+  - component: {fileID: 2139217350}
   m_Layer: 0
   m_Name: Secondary 2
   m_TagString: Untagged
@@ -12398,7 +12473,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2139217348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2139217350}
+        m_MethodName: setSecondaryWeapon2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2139217348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12436,6 +12522,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139217345}
   m_CullTransparentMesh: 0
+--- !u!114 &2139217350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139217345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4660be5d5f0524bb5d3d9c5b73b41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedWeapon: 0
+  Ak: 1
+  SK: 1
 --- !u!114 &968968886450367072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13322,7 +13423,7 @@ MonoBehaviour:
   disableGun: {fileID: 968968888215123902}
   disableCrosshair: {fileID: 968968887375809377}
   InGameOptionsMenu: {fileID: 1879320775}
-  WeaponsMenu: {fileID: 1433322479}
+  WeaponsMenu: {fileID: 1843604237}
 --- !u!4 &968968887172959873
 Transform:
   m_ObjectHideFlags: 0
@@ -14864,6 +14965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedWeapon: 0
+  Ak: 1
+  SK: 1
 --- !u!4 &968968888215123901
 Transform:
   m_ObjectHideFlags: 0
@@ -15573,7 +15676,7 @@ GameObject:
   - component: {fileID: 2512006844873214918}
   m_Layer: 0
   m_Name: AK Holder
-  m_TagString: Untagged
+  m_TagString: AK-47
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16155,7 +16258,7 @@ GameObject:
   - component: {fileID: 3847189026421139707}
   m_Layer: 0
   m_Name: M4 Holder
-  m_TagString: Untagged
+  m_TagString: M4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
