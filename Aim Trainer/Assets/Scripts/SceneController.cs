@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    public static int mapSelection;
+
     public void goToLoginMenu()
     {
         Debug.Log("Going to Login Menu Scene");
@@ -46,6 +48,27 @@ public class SceneController : MonoBehaviour
         Debug.Log("Going to Pre Game Scene");
         SceneManager.LoadScene("Mode 1 Pre Game");
     }
+
+    public void checkMapSelect()
+    {
+        mapSelection = MapDropdown.mapValue;
+
+        if (mapSelection == 0)
+        {
+            goToMap1();
+        }
+
+        else if (mapSelection == 1)
+        {
+            goToMap2();
+        }
+
+        else if (mapSelection == 2)
+        {
+            goToMap3();
+        }
+    }
+
 
     public void goToMap1()
     {
