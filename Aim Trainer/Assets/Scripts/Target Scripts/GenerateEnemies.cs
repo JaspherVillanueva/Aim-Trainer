@@ -23,11 +23,11 @@ public class GenerateEnemies : MonoBehaviour
     public static float midTarget_radius = 30.0f;
     public static float farTarget_radius = 40.0f;
 
-    public int xPos;
-    public int zPos;
-    public int yPos = 1;
-    public Vector3 Center = new Vector3(50, 5, -50);
-    public int enemyCount;
+    private int xPos;
+    private int zPos;
+    private int yPos = 1;
+    private Vector3 Center = new Vector3(50, 5, -50);
+    private int enemyCount;
 
     // Start is called before the first frame update
     void Start()
@@ -104,6 +104,7 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
+    //used to repspawn targets from the stair map
     public void SpawnSingleStairTarget(int gameObj, int randomRow)
     {
         GameObject targetSpawned = null;
@@ -177,6 +178,7 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
+    //Used to respawn target from the ring map
     public void SpawnSingleCircularTarget(int gameObj)
     {
         GameObject targetSpawned = null;
@@ -204,9 +206,10 @@ public class GenerateEnemies : MonoBehaviour
         Vector3 pos = RandomCircle(Center, radius);
         Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
         Instantiate(targetSpawned, pos, rot);
-        Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
+        //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
     }
 
+    //used to get random vector from a circle
     Vector3 RandomCircle(Vector3 Center, float radius)
     {
         float angle = Random.value * 360;
@@ -216,11 +219,4 @@ public class GenerateEnemies : MonoBehaviour
         pos.y = Center.y;
         return pos;
     }
-
-    [Test]
-    public void Construct (GameObject Target)
-    {
-
-    }
-
 }

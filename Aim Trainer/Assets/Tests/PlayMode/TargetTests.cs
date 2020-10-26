@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
+using UnityEditor;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Runtime;
@@ -36,7 +37,6 @@ public class TargetTests
         yield return new WaitForSeconds(0.5f);
     }
 
-    /*
 
     [UnityTest]
     public IEnumerator TargetSpawnedOnStartup()
@@ -44,7 +44,6 @@ public class TargetTests
 
         var enemyPrefab = Resources.Load("Tests/enemy");
         var enemySpawner = new GameObject().AddComponent<GenerateEnemies>();
-        enemySpawner.Construct(enemyPrefab, 0, 1);
 
         yield return null;
 
@@ -56,6 +55,6 @@ public class TargetTests
 
         yield return new WaitForSeconds(0.5f);
     }
-    */
 }
+
 

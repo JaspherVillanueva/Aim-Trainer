@@ -26,6 +26,7 @@ public class Target : MonoBehaviour
         {
             //die...
             Die();
+            Debug.Log("Die Function Called?");
         }
     }
 
@@ -68,17 +69,3 @@ public class Target : MonoBehaviour
 
 
 }
-
-//spawn close enemies
-StartCoroutine(SpawnRowOfTargets(CloseEnemies, 26, 104, closeTarget_Obj));
-StartCoroutine(SpawnRowOfTargets(CloseEnemies, 28, 104, closeTarget_Obj));
-//Debug.Log("Close Enemies Spawned: " + CloseEnemies);
-
-//spawn mid enemies
-StartCoroutine(SpawnRowOfTargets(MidEnemies, 34, 106, midTarget_Obj));
-StartCoroutine(SpawnRowOfTargets(MidEnemies, 36, 106, midTarget_Obj));
-//Debug.Log("Mid Enemies Spawned: " + MidEnemies);
-
-//spawn far enemies
-StartCoroutine(SpawnRowOfTargets(FarEnemies, 42, 107, farTarget_Obj));
-StartCoroutine(SpawnRowOfTargets(FarEnemies, 44, 108, farTarget_Obj));
