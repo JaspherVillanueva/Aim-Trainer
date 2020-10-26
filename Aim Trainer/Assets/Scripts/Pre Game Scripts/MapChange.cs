@@ -15,4 +15,7 @@ public class MapChange : MonoBehaviour
     }
     
     void Update()
+    {
+
+    }
 }
