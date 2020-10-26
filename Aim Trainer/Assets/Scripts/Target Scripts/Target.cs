@@ -1,6 +1,7 @@
 ﻿using System.CodeDom.Compiler;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 
 public class Target : MonoBehaviour
@@ -9,14 +10,8 @@ public class Target : MonoBehaviour
     public int TargetScore = 10;
     public GameObject target;
     public int EnemyCounter;
-    //public GenerateEnemies Generator;
+    public GenerateEnemies Generator;
     public int EnemyDistance;
-
-    //void Start()
-    //{
-    //    int random = Generator.enemyCount++;
-    //    Debug.Log(random);
-    //}
 
     public void TakeDamage (float damage)
     {
@@ -39,6 +34,17 @@ public class Target : MonoBehaviour
         //remove object
         Destroy(gameObject);
         Destroy(target);
+
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "The Ring")
+        {
+            Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
+            Generator.SpawnSingleTarget(EnemyDistance);
+            Debug.Log("THE RING HAS RESPAWNED A TARGET!!!");
+        }
+
         /*
         Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
         Generator.SpawnSingleTarget(EnemyDistance);
