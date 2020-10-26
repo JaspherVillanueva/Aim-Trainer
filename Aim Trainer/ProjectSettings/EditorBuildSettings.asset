@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mode 2 Map/Mode 2.unity
     guid: d4d28963aea980047b28c3007e6a1f97
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Options.unity
+    guid: b22304558f5be1f49b04c3f1219eac00
+  - enabled: 1
+    path: Assets/Scenes/Menu Scenes/Ranking.unity
+    guid: 5aad0478cd9b0be47866164e8b96a2d1
   m_configObjects: {}
