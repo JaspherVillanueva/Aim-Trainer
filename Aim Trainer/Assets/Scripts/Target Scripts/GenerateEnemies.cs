@@ -90,7 +90,7 @@ public class GenerateEnemies : MonoBehaviour
     IEnumerator SpawnRowOfTargets(int maxEnemies, int Xposition, int Yposition, GameObject Target)
     {
         //while enemy count <= maxEnemy
-        for(int counter = 1; counter <= maxEnemies; counter++)
+        for (int counter = 1; counter <= maxEnemies; counter++)
         {
             //generate x axis
             xPos = Random.Range(Xposition, Xposition);
@@ -108,7 +108,7 @@ public class GenerateEnemies : MonoBehaviour
     {
         GameObject targetSpawned = null;
 
-        if(gameObj == 1)
+        if (gameObj == 1)
         {
             targetSpawned = closeTarget_Obj;
             if (randomRow == 0)
@@ -122,7 +122,7 @@ public class GenerateEnemies : MonoBehaviour
                 yPos = 104;
             }
         }
-        else if(gameObj == 2)
+        else if (gameObj == 2)
         {
             targetSpawned = midTarget_Obj;
             if (randomRow == 0)
@@ -215,6 +215,12 @@ public class GenerateEnemies : MonoBehaviour
         pos.z = Center.z + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
         pos.y = Center.y;
         return pos;
+    }
+
+    [Test]
+    public void Construct (GameObject Target)
+    {
+
     }
 
 }

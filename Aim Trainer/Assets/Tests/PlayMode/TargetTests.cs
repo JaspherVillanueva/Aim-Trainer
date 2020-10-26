@@ -41,10 +41,10 @@ public class TargetTests
     [UnityTest]
     public IEnumerator TargetSpawnedOnStartup()
     {
-        
-         var enemyPrefab = Resources.Load("Tests/enemy");
-         var enemySpawner = new GameObject().AddComponent<GenerateEnemies>();
-         enemySpawner.Construct(enemyPrefab, 0 , 1);
+
+        var enemyPrefab = Resources.Load("Tests/enemy");
+        var enemySpawner = new GameObject().AddComponent<GenerateEnemies>();
+        enemySpawner.Construct(enemyPrefab, 0, 1);
 
         yield return null;
 
@@ -52,7 +52,7 @@ public class TargetTests
         var prefabOfTheSpawnedEnemy = PrefabUtility.GetPrefabParent(spawnedEnemy);
 
         Assert.AreEqual(enemyPrefab, prefabOfTheSpawnedEnemy);
-         
+
 
         yield return new WaitForSeconds(0.5f);
     }
