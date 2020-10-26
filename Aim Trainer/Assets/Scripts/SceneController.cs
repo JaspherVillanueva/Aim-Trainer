@@ -7,24 +7,6 @@ public class SceneController : MonoBehaviour
 {
     public static int mapSelection;
 
-    public void goToLoginMenu()
-    {
-        Debug.Log("Going to Login Menu Scene");
-        SceneManager.LoadScene("Login Menu");
-    }
-
-    public void goToLogin()
-    {
-        Debug.Log("Going to Login Scene");
-        SceneManager.LoadScene("Login");
-    }
-
-    public void goToCreateAccount()
-    {
-        Debug.Log("Going to Create Account Scene");
-        SceneManager.LoadScene("Create Account");
-    }
-
     public void goToMainMenu()
     {
         Debug.Log("Going to Main Menu Scene");
@@ -56,7 +38,6 @@ public class SceneController : MonoBehaviour
         if (mapSelection == 0)
         {
             goToMap1();
-
         }
 
         else if (mapSelection == 1)
@@ -69,7 +50,6 @@ public class SceneController : MonoBehaviour
             goToMap3();
         }
     }
-
 
     public void goToMap1()
     {
@@ -88,5 +68,30 @@ public class SceneController : MonoBehaviour
         Debug.Log("Going to Map 3");
         SceneManager.LoadScene("The Shelf");
     }
+
+    public void goToMode2PreGame()
+    {
+        Debug.Log("Going to Pre Game Scene");
+        SceneManager.LoadScene("Mode 2 Pre Game");
+    }
+
+    public void goToMode2()
+    {
+        Debug.Log("Going to Mode 2 Scene");
+        SceneManager.LoadScene("Mode 2");
+    }
+
+    public void goToMode3PreGame()
+    {
+        Debug.Log("Going to Pre Game Scene");
+        SceneManager.LoadScene("Mode 3 Pre Game");
+    }
+
+    public void goToMode3()
+    {
+        Debug.Log("Going to Mode 3 Scene");
+        SceneManager.LoadScene("Mode 3");
+    }
+
 
 }

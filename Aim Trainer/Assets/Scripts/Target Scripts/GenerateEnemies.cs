@@ -14,14 +14,20 @@ public class GenerateEnemies : MonoBehaviour
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
     public int FarEnemies = 3;
-    public int xPos;
-    public int zPos;
-    public int yPos = 1;
+
     public GameObject closeTarget_Obj;
     public GameObject midTarget_Obj;
     public GameObject farTarget_Obj;
-    public int enemyCount;
 
+    public static float closeTarget_radius = 20.0f;
+    public static float midTarget_radius = 30.0f;
+    public static float farTarget_radius = 40.0f;
+
+    public int xPos;
+    public int zPos;
+    public int yPos = 1;
+    public Vector3 Center = new Vector3(50, 5, -50);
+    public int enemyCount;
 
     // Start is called before the first frame update
     void Start()
@@ -47,13 +53,13 @@ public class GenerateEnemies : MonoBehaviour
 
         else if (sceneName == "The Ring")
         {
-            Vector3 Center = new Vector3(50, 5, -50);
+            //Vector3 Center = new Vector3(50, 5, -50);
             //spawn close ring of enemies
-            StartCoroutine(SpawnCircleOfEnemies(CloseEnemies, Center, closeTarget_Obj, 20.0f));
+            StartCoroutine(SpawnCircleOfEnemies(CloseEnemies, Center, closeTarget_Obj, closeTarget_radius));
             //spawn mid ring of enemies
-            StartCoroutine(SpawnCircleOfEnemies(MidEnemies, Center, midTarget_Obj, 30.0f));
+            StartCoroutine(SpawnCircleOfEnemies(MidEnemies, Center, midTarget_Obj, midTarget_radius));
             //spawn far ring of enemies
-            StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, 40.0f));
+            StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, farTarget_radius));
         }
 
         else if (sceneName == "Stair Master")
@@ -98,38 +104,65 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
-    public void SpawnSingleTarget(int gameObj)
+    public void SpawnSingleStairTarget(int gameObj, int randomRow)
     {
         GameObject targetSpawned = null;
 
         if(gameObj == 1)
         {
             targetSpawned = closeTarget_Obj;
-            xPos = 20;
+            if (randomRow == 0)
+            {
+                xPos = 26;
+                yPos = 104;
+            }
+            else
+            {
+                xPos = 28;
+                yPos = 104;
+            }
         }
         else if(gameObj == 2)
         {
             targetSpawned = midTarget_Obj;
-            xPos = 30;
+            if (randomRow == 0)
+            {
+                xPos = 34;
+                yPos = 106;
+            }
+            else
+            {
+                xPos = 36;
+                yPos = 106;
+            }
         }
         else if (gameObj == 3)
         {
             targetSpawned = farTarget_Obj;
-            xPos = 40;
+            if (randomRow == 0)
+            {
+                xPos = 42;
+                yPos = 107;
+            }
+            else
+            {
+                xPos = 44;
+                yPos = 108;
+            }
         }
         else
         {
             Debug.Log("Error Spawn Target: Target Distance is not valid");
         }
         //generate random range between 
-        zPos = Random.Range(-10, -40);
+        zPos = Random.Range(5, -40);
         Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
+        Debug.Log("STAIR SPAWNED AN ENEMY!!");
     }
 
     // Update is called once per frame
     IEnumerator SpawnCircleOfEnemies(int maxEnemies, Vector3 center, GameObject Target, float radius)
     {
-        
         //while enemy count <= maxEnemy
         for (int counter = 1; counter <= maxEnemies; counter++)
         {
@@ -142,6 +175,36 @@ public class GenerateEnemies : MonoBehaviour
             //Debug.Log(enemyCount);
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    public void SpawnSingleCircularTarget(int gameObj)
+    {
+        GameObject targetSpawned = null;
+        float radius = 0.0f;
+
+        if (gameObj == 1)
+        {
+            targetSpawned = closeTarget_Obj;
+            radius = closeTarget_radius;
+        }
+        else if (gameObj == 2)
+        {
+            targetSpawned = midTarget_Obj;
+            radius = midTarget_radius;
+        }
+        else if (gameObj == 3)
+        {
+            targetSpawned = farTarget_Obj;
+            radius = farTarget_radius;
+        }
+        else
+        {
+            Debug.Log("Error Spawn Target: Target Distance is not valid");
+        }
+        Vector3 pos = RandomCircle(Center, radius);
+        Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
+        Instantiate(targetSpawned, pos, rot);
+        Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
     }
 
     Vector3 RandomCircle(Vector3 Center, float radius)
