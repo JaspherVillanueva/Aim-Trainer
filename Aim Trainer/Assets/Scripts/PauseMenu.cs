@@ -80,7 +80,6 @@ public class PauseMenu : MonoBehaviour
             InGameOptionsMenu.SetActive(false);//disable options menu
             pauseMenuUI.SetActive(true);       //bring back pause menu
             OpMenu = true;                     //update value
-        }
-        
+        } 
     }
 }
