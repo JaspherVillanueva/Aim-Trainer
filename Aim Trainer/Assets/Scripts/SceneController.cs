@@ -19,12 +19,6 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Mode Select");
     }
 
-    public void goToOptions()
-    {
-        Debug.Log("Going to Options Scene");
-        SceneManager.LoadScene("Options");
-    }
-
     public void goToRanking()
     {
         Debug.Log("Going to Ranking Scene");
