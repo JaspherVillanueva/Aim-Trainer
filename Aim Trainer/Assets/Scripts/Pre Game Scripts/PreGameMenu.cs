@@ -15,7 +15,7 @@ public class PreGameMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 0f;                  //stop time
         Cursor.lockState = CursorLockMode.None;
         disableBuyingMenu.SetActive(false);
         disableWeapon.SetActive(false);
