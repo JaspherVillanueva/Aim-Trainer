@@ -8992,9 +8992,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0177cb6a131848b49bdd51a5f6acac77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseEnemies: 20
-  MidEnemies: 20
-  FarEnemies: 20
+  CloseEnemies: 10
+  MidEnemies: 10
+  FarEnemies: 10
   closeTarget_Obj: {fileID: 565566692}
   midTarget_Obj: {fileID: 1709242605}
   farTarget_Obj: {fileID: 844717216}
