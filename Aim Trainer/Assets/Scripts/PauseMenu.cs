@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public static bool OpMenu = false; //chaeck if game is paused
+    public static bool OpMenu = true; //chaeck if game is paused
 
     public GameObject pauseMenuUI;   //the menu
 
