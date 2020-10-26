@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
@@ -10,10 +11,11 @@ public class WeaponsMenu : MonoBehaviour
 
     public GameObject WeaponsMenuUI;
 
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.B))  //if user presses B
+        if (Input.GetKeyDown(KeyCode.B))  //if user presses B
         {
             //Debug.Log("escape key pressed");
             if (GameIsPaused) //if game is already paused
@@ -26,6 +28,7 @@ public class WeaponsMenu : MonoBehaviour
             else
             {
                 Open();    // pasuse game
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;   //unlock cursor to use in menu
                 //wait
             }
@@ -36,11 +39,13 @@ public class WeaponsMenu : MonoBehaviour
     {
         WeaponsMenuUI.SetActive(true);
         GameIsPaused = true;
+        Time.timeScale = 0f;
     }
 
     public void Close()
     {
         WeaponsMenuUI.SetActive(false);
         GameIsPaused = false;
+        Time.timeScale = 1f;
     }
 }

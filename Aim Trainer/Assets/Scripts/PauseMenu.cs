@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject InGameOptionsMenu;    //options menu
 
-
+    public GameObject WeaponsMenu;    //options menu
 
     // Update is called once per frame
     void Update()
@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         disableCrosshair.SetActive(true);    //bring back crosshair
         Time.timeScale = 1f;                 //resume time
         GameIsPaused = false;                //update value
+        WeaponsMenu.SetActive(true);
     }
 
     public void QuitGame ()
@@ -62,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         disableCrosshair.SetActive(false);   //disable crosshair
         Time.timeScale = 0f;                 //stop time, aka pause the game
         GameIsPaused = true;                 //update value
+        WeaponsMenu.SetActive(false);
 
     }
 

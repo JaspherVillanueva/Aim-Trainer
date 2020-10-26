@@ -26,6 +26,7 @@ public class Target : MonoBehaviour
         {
             //die...
             Die();
+            Debug.Log("Die Function Called?");
         }
     }
 
