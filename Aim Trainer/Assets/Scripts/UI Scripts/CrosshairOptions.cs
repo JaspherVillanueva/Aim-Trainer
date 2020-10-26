@@ -11,42 +11,18 @@ public class CrosshairOptions : MonoBehaviour
     public GameObject East;
     public GameObject Center;
 
-    public float thicknessNS = 0.7f;
-    public float thicknessEW = 1;
-    public float lengthNS = 5;
-    public float lengthEW = 3;
+    public GameObject NorthG;
+    public GameObject SouthG;
+    public GameObject WestG;
+    public GameObject EastG;
+    public GameObject CenterG;
+
+    public static float thicknessNS = 0.7f;
+    public static float thicknessEW = 1;
+    public static float lengthNS = 5;
+    public static float lengthEW = 3;
 
     public static bool IsEnabled = true;
-
-    public void offsetOut()
-    {
-        Vector3 VectorN = new Vector3(0, 0.1f, 0);
-        Vector3 VectorS = new Vector3(0, -0.1f, 0);
-        Vector3 VectorW = new Vector3(-0.1f, 0, 0);
-        Vector3 VectorE = new Vector3(0.1f, 0, 0);
-
-        North.transform.position += VectorN; 
-        South.transform.position += VectorS;
-        East.transform.position += VectorE;
-        West.transform.position += VectorW;
-
-        Debug.Log("Crosshair offset out");
-    }
-
-    public void offsetIn()
-    {
-        Vector3 VectorN = new Vector3(0, 0.1f, 0);
-        Vector3 VectorS = new Vector3(0, -0.1f, 0);
-        Vector3 VectorW = new Vector3(-0.1f, 0, 0);
-        Vector3 VectorE = new Vector3(0.1f, 0, 0);
-
-        North.transform.position -= VectorN;
-        South.transform.position -= VectorS;
-        East.transform.position -= VectorE;
-        West.transform.position -= VectorW;
-
-        Debug.Log("Crosshair offset in");
-    }
 
     public void thicknessOut()
     {
@@ -55,12 +31,17 @@ public class CrosshairOptions : MonoBehaviour
         Vector3 VectorW = new Vector3(thicknessEW, lengthEW, 0);
         Vector3 VectorE = new Vector3(thicknessEW, lengthEW, 0);
 
-        North.transform.localScale += VectorN;
-        South.transform.localScale += VectorS;
-        East.transform.localScale += VectorE;
-        West.transform.localScale += VectorW;
+        North.transform.localScale = VectorN;
+        South.transform.localScale = VectorS;
+        East.transform.localScale = VectorE;
+        West.transform.localScale = VectorW;
 
-        thicknessNS += 0.1f;
+        NorthG.transform.localScale = VectorN;
+        SouthG.transform.localScale = VectorS;
+        EastG.transform.localScale = VectorE;
+        WestG.transform.localScale = VectorW;
+
+        thicknessNS += 0.05f;
         thicknessEW += 0.1f;
 
         Debug.Log("Crosshair thickness out");
@@ -73,12 +54,17 @@ public class CrosshairOptions : MonoBehaviour
         Vector3 VectorW = new Vector3(thicknessEW, lengthEW, 0);
         Vector3 VectorE = new Vector3(thicknessEW, lengthEW, 0);
 
-        North.transform.localScale -= VectorN;
-        South.transform.localScale -= VectorS;
-        East.transform.localScale -= VectorE;
-        West.transform.localScale -= VectorW;
+        North.transform.localScale = VectorN;
+        South.transform.localScale = VectorS;
+        East.transform.localScale = VectorE;
+        West.transform.localScale = VectorW;
 
-        thicknessNS -= 0.1f;
+        NorthG.transform.localScale = VectorN;
+        SouthG.transform.localScale = VectorS;
+        EastG.transform.localScale = VectorE;
+        WestG.transform.localScale = VectorW;
+
+        thicknessNS -= 0.05f;
         thicknessEW -= 0.1f;
 
         Debug.Log("Crosshair thickness in");
@@ -91,13 +77,18 @@ public class CrosshairOptions : MonoBehaviour
         Vector3 VectorW = new Vector3(thicknessEW, lengthEW, 0);
         Vector3 VectorE = new Vector3(thicknessEW, lengthEW, 0);
 
-        North.transform.localScale += VectorN;
-        South.transform.localScale += VectorS;
-        East.transform.localScale += VectorE;
-        West.transform.localScale += VectorW;
+        North.transform.localScale = VectorN;
+        South.transform.localScale = VectorS;
+        East.transform.localScale = VectorE;
+        West.transform.localScale = VectorW;
 
-        lengthNS += 0.1f;
-        lengthEW += 0.07f;
+        NorthG.transform.localScale = VectorN;
+        SouthG.transform.localScale = VectorS;
+        EastG.transform.localScale = VectorE;
+        WestG.transform.localScale = VectorW;
+
+        lengthNS += 0.4f;
+        lengthEW += 0.28f;
 
         Debug.Log("Crosshair length out");
     }
@@ -109,13 +100,18 @@ public class CrosshairOptions : MonoBehaviour
         Vector3 VectorW = new Vector3(thicknessEW, lengthEW, 0);
         Vector3 VectorE = new Vector3(thicknessEW, lengthEW, 0);
 
-        North.transform.localScale -= VectorN;
-        South.transform.localScale -= VectorS;
-        East.transform.localScale -= VectorE;
-        West.transform.localScale -= VectorW;
+        North.transform.localScale = VectorN;
+        South.transform.localScale = VectorS;
+        East.transform.localScale = VectorE;
+        West.transform.localScale = VectorW;
 
-        lengthNS -= 0.1f;
-        lengthEW -= 0.07f;
+        NorthG.transform.localScale = VectorN;
+        SouthG.transform.localScale = VectorS;
+        EastG.transform.localScale = VectorE;
+        WestG.transform.localScale = VectorW;
+
+        lengthNS -= 0.4f;
+        lengthEW -= 0.28f;
 
         Debug.Log("Crosshair length in");
     }
@@ -126,6 +122,8 @@ public class CrosshairOptions : MonoBehaviour
 
         Center.transform.localScale += VectorN;
 
+        CenterG.transform.localScale += VectorN;
+
         Debug.Log("Center Out");
     }
 
@@ -135,6 +133,8 @@ public class CrosshairOptions : MonoBehaviour
 
         Center.transform.localScale -= VectorN;
 
+        CenterG.transform.localScale -= VectorN;
+
         Debug.Log("Center In");
     }
 
@@ -143,6 +143,7 @@ public class CrosshairOptions : MonoBehaviour
         if (IsEnabled == true)
         {
             Center.SetActive(false);
+            CenterG.SetActive(false);
             IsEnabled = false;
 
             Debug.Log("Center disabled");
@@ -150,6 +151,7 @@ public class CrosshairOptions : MonoBehaviour
         else
         {
             Center.SetActive(true);
+            CenterG.SetActive(true);
             IsEnabled = true;
 
             Debug.Log("Center enabled");

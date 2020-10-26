@@ -1,5 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 0f15557cba3786a40a4310b5806166b0
+=======
+<<<<<<<< HEAD:Aim Trainer/Assets/Scripts/Gun Scipts.meta
+guid: 07f0b06490543314bb917b3298a130b0
+folderAsset: yes
+========
+guid: 0f15557cba3786a40a4310b5806166b0
+>>>>>>>> Tony-Jaspher:Aim Trainer/Assets/Scenes/Pregame.unity.meta
+>>>>>>> Tony-Jaspher
 DefaultImporter:
   externalObjects: {}
   userData: 
