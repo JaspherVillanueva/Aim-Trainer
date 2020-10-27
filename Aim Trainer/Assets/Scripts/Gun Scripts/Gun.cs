@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Diagnostics;
+using Debug = UnityEngine.Debug;
+using System.Runtime.InteropServices;
 
 /*
  * this script is used to contain the functionality
@@ -13,7 +16,7 @@ public class Gun : MonoBehaviour
 
     //instantiating variables
     public float damage = 10f;
-    public float range = 100f;
+    private float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 60f;
     private float nextTimeToFire = 0f;
@@ -119,12 +122,20 @@ public class Gun : MonoBehaviour
         GameManager.BulletsShot++;
         bulletsLeft--;
 
+        //Debug.Log("Bullet Shot");
+
         RaycastHit hit;
         //if the gun is fired...
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
+            //Debug.Log(range);
+            //Debug.Log("\nOutter Hit " + hit
+                      //+ "\nRange: " + range);
+            //Debug.Log(hit.transform.name);
             //if target is hit...
             Target target = hit.transform.GetComponent<Target>();
+            //Debug.Log(target);
+            //Debug.Log(GetComponent<Target>());
             if (target != null)
             {
                 //make the target take damage

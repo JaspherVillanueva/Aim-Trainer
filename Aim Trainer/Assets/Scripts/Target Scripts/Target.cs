@@ -7,7 +7,7 @@ using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 using System;
 /*
- * This calss is used to instatiate 
+ * This class is used to instatiate 
  * Targets for the player to shoot
  * Targets either take damage,
  * or they die due to no more health
@@ -19,13 +19,14 @@ public class Target : MonoBehaviour
     public int TargetScore = 10;
     public GameObject target;
     public int EnemyCounter;
-    public GenerateEnemies Generator;
+    private GenerateEnemies Generator;
     public int EnemyDistance;
 
     //when target is shot by player
     //target will take damage until it reaches 0
     public void TakeDamage (float damage)
     {
+        Debug.Log("Target Hit!!");
         GameManager.TargetsHit++;
         //decrease health
         health -= damage;
