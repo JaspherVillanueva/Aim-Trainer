@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     private bool isAiming;
 
     public int magazineSize;
-    private int bulletsLeft;
+    public int bulletsLeft;
     public float reloadTime = 1f;
 
     public Camera fpsCamera;
@@ -103,7 +103,7 @@ public class Gun : MonoBehaviour
     }
 
 
-    void Shoot()
+    public void Shoot()
     {
         //Bullet Tracer Animation
         Tracer.Play();
