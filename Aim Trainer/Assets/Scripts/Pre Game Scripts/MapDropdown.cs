@@ -12,7 +12,9 @@ public class MapDropdown : MonoBehaviour
 
     void Start()
     {
+        
         mapdropDown = GetComponent<Dropdown>();
+        mapValue = mapdropDown.value;
         mapdropDown.onValueChanged.AddListener(delegate
         {
             DropdownValueChanged(mapdropDown);

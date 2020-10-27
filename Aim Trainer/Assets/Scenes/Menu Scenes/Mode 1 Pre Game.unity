@@ -2897,7 +2897,6 @@ GameObject:
   - component: {fileID: 1600451152}
   - component: {fileID: 1600451154}
   - component: {fileID: 1600451153}
-  - component: {fileID: 1600451155}
   - component: {fileID: 1600451156}
   - component: {fileID: 1600451157}
   m_Layer: 5
@@ -2945,7 +2944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a63e1f65418ac804b89b705260d13a16, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 243b0e8d3f257f44aabec5c3aea14427, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2963,22 +2962,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600451151}
   m_CullTransparentMesh: 0
---- !u!114 &1600451155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600451151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b174178aed2d71a438ddedac6059ad20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  map1: {fileID: 0}
-  map2: {fileID: 0}
-  map3: {fileID: 0}
-  mapPanel: {fileID: 0}
 --- !u!212 &1600451156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3018,7 +3001,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d9a44efbb7762a94695e1a651bff8940, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3026,7 +3009,7 @@ SpriteRenderer:
   m_Size: {x: 25, y: 25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1600451157
@@ -3041,9 +3024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b174178aed2d71a438ddedac6059ad20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map1: {fileID: 21300000, guid: d9a44efbb7762a94695e1a651bff8940, type: 3}
-  map2: {fileID: 21300000, guid: bec00bfeb5521ff48b28ac4df811d531, type: 3}
-  map3: {fileID: 21300000, guid: 260e79429a42d56439946e97aa96c221, type: 3}
+  map1: {fileID: 21300000, guid: 243b0e8d3f257f44aabec5c3aea14427, type: 3}
+  map2: {fileID: 21300000, guid: b449139e8d92dee4c830eda4525569f6, type: 3}
+  map3: {fileID: 21300000, guid: 5998a3b6e3b514846a82aca823f0adc4, type: 3}
   mapPanel: {fileID: 1600451153}
 --- !u!1 &1705298638
 GameObject:
