@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class MapDropdown : MonoBehaviour
 {
-    List<string> maps = new List<string>() { "Map 1", "Map 2", "Map 3" };
+    List<string> maps = new List<string>() { "The Ring", "Stair Master", "The Shelf" };
 
     public Dropdown mapdropDown;
     public static int mapValue;
 
     void Start()
     {
+        
         mapdropDown = GetComponent<Dropdown>();
+        mapValue = mapdropDown.value;
         mapdropDown.onValueChanged.AddListener(delegate
         {
             DropdownValueChanged(mapdropDown);
