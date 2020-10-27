@@ -11,8 +11,6 @@ public class WeaponSwitching : MonoBehaviour
 {
     //instantiating variables
     public int selectedWeapon = 0;
-    public bool Ak = true;
-    public bool SK = true;
 
     // Start is called before the first frame update
     void Start()
@@ -60,26 +58,12 @@ public class WeaponSwitching : MonoBehaviour
         //this allows the user to switch between weapons when the user presses down on 1....
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if(Ak == true)
-            {
                 selectedWeapon = 0;
-            }
-            if (Ak != true)
-            {
-                selectedWeapon = 1;
-            }
         }
         //.....or 2 on the keyboard
         if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
         {
-            if (SK == true)
-            {
-                selectedWeapon = 2;
-            }
-            if (SK != true)
-            {
-                selectedWeapon = 3;
-            }
+                selectedWeapon = 1;
         }
         //if the user hasnt switched weapons then select a weapon
         if (previousSelectedWeapon != selectedWeapon)
@@ -87,40 +71,6 @@ public class WeaponSwitching : MonoBehaviour
             SelectWeapon();
         }
     }
-
-
-    public void setPrimaryWeapon1()
-    {
-            Debug.Log("AK");
-            Ak = true;
-            selectedWeapon = 0;
-
-        SelectWeapon();
-        //GameObject.FindWithTag("AK-47").SetActive(true);
-            //GameObject.FindWithTag("M4").SetActive(false);
-    }
-
-    public void setPrimaryWeapon2()
-    {
-            Debug.Log("M4");
-            Ak = false;
-            selectedWeapon = 1;
-
-            SelectWeapon();
-    }
-
-    public void setSecondaryWeapon1()
-    {
-            Debug.Log("Sk");
-            SK = true;
-    }
-
-    public void setSecondaryWeapon2()
-    {
-            Debug.Log("M19");
-            SK = false;
-    }
-
 
     //this function is called when the user is selecting a gun
     //it deactivates all the other guns besides the on the user is currently on

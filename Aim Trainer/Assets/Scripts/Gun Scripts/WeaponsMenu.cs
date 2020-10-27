@@ -11,7 +11,6 @@ public class WeaponsMenu : MonoBehaviour
 
     public GameObject WeaponsMenuUI;
 
-
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +33,7 @@ public class WeaponsMenu : MonoBehaviour
             }
         }
     }
-
+    
     public void Open()
     {
         WeaponsMenuUI.SetActive(true);
