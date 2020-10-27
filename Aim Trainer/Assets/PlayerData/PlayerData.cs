@@ -9,5 +9,4 @@ public class PlayerData : ScriptableObject
     public int playerScore;
     public float playerAccuracy;
     public int playerMap;
-    public int playerMode;
 }
