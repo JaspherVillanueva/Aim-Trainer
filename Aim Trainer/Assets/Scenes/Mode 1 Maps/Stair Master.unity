@@ -536,7 +536,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 971.13, y: 555.9}
+  m_SizeDelta: {x: 986.83, y: 747.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70842699
 MonoBehaviour:
@@ -1528,6 +1528,17 @@ MonoBehaviour:
       - m_Target: {fileID: 5392216724495043065}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1433322481}
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8613,6 +8624,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1433322481}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1402327608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9007,6 +9029,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1433322481}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1472984363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9326,7 +9359,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 35}
-  m_SizeDelta: {x: 381.67, y: 511.9}
+  m_SizeDelta: {x: 381.67, y: 514.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642007883
 MonoBehaviour:
@@ -12891,7 +12924,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 426, y: 551.5}
+  m_SizeDelta: {x: 426, y: 566.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2032096667
 MonoBehaviour:
@@ -13747,6 +13780,17 @@ MonoBehaviour:
       - m_Target: {fileID: 5392216724495043065}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1433322481}
+        m_MethodName: Close
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16630,7 +16674,7 @@ MonoBehaviour:
   magazineSize: 10
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
-  Tracer: {fileID: 4766760306327148365, guid: 760f50da43a65d54d832466be3c557e9, type: 3}
+  Tracer: {fileID: 5716360058250192644}
   animator: {fileID: 1612725945842054942}
   aimPosition: {x: -1.691, y: 0.163, z: -0.53}
   adsSpeed: 20
@@ -16661,7 +16705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612725947824086314}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.2116743, y: -0.3369827, z: 0.007929847}
+  m_LocalPosition: {x: 0.212, y: -0.472, z: -0.174}
   m_LocalScale: {x: 0.42000002, y: 0.66499996, z: 0.6999998}
   m_Children:
   - {fileID: 1616496661514378231}
@@ -17411,7 +17455,7 @@ MonoBehaviour:
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
-  Tracer: {fileID: 4766760306327148365, guid: 760f50da43a65d54d832466be3c557e9, type: 3}
+  Tracer: {fileID: 5716360058250192644}
   animator: {fileID: 3847189026068810676}
   aimPosition: {x: 0.89, y: 0.02, z: 0.46}
   adsSpeed: 15
