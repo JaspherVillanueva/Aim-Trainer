@@ -6845,7 +6845,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1191749210}
+      - m_Target: {fileID: 968968886978893429}
         m_MethodName: enableInvertYAxis
         m_Mode: 1
         m_Arguments:
