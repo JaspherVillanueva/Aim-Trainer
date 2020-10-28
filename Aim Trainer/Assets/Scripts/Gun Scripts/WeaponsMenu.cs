@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
@@ -26,21 +27,24 @@ public class WeaponsMenu : MonoBehaviour
             else
             {
                 Open();    // pasuse game
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;   //unlock cursor to use in menu
                 //wait
             }
         }
     }
-
+    
     public void Open()
     {
         WeaponsMenuUI.SetActive(true);
         GameIsPaused = true;
+        Time.timeScale = 0f;
     }
 
     public void Close()
     {
         WeaponsMenuUI.SetActive(false);
         GameIsPaused = false;
+        Time.timeScale = 1f;
     }
 }

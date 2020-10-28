@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;
-
+    public static float mouseSensitivity = 100f;
     public Transform playerBody;
-
     float xRotation = 0f;
+    bool isInvertYAxis = false;
+    float mouseY;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //set cursor to lock
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        //change x axis of mouse
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        //change y axis of mouse
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
+        if (isInvertYAxis == false)
+        {
+            mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        }
+        else
+        {
+            mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        }
 
         xRotation -= mouseY;
         //locks camera rotation to 90 degrees
@@ -44,4 +42,17 @@ public class MouseLook : MonoBehaviour
     {
         mouseSensitivity -= 10;
     }
+
+    public void enableInvertYAxis()
+    {
+        if (isInvertYAxis == false)
+        {
+            isInvertYAxis = true;
+        }
+        else
+        {
+            isInvertYAxis = false;
+        }
+    }
 }
+

@@ -13,6 +13,7 @@ public class MapChange : MonoBehaviour
 
     void Start()
     {
+    
         mapPanel = GetComponent<Image>();
 
     }
