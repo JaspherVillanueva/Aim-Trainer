@@ -16,6 +16,8 @@ public class GunTests
         SceneManager.LoadScene("Aim Trainer");
     }
 
+    /*
+
     [UnityTest]
     public IEnumerator GunShootsOneBullet()
     {
@@ -58,6 +60,9 @@ public class GunTests
 
         yield return new WaitForSeconds(0.5f);
     }
+
+    */
 }
+
 
 
