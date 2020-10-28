@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SaveData : MonoBehaviour
 {
     public string saveName;
@@ -9,11 +10,8 @@ public class SaveData : MonoBehaviour
     public float saveAccuracy;
     public int saveMap;
 
-   
-
     void Start()
     {
-      
 
         saveName = NameInput.playerName;
         saveScore = ScoreScript.scoreValue;
@@ -26,6 +24,4 @@ public class SaveData : MonoBehaviour
         Debug.Log(saveMap.ToString());
 
     }
-
-    
 }
