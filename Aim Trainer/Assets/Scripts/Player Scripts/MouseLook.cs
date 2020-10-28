@@ -23,7 +23,7 @@ public class MouseLook : MonoBehaviour
         {
             mouseY = -Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         }
-    
+
         xRotation -= mouseY;
         //locks camera rotation to 90 degrees
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
@@ -45,7 +45,7 @@ public class MouseLook : MonoBehaviour
 
     public void enableInvertYAxis()
     {
-        if(isInvertYAxis == false)
+        if (isInvertYAxis == false)
         {
             isInvertYAxis = true;
         }
@@ -54,4 +54,5 @@ public class MouseLook : MonoBehaviour
             isInvertYAxis = false;
         }
     }
+}
 

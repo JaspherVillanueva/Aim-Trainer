@@ -175,7 +175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &25760677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2332,6 +2332,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 888746120}
     m_Modifications:
+    - target: {fileID: 7480656416249730693, guid: d6710a47d99bcf344ac75e12133dc2a8,
+        type: 3}
+      propertyPath: Generator
+      value: 
+      objectReference: {fileID: 1481332226}
     - target: {fileID: 7480656416249730694, guid: d6710a47d99bcf344ac75e12133dc2a8,
         type: 3}
       propertyPath: m_Name
@@ -6845,7 +6850,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1191749210}
+      - m_Target: {fileID: 968968886978893429}
         m_MethodName: enableInvertYAxis
         m_Mode: 1
         m_Arguments:
@@ -9651,6 +9656,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'MidTarget '
       objectReference: {fileID: 0}
+    - target: {fileID: 5397478956496480419, guid: 85909f4238cbec14fba8cd2946d4a206,
+        type: 3}
+      propertyPath: Generator
+      value: 
+      objectReference: {fileID: 1481332226}
     - target: {fileID: 5397478956496480423, guid: 85909f4238cbec14fba8cd2946d4a206,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12012,6 +12022,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'CloseTarget '
       objectReference: {fileID: 0}
+    - target: {fileID: 6174928225475781627, guid: e9532e7d234f95a4c82ba056ce6e7ded,
+        type: 3}
+      propertyPath: Generator
+      value: 
+      objectReference: {fileID: 1481332226}
     - target: {fileID: 6174928225475781631, guid: e9532e7d234f95a4c82ba056ce6e7ded,
         type: 3}
       propertyPath: m_LocalPosition.x
