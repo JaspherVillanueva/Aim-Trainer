@@ -29,29 +29,14 @@ public class GenerateEnemies : MonoBehaviour
     private Vector3 Center = new Vector3(50, 5, -50);
     private int enemyCount;
 
+    private Target TargetScript;
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
         String sceneName = currentScene.name;
 
-        if (sceneName == "Aim Trainer")
-        {
-            yPos = 1;
-            //spawn close enemies
-            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, yPos, closeTarget_Obj));
-            //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
-
-            //spawn mid enemies
-            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, yPos, midTarget_Obj));
-            //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
-
-            //spawn far enemies
-            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, yPos, farTarget_Obj));
-            //Debug.Log("Far Enemies Spawned" + FarEnemies);
-        }
-
-        else if (sceneName == "The Ring")
+        if (sceneName == "The Ring")
         {
             //Vector3 Center = new Vector3(50, 5, -50);
             //spawn close ring of enemies
@@ -79,6 +64,35 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnRowOfTargets(FarEnemies, 44, 108, farTarget_Obj));
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
+
+        else if (sceneName == "Stairmaster2")
+        {
+            int randX = Random.Range(26, 44);
+            int randY = Random.Range(104, 107);
+            int randTarget = Random.Range(1, 3);
+
+            if(randTarget == 1)
+            {
+                StartCoroutine(SpawnRowOfTargets(1, 26, 104, closeTarget_Obj));
+                Debug.Log("Close target spawned");
+            }
+            else if(randTarget == 2)
+            {
+                StartCoroutine(SpawnRowOfTargets(1, 34, 106, midTarget_Obj));
+                Debug.Log("Mid Target spawned");
+            }
+            else if (randTarget == 3)
+            {
+                StartCoroutine(SpawnRowOfTargets(1, 42, 108, farTarget_Obj));
+                Debug.Log("Far Target spawnedS");
+            }
+            TargetScript = GameObject.FindWithTag("CloseTarget").GetComponent<Target>();
+            TargetScript.Wait(5000);
+            Debug.Log("Waited for 5000 seconds");
+            TargetScript.TakeDamage(100);
+            Debug.Log("Die Function Called in generate");
+        }
+
 
         else
         {

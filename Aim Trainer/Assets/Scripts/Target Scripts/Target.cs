@@ -35,22 +35,28 @@ public class Target : MonoBehaviour
         {
             //die...
             Die();
-            Debug.Log("Die Function Called?");
         }
+    }
+
+    void Update()
+    { 
     }
 
     //when target health reaches 0
     //function is called to destroy the object
     //and adds a score to the total score
     //as the object is destroyed it is replaced with a new target
-    void Die()
+    public void Die()
     {
+        Debug.Log("Die Function Called");
         //add score
         ScoreScript.scoreValue += TargetScore;
 
         //remove object
         Destroy(gameObject);
         Destroy(target);
+
+        Debug.Log("Target Destroyed");
 
         //get the active scene
         Scene currentScene = SceneManager.GetActiveScene();
@@ -71,6 +77,11 @@ public class Target : MonoBehaviour
             int randomRow = Random.Range(0, 2);
             Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
         }
+        else if (sceneName == "Stairmaster2")
+        {
+            int randomRow = Random.Range(0, 2);
+            Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
+        }
         else
         {
             //couldnt find the active scene
@@ -78,5 +89,10 @@ public class Target : MonoBehaviour
         }
         //debug log
         Debug.Log("Target Destroyed");
+    }
+
+    public IEnumerator Wait(int seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 }

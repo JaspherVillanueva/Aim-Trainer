@@ -23,7 +23,7 @@ public class WeaponsMenu : MonoBehaviour
             }
             else
             {
-                Open();    // pasuse game
+                Open();    // pause game
             }
         }
     }
