@@ -15,6 +15,7 @@ TagManager:
   - M19
   - Undefined
   - SKO
+  - Target
   layers:
   - Default
   - TransparentFX
