@@ -18,15 +18,13 @@ public class Target : MonoBehaviour
     public float health = 50f;
     public int TargetScore = 10;
     public GameObject target;
-    public int EnemyCounter;
-    private GenerateEnemies Generator;
     public int EnemyDistance;
+    private GenerateEnemies Generator;
 
     //when target is shot by player
     //target will take damage until it reaches 0
     public void TakeDamage (float damage)
     {
-        Debug.Log("Target Hit!!");
         GameManager.TargetsHit++;
         //decrease health
         health -= damage;
@@ -35,7 +33,6 @@ public class Target : MonoBehaviour
         {
             //die...
             Die();
-            Debug.Log("Die Function Called?");
         }
     }
 

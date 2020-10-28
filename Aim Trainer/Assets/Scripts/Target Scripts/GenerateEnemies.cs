@@ -158,7 +158,6 @@ public class GenerateEnemies : MonoBehaviour
         //generate random range between 
         zPos = Random.Range(5, -40);
         Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
-        Debug.Log("STAIR SPAWNED AN ENEMY!!");
     }
 
     // Update is called once per frame
