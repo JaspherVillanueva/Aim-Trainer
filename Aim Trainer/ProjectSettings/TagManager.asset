@@ -11,6 +11,10 @@ TagManager:
   - Hip
   - MidTarget
   - FarTarget
+  - M4
+  - M19
+  - Undefined
+  - SKO
   layers:
   - Default
   - TransparentFX

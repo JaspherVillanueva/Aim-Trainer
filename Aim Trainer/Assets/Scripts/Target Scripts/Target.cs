@@ -6,18 +6,27 @@ using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 using System;
-
+/*
+ * This class is used to instatiate 
+ * Targets for the player to shoot
+ * Targets either take damage,
+ * or they die due to no more health
+ */
 public class Target : MonoBehaviour
 {
+    //instantiating variables
     public float health = 50f;
     public int TargetScore = 10;
     public GameObject target;
     public int EnemyCounter;
-    public GenerateEnemies Generator;
+    private GenerateEnemies Generator;
     public int EnemyDistance;
 
+    //when target is shot by player
+    //target will take damage until it reaches 0
     public void TakeDamage (float damage)
     {
+        Debug.Log("Target Hit!!");
         GameManager.TargetsHit++;
         //decrease health
         health -= damage;
@@ -30,7 +39,10 @@ public class Target : MonoBehaviour
         }
     }
 
-    //when die
+    //when target health reaches 0
+    //function is called to destroy the object
+    //and adds a score to the total score
+    //as the object is destroyed it is replaced with a new target
     void Die()
     {
         //add score
@@ -40,32 +52,31 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         Destroy(target);
 
+        //get the active scene
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-
-        //Generator = GameObject.Find("EnemyGenerate").GetComponent<GenerateEnemies>();
+        //get the enemy generation script
         Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
 
+        //used to detect which map user has chosen
+        //in order to spawn targets in the right place
         if (sceneName == "The Ring")
         {
-            //Debug.Log("THE RING HAS RESPAWNED A TARGET!!!");
+            //spawn enemy in circle
             Generator.SpawnSingleCircularTarget(EnemyDistance);
         }
-
         else if (sceneName == "Stair Master")
         {
+            //spawn a target on either row
             int randomRow = Random.Range(0, 2);
-            Debug.Log("STAIR MASTER!!!");
-            Debug.Log("Random Range: " + randomRow);
             Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
         }
-
-        /*
-        Generator.SpawnSingleTarget(EnemyDistance);
-        */
+        else
+        {
+            //couldnt find the active scene
+            Debug.Log("Failed To Find Scene");
+        }
         //debug log
         Debug.Log("Target Destroyed");
     }
-
-
 }
