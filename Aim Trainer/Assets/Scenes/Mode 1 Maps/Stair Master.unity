@@ -214,7 +214,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14564
+  m_Name: pb_Mesh14608
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -701,7 +701,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14868
+  m_Name: pb_Mesh14900
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8937,6 +8937,8 @@ MonoBehaviour:
   closeTarget_Obj: {fileID: 6174928225161779478}
   midTarget_Obj: {fileID: 5397478957995928605}
   farTarget_Obj: {fileID: 7480656416841488808}
+  timeBetweenWaves: 5
+  WaveDifficulty: 0
 --- !u!4 &1481332227
 Transform:
   m_ObjectHideFlags: 0
@@ -12184,7 +12186,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14384
+  m_Name: pb_Mesh14428
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16311,7 +16313,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 10
   fireRate: 15
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
   magazineSize: 10
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -16680,7 +16684,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 100
   fireRate: 15
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
   magazineSize: 30
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -17092,7 +17098,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 10
   fireRate: 20
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -17533,7 +17541,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 10
   fireRate: 25
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
   magazineSize: 45
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -17597,7 +17607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &5397478957995928608
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22554,7 +22564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &6174928225161779479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22591,7 +22601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &7480656416841488810
 MeshCollider:
   m_ObjectHideFlags: 0
