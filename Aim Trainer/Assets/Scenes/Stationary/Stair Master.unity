@@ -8938,6 +8938,8 @@ MonoBehaviour:
   midTarget_Obj: {fileID: 5397478957995928605}
   farTarget_Obj: {fileID: 7480656416841488808}
   Bot1: {fileID: 0}
+  timeBetweenWaves: 0
+  waveTime: 0
 --- !u!4 &1481332227
 Transform:
   m_ObjectHideFlags: 0
@@ -12094,7 +12096,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 968968886978893430}
   m_PlaneDistance: 0.1
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -15213,7 +15215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 160.00009, y: 70}
+  m_AnchoredPosition: {x: 160.00012, y: 70}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &968968887701921047
@@ -15752,7 +15754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -135.00009, y: -30}
+  m_AnchoredPosition: {x: -135.00012, y: -30}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &968968888062716106
