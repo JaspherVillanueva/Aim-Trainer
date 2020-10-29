@@ -3282,11 +3282,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1846939528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd7890853d61a646aa7bd402fd1364f, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2d68d406acc1348970ef1263757ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botDifficultyDropdown: {fileID: 1846939531}
-  botCountValue: 1
+  gameDifficultyDropdown: {fileID: 1846939531}
+  gameDifficultyValue: 0
 --- !u!114 &1846939531
 MonoBehaviour:
   m_ObjectHideFlags: 0

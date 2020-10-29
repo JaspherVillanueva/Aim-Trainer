@@ -41,16 +41,18 @@ public class GenerateEnemies : MonoBehaviour
     public enum SpawnState { SPAWNING, WAITING};
     private GameObject LastSpawnedTarget;
 
-    public static float timeBetweenWaves = 5f;
+    public float timeBetweenWaves;
 
     private float searchCountDown;
-    private float waveTime;
+    public float waveTime;
     private SpawnState state = SpawnState.WAITING;
 
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        timeBetweenWaves = GameDifficulty.waveTimer;
+        Debug.Log(timeBetweenWaves);
         sceneName = currentScene.name;
         waveTime = timeBetweenWaves;
         searchCountDown = timeBetweenWaves;

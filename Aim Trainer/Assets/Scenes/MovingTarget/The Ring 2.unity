@@ -18846,6 +18846,8 @@ MonoBehaviour:
   farTarget_Obj: {fileID: 8138781387123681042, guid: d6710a47d99bcf344ac75e12133dc2a8,
     type: 3}
   Bot1: {fileID: 1900539469}
+  timeBetweenWaves: 0
+  waveTime: 0
 --- !u!43 &758287523
 Mesh:
   m_ObjectHideFlags: 0
@@ -28336,7 +28338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -150, y: -100}
+  m_AnchoredPosition: {x: -165, y: -100}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466348387
@@ -28371,7 +28373,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Aim Trainer
+  m_Text: Bot Practice
 --- !u!222 &1466348388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30873,7 +30875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.66633385, y: 1.3128461}
+  m_AnchoredPosition: {x: -0.66633385, y: 25.4}
   m_SizeDelta: {x: 705.6, y: 453.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1996402071
@@ -30897,10 +30899,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 50
     m_Alignment: 1
     m_AlignByGeometry: 1
@@ -30908,14 +30910,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome to the "The Ring"!
-
-
-    Shoot as many targets as you can within
-    the time limit
-
-
-    Good Luck!'
+  m_Text: "Welcome to the \"Bot Practice\"\n\nShoot the bot as it rotates around
+    the center of the map! \n\nEach body part equates to a score!\n\nGoodluck!"
 --- !u!222 &1996402072
 CanvasRenderer:
   m_ObjectHideFlags: 0

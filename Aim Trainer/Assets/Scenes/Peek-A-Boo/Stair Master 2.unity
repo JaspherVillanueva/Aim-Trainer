@@ -626,7 +626,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -150, y: -88}
+  m_AnchoredPosition: {x: -125, y: -88}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83809041
@@ -661,7 +661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Aim Trainer
+  m_Text: Peek-a-boo
 --- !u!222 &83809042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20298,18 +20298,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Welcome to "Stair Master: Peek-A-Boo"!
+  m_Text: 'Welcome to "Peek-A-Boo"!
 
 
-    Shoot as many targets as
-    you can within the time limit!
+    Shoot as many targets as you can within
+    the time limit!
 
 
-    Targets will disapear if you don''t kill
-    them in time!S
+    Targets will disappear if you don''t kill them in time!
 
 
-    Good Luck!'
+    Good
+    Luck!'
 --- !u!222 &1701894469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20611,6 +20611,8 @@ MonoBehaviour:
   midTarget_Obj: {fileID: 151115652}
   farTarget_Obj: {fileID: 869687261}
   Bot1: {fileID: 0}
+  timeBetweenWaves: 0
+  waveTime: 0
 --- !u!4 &1784317549
 Transform:
   m_ObjectHideFlags: 0
