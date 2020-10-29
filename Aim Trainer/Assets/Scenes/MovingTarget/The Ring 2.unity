@@ -5246,7 +5246,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh119164
+  m_Name: pb_Mesh182066
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13033,7 +13033,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1812622416}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -13044,7 +13044,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 669547954}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -15522,7 +15522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 265926463}
-  - component: {fileID: 265926465}
   - component: {fileID: 265926464}
   - component: {fileID: 265926466}
   m_Layer: 0
@@ -15531,7 +15530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &265926463
 Transform:
   m_ObjectHideFlags: 0
@@ -15568,29 +15567,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &265926465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265926462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc07d38022fbd9a499a6f731672c5cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ammo: {fileID: 525311500}
-  damage: 10
-  fireRate: 20
-  impactForce: 60
-  magazineSize: 35
-  reloadTime: 1
-  fpsCamera: {fileID: 1395264536}
-  Tracer: {fileID: 4766760306327148365, guid: 760f50da43a65d54d832466be3c557e9, type: 3}
-  animator: {fileID: 265926464}
-  aimPosition: {x: 0.89, y: 0.02, z: 0.46}
-  adsSpeed: 15
 --- !u!114 &265926466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15609,9 +15585,9 @@ MonoBehaviour:
   impactForce: 60
   magazineSize: 0
   reloadTime: 1
-  fpsCamera: {fileID: 0}
-  Tracer: {fileID: 0}
-  animator: {fileID: 0}
+  fpsCamera: {fileID: 1395264536}
+  Tracer: {fileID: 6070264}
+  animator: {fileID: 265926464}
   aimPosition: {x: 0, y: 0, z: 0}
   adsSpeed: 8
 --- !u!1 &281885491
@@ -16102,7 +16078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 455062347}
   - component: {fileID: 455062349}
-  - component: {fileID: 455062348}
+  - component: {fileID: 455062350}
   m_Layer: 0
   m_Name: M1911
   m_TagString: Untagged
@@ -16130,29 +16106,6 @@ Transform:
   m_Father: {fileID: 905882034}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &455062348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455062346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc07d38022fbd9a499a6f731672c5cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ammo: {fileID: 525311500}
-  damage: 10
-  fireRate: 15
-  impactForce: 60
-  magazineSize: 10
-  reloadTime: 1
-  fpsCamera: {fileID: 1395264536}
-  Tracer: {fileID: 4766760306327148365, guid: 760f50da43a65d54d832466be3c557e9, type: 3}
-  animator: {fileID: 455062349}
-  aimPosition: {x: -1.691, y: 0.163, z: -0.53}
-  adsSpeed: 20
 --- !u!95 &455062349
 Animator:
   serializedVersion: 3
@@ -16172,6 +16125,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &455062350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455062346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9d316d1e02b474e92ae451d641a18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ammo: {fileID: 0}
+  damage: 10
+  fireRate: 15
+  impactForce: 60
+  magazineSize: 10
+  reloadTime: 1
+  fpsCamera: {fileID: 1395264536}
+  Tracer: {fileID: 6070264}
+  animator: {fileID: 455062349}
+  aimPosition: {x: -1.691, y: 0.163, z: -0.53}
+  adsSpeed: 8
 --- !u!1 &456940953
 GameObject:
   m_ObjectHideFlags: 0
@@ -22125,7 +22101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &669547955
 Transform:
   m_ObjectHideFlags: 0
@@ -22155,7 +22131,7 @@ GameObject:
   - component: {fileID: 673168644}
   - component: {fileID: 673168645}
   m_Layer: 8
-  m_Name: Sphere
+  m_Name: Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22260,7 +22236,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118576
+  m_Name: pb_Mesh181478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23493,8 +23469,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 915143898}
-  - component: {fileID: 915143900}
   - component: {fileID: 915143899}
+  - component: {fileID: 915143901}
   m_Layer: 0
   m_Name: Skorpion VZ
   m_TagString: Untagged
@@ -23537,7 +23513,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &915143900
+--- !u!114 &915143901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -23546,20 +23522,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 915143897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc07d38022fbd9a499a6f731672c5cb6, type: 3}
+  m_Script: {fileID: 11500000, guid: df9d316d1e02b474e92ae451d641a18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ammo: {fileID: 525311500}
+  Ammo: {fileID: 0}
   damage: 10
   fireRate: 25
   impactForce: 60
   magazineSize: 45
   reloadTime: 1
-  fpsCamera: {fileID: 1395264536}
-  Tracer: {fileID: 4766760306327148365, guid: 760f50da43a65d54d832466be3c557e9, type: 3}
-  animator: {fileID: 915143899}
+  fpsCamera: {fileID: 0}
+  Tracer: {fileID: 0}
+  animator: {fileID: 0}
   aimPosition: {x: 0.593, y: -0.01, z: 0.37}
-  adsSpeed: 20
+  adsSpeed: 8
 --- !u!1 &917583294
 GameObject:
   m_ObjectHideFlags: 0
@@ -24818,7 +24794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1262401267
 Transform:
   m_ObjectHideFlags: 0
@@ -29154,7 +29130,7 @@ PrefabInstance:
     - target: {fileID: 6174928225475781626, guid: e9532e7d234f95a4c82ba056ce6e7ded,
         type: 3}
       propertyPath: m_Name
-      value: 'CloseTarget '
+      value: Center
       objectReference: {fileID: 0}
     - target: {fileID: 6174928225475781626, guid: e9532e7d234f95a4c82ba056ce6e7ded,
         type: 3}
@@ -29312,7 +29288,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1812622416}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -29323,7 +29299,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 669547954}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -29407,7 +29383,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118748
+  m_Name: pb_Mesh181650
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -29654,7 +29630,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1481727773}
   - component: {fileID: 1481727775}
-  - component: {fileID: 1481727774}
   - component: {fileID: 1481727776}
   m_Layer: 0
   m_Name: Ak-47
@@ -29680,29 +29655,6 @@ Transform:
   m_Father: {fileID: 1812622417}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1481727774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481727772}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc07d38022fbd9a499a6f731672c5cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Ammo: {fileID: 525311500}
-  damage: 10
-  fireRate: 15
-  impactForce: 60
-  magazineSize: 30
-  reloadTime: 1
-  fpsCamera: {fileID: 1395264536}
-  Tracer: {fileID: 6070264}
-  animator: {fileID: 1481727775}
-  aimPosition: {x: -0.85, y: 0.01, z: -0.75}
-  adsSpeed: 15
 --- !u!95 &1481727775
 Animator:
   serializedVersion: 3
@@ -29933,7 +29885,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118688
+  m_Name: pb_Mesh181590
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32166,7 +32118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -135.00015, y: -30}
+  m_AnchoredPosition: {x: -135.00012, y: -30}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1858135342
@@ -33636,7 +33588,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh118500
+  m_Name: pb_Mesh181402
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

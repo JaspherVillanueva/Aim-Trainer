@@ -46,11 +46,7 @@ public class TargetMoving : MonoBehaviour
         //decrease health
         health -= damage;
         //if health below 0
-        if (health <= 0f)
-        {
-            ScoreScript.scoreValue += TargetScore;
-        }
-
+        ScoreScript.scoreValue += TargetScore;
         Debug.Log(health);
     }
 
