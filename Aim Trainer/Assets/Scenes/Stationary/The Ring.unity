@@ -2318,7 +2318,9 @@ MonoBehaviour:
   Ammo: {fileID: 426039032}
   damage: 10
   fireRate: 15
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 30
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -2671,7 +2673,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: e9532e7d234f95a4c82ba056ce6e7ded, type: 3}
 --- !u!4 &487619311 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6174928225475781631, guid: e9532e7d234f95a4c82ba056ce6e7ded,
+  m_CorrespondingSourceObject: {fileID: 5079341184863210360, guid: e9532e7d234f95a4c82ba056ce6e7ded,
+    type: 3}
+  m_PrefabInstance: {fileID: 487619310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &487619312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5079341184863210365, guid: e9532e7d234f95a4c82ba056ce6e7ded,
     type: 3}
   m_PrefabInstance: {fileID: 487619310}
   m_PrefabAsset: {fileID: 0}
@@ -3473,12 +3481,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &565566692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6174928225475781626, guid: e9532e7d234f95a4c82ba056ce6e7ded,
-    type: 3}
-  m_PrefabInstance: {fileID: 487619310}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &576257325
 GameObject:
   m_ObjectHideFlags: 0
@@ -7402,12 +7404,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818590515}
   m_CullTransparentMesh: 0
---- !u!1 &844717216 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7480656416249730694, guid: d6710a47d99bcf344ac75e12133dc2a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1887579170}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &879938637
 GameObject:
   m_ObjectHideFlags: 0
@@ -11858,8 +11854,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 487619311}
-  - {fileID: 2134084586}
   - {fileID: 1887579171}
+  - {fileID: 2134084586}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20520,9 +20516,10 @@ MonoBehaviour:
   CloseEnemies: 10
   MidEnemies: 10
   FarEnemies: 10
-  closeTarget_Obj: {fileID: 565566692}
-  midTarget_Obj: {fileID: 1709242605}
-  farTarget_Obj: {fileID: 844717216}
+  closeTarget_Obj: {fileID: 487619312}
+  midTarget_Obj: {fileID: 2134084587}
+  farTarget_Obj: {fileID: 1887579172}
+  Bot1: {fileID: 0}
 --- !u!4 &1632965811
 Transform:
   m_ObjectHideFlags: 0
@@ -20712,7 +20709,9 @@ MonoBehaviour:
   Ammo: {fileID: 426039032}
   damage: 10
   fireRate: 25
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 45
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -21532,12 +21531,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -65.000046}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1709242605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5397478956496480413, guid: 85909f4238cbec14fba8cd2946d4a206,
-    type: 3}
-  m_PrefabInstance: {fileID: 2134084585}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1711030579
 GameObject:
   m_ObjectHideFlags: 0
@@ -21607,7 +21600,9 @@ MonoBehaviour:
   Ammo: {fileID: 426039032}
   damage: 10
   fireRate: 20
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -21831,7 +21826,9 @@ MonoBehaviour:
   Ammo: {fileID: 426039032}
   damage: 10
   fireRate: 15
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 10
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -23003,7 +23000,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d6710a47d99bcf344ac75e12133dc2a8, type: 3}
 --- !u!4 &1887579171 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7480656416249730713, guid: d6710a47d99bcf344ac75e12133dc2a8,
+  m_CorrespondingSourceObject: {fileID: 8138781387123681037, guid: d6710a47d99bcf344ac75e12133dc2a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1887579170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1887579172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8138781387123681042, guid: d6710a47d99bcf344ac75e12133dc2a8,
     type: 3}
   m_PrefabInstance: {fileID: 1887579170}
   m_PrefabAsset: {fileID: 0}
@@ -32096,7 +32099,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 85909f4238cbec14fba8cd2946d4a206, type: 3}
 --- !u!4 &2134084586 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5397478956496480423, guid: 85909f4238cbec14fba8cd2946d4a206,
+  m_CorrespondingSourceObject: {fileID: 2465948449118351995, guid: 85909f4238cbec14fba8cd2946d4a206,
+    type: 3}
+  m_PrefabInstance: {fileID: 2134084585}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2134084587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2465948449118351937, guid: 85909f4238cbec14fba8cd2946d4a206,
     type: 3}
   m_PrefabInstance: {fileID: 2134084585}
   m_PrefabAsset: {fileID: 0}

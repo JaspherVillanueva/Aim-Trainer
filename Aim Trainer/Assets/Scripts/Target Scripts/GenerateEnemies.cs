@@ -11,7 +11,7 @@ using Debug = UnityEngine.Debug;
 public class GenerateEnemies : MonoBehaviour
 {
     public static bool Respawnable = false;
-    public static bool Rotating = true;
+    public static bool Rotating = false;
 
 
     public int CloseEnemies = 3;
@@ -55,23 +55,8 @@ public class GenerateEnemies : MonoBehaviour
         waveTime = timeBetweenWaves;
         searchCountDown = timeBetweenWaves;
 
-        if (sceneName == "Aim Trainer")
-        {
-            yPos = 1;
-            //spawn close enemies
-            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, yPos, closeTarget_Obj));
-            //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
-
-            //spawn mid enemies
-            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, yPos, midTarget_Obj));
-            //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
-
-            //spawn far enemies
-            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, yPos, farTarget_Obj));
-            //Debug.Log("Far Enemies Spawned" + FarEnemies);
-        }
-
-        else if (sceneName == "The Ring" && Rotating == false)
+       
+        if (sceneName == "The Ring" && Rotating == false)
         {
             //Vector3 Center = new Vector3(50, 5, -50);
             //spawn close ring of enemies
@@ -105,8 +90,9 @@ public class GenerateEnemies : MonoBehaviour
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
-        else if (sceneName == "Stair Master" && Respawnable == true)
+        else if (sceneName == "Stair Master 2")
         {
+            Respawnable = true;
             SpawnRespawnableEnemy();
         }
 
