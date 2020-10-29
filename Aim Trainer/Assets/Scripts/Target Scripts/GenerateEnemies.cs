@@ -10,6 +10,7 @@ using Debug = UnityEngine.Debug;
 
 public class GenerateEnemies : MonoBehaviour
 {
+    public static bool Respawnable = true;
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
@@ -28,12 +29,13 @@ public class GenerateEnemies : MonoBehaviour
     private int yPos = 1;
     private Vector3 Center = new Vector3(50, 5, -50);
     private int enemyCount;
+    private String sceneName;
 
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        String sceneName = currentScene.name;
+        sceneName = currentScene.name;
 
         if (sceneName == "Aim Trainer")
         {
@@ -62,7 +64,7 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, farTarget_radius));
         }
 
-        else if (sceneName == "Stair Master")
+        else if (sceneName == "Stair Master" && Respawnable == false)
         {
             //spawn close enemies
             StartCoroutine(SpawnRowOfTargets(CloseEnemies, 26, 104, closeTarget_Obj));
@@ -78,6 +80,14 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnRowOfTargets(FarEnemies, 42, 107, farTarget_Obj));
             StartCoroutine(SpawnRowOfTargets(FarEnemies, 44, 108, farTarget_Obj));
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
+        }
+
+        else if (sceneName == "Stair Master" && Respawnable == true)
+        {
+            int RandomTarget = Random.Range(1, 3);
+            int RandomRow = Random.Range(0, 1);
+
+            SpawnSingleStairTarget(RandomTarget, RandomRow);
         }
 
         else
@@ -158,7 +168,7 @@ public class GenerateEnemies : MonoBehaviour
         //generate random range between 
         zPos = Random.Range(5, -40);
         Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
-        Debug.Log("STAIR SPAWNED AN ENEMY!!");
+        Debug.Log("Spawned a new enemy");
     }
 
     // Update is called once per frame
