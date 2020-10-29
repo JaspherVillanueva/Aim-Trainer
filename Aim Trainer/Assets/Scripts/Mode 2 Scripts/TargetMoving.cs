@@ -46,18 +46,13 @@ public class TargetMoving : MonoBehaviour
         //decrease health
         health -= damage;
         //if health below 0
-        if (health <= 0f)
-        {
-            ScoreScript.scoreValue += TargetScore;
-        }
-
+        ScoreScript.scoreValue += TargetScore;
         Debug.Log(health);
     }
 
     private void Update()
     {
         center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
-        
         if (isRunning == 1)
         {
             StartCoroutine(Move());
