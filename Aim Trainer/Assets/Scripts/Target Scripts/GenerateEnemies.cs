@@ -11,10 +11,8 @@ using Debug = UnityEngine.Debug;
 public class GenerateEnemies : MonoBehaviour
 {
     public static bool Respawnable = false;
-<<<<<<< HEAD
-    public static bool Rotating = false;
-=======
->>>>>>> origin/Tony-Jaspher
+    public static bool Rotating = true;
+
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
@@ -84,6 +82,11 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, farTarget_radius));
         }
 
+        else if (sceneName == "The Ring" && Rotating == true)
+        { 
+
+        }
+
         else if (sceneName == "Stair Master" && Respawnable == false)
         {
             //spawn close enemies
@@ -107,10 +110,6 @@ public class GenerateEnemies : MonoBehaviour
             SpawnRespawnableEnemy();
         }
 
-        else if (sceneName == "The Ring" && Rotating == true)
-        {
-            SpawnSingleCircularRobot(Bot1, 13);
-        }
         else
         {
             Debug.Log("you are not in aim trainer");
@@ -314,15 +313,6 @@ public class GenerateEnemies : MonoBehaviour
         Vector3 pos = RandomCircle(Center, radius);
         Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
         Instantiate(targetSpawned, pos, rot);
-        //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
-    }
-
-    //Used to respawn target from the ring map
-    public void SpawnSingleCircularRobot(GameObject Bot, float radius)
-    {
-        Vector3 pos = RandomCircle(Center, radius);
-        Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
-        Instantiate(Bot, pos, rot);
         //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
     }
 

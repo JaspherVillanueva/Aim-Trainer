@@ -25,7 +25,7 @@ public class Target : MonoBehaviour
     private String sceneName;
 
     public Transform center;
-    public Transform target1;
+    public Transform Bot1;
 
     public float rotationSpeed;
     public float speed;
@@ -45,6 +45,9 @@ public class Target : MonoBehaviour
         Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
         if (GenerateEnemies.Rotating == true)
         {
+
+            rotationSpeed = 25f;
+            speed = 10;
             //rotationSpeed = BotDifficulty.botRotationSpeed;
             //speed = BotDifficulty.botSpeed;
         }
@@ -54,14 +57,20 @@ public class Target : MonoBehaviour
     {
         if (GenerateEnemies.Rotating == true)
         {
-            //turning point
-            center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
-            if (isRunning == 1)
+            if (Bot1 != null)
             {
-                StartCoroutine(Move());
+                //turning point
+                center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
+                if (isRunning == 1)
+                {
+                    StartCoroutine(Move());
+                }
+                Bot1.transform.localPosition = Vector3.MoveTowards(Bot1.localPosition, v3, speed * Time.deltaTime);
             }
-            //distance from center
-            target1.transform.localPosition = Vector3.MoveTowards(target1.localPosition, v3, speed * Time.deltaTime);
+            else
+            {
+                Debug.Log("Bot1 Not Set");
+            }
         }
         
     }
@@ -71,7 +80,7 @@ public class Target : MonoBehaviour
     {
         isRunning = 0;
         yield return new WaitForSeconds(2f);
-        v3 = new Vector3(2, RandomN(), 0);
+        v3 = new Vector3(2, -RandomN(), 0);
         isRunning = 1;
     }
 
@@ -109,23 +118,25 @@ public class Target : MonoBehaviour
             ScoreScript.scoreValue += TargetScore;
         }
 
+
+        if (sceneName == "The Ring" && GenerateEnemies.Rotating == true)
+        {
+            //spawn enemy in circle
+            return;
+        }
+
         //remove object
         Destroy(gameObject);
         Destroy(target);
 
-        //get the active scene
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-        //get the enemy generation script
-        Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
-
         //used to detect which map user has chosen
         //in order to spawn targets in the right place
-        if (sceneName == "The Ring")
+        if (sceneName == "The Ring" && GenerateEnemies.Rotating == false)
         {
             //spawn enemy in circle
             Generator.SpawnSingleCircularTarget(EnemyDistance);
         }
+
         else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == false)
         {
             //spawn a target on either row

@@ -63,29 +63,6 @@ public class Gun : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
-
-        /*
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        Ray ray = fpsCamera.ScreenPointToRay(mouseScreenPosition);
-        RaycastHit hit;
-        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
-
-        if (Physics.Raycast(ray, out hit, 100f))
-        {
-            //Store Hit target into a variable
-            Target target = hit.transform.GetComponent<Target>();
-            Debug.Log(hit.transform.name);
-
-            if (target != null)
-            {
-                //make the target take damage
-                target.TakeDamage(damage);
-            }
-        }
-        */
-
-
-
         //change text
         Ammo.text = bulletsLeft + " / " + magazineSize;
 
@@ -122,18 +99,28 @@ public class Gun : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, layerMask))
             {
                 //Store Hit target into a variable
-                Target target = hit.transform.GetComponent<Target>();
-                Debug.Log(hit.transform.name);
-
-                if (target != null)
+                if (GenerateEnemies.Rotating == true)
                 {
-                    //make the target take damage
-                    //Debug.Log("SHOTS SHOTS SHOTS");
-                    target.TakeDamage(damage);
+                    Target target = hit.transform.GetComponentInParent<Target>();
+                    if (target != null)
+                    {
+                        //make the target take damage
+                        target.TakeDamage(damage);
+                    }
                 }
-                
+                else
+                {
+                    Target target = hit.transform.GetComponent<Target>();
+                    if (target != null)
+                    {
+                        //make the target take damage
+                        target.TakeDamage(damage);
+                    }
+                }
+                //Debug.Log(target);
             }
         }
+
         //Aim
         AimDownSights();
     }
