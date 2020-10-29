@@ -17,21 +17,17 @@ public class TargetMoving : MonoBehaviour
     //instantiating variables
     public float health = 50f;
     public int TargetScore = 10;
-    public GameObject target;
-    public int EnemyDistance;
+    public Transform center;
+    public Transform target;
 
-    private MovingTargetGenerate Generator;
-    private String sceneName;
+    public float minRotationSpeed;
+    public float speed;
 
-    private Vector3 Center = new Vector3(50, 5, -50);
+    private Quaternion qTo;
 
-    private void Start()
-    {
-        //get the active scene
-        Scene currentScene = SceneManager.GetActiveScene();
-        sceneName = currentScene.name;
-        Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<MovingTargetGenerate>();
-    }
+    private int isRunning = 1;
+
+    private Vector3 v3 = new Vector3(2,13,0);
 
     //when target is shot by player
     //target will take damage until it reaches 0
@@ -45,30 +41,39 @@ public class TargetMoving : MonoBehaviour
         {
             ScoreScript.scoreValue += TargetScore;
         }
+
+        Debug.Log(health);
     }
 
     private void Update()
     {
-        Vector3 pos = RandomCircle(Center, 20f);
+        center.transform.RotateAround(center.position, Vector3.up, minRotationSpeed * Time.deltaTime * 0.5f);
         
-        target.transform.position += pos;
-
-        Wait(1);
+        if (isRunning == 1)
+        {
+            StartCoroutine(Move());
+        }
+        target.transform.localPosition = Vector3.MoveTowards(target.localPosition, v3, speed * Time.deltaTime);
     }
 
-    Vector3 RandomCircle(Vector3 Center, float radius)
+    public IEnumerator Move()
     {
-        float angle = Random.value * 360;
-        Vector3 pos;
-        pos.x = Center.x + radius * Mathf.Sin(angle * Mathf.Deg2Rad);
-        pos.z = Center.z + radius * Mathf.Cos(angle * Mathf.Deg2Rad);
-        pos.y = Center.y;
-        return pos;
+        isRunning = 0;
+        yield return new WaitForSeconds(2f);
+        v3 = new Vector3(2, RandomN(), 0);
+
+        isRunning = 1;
+    }
+
+    public float RandomN()
+    {
+        Wait(10f);
+        float position = Random.Range(13f, 40f);
+        return position;
     }
 
     IEnumerator Wait(float seconds)
     {
         yield return new WaitForSeconds(seconds);
     }
-
 }
