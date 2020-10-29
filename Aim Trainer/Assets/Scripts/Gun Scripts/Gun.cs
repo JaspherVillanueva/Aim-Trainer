@@ -4,6 +4,8 @@ using System.Collections;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 using System.Runtime.InteropServices;
+using System;
+using System.Security.Cryptography;
 
 /*
  * this script is used to contain the functionality
@@ -18,8 +20,8 @@ public class Gun : MonoBehaviour
     public float damage = 10f;
     private float range = 100f;
     public float fireRate = 15f;
-    public float impactForce = 60f;
     private float nextTimeToFire = 0f;
+    public LayerMask layerMask;
 
     private bool isReloading = false;
     private bool isAiming;
@@ -35,6 +37,7 @@ public class Gun : MonoBehaviour
     private Vector3 originalPosition;
     public Vector3 aimPosition;
     public float adsSpeed= 8f;
+
 
     void start()
     {
@@ -58,8 +61,31 @@ public class Gun : MonoBehaviour
     }
 
     //Update is called once per frame
-    private void Update()
+    void Update()
     {
+
+        /*
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Ray ray = fpsCamera.ScreenPointToRay(mouseScreenPosition);
+        RaycastHit hit;
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+
+        if (Physics.Raycast(ray, out hit, 100f))
+        {
+            //Store Hit target into a variable
+            Target target = hit.transform.GetComponent<Target>();
+            Debug.Log(hit.transform.name);
+
+            if (target != null)
+            {
+                //make the target take damage
+                target.TakeDamage(damage);
+            }
+        }
+        */
+
+
+
         //change text
         Ammo.text = bulletsLeft + " / " + magazineSize;
 
@@ -78,12 +104,35 @@ public class Gun : MonoBehaviour
         }
 
         //When the fire button is pressed and they arent spamming the fire button
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        //if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        if (Input.GetButtonDown("Fire1"))
         {
-            //stop from firing
-            nextTimeToFire = Time.time + 1f / fireRate;
-            //then shoot
-            Shoot();
+            //Debug.Log("Fire");
+            //Bullet Tracer Animation
+            Tracer.Play();
+            //increment bullets shot for accuracy 
+            GameManager.BulletsShot++;
+            bulletsLeft--;
+
+            Vector3 mouseScreenPosition = Input.mousePosition;
+            Ray ray = fpsCamera.ScreenPointToRay(mouseScreenPosition);
+            RaycastHit hit;
+            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+
+            if (Physics.Raycast(ray, out hit, 100f, layerMask))
+            {
+                //Store Hit target into a variable
+                Target target = hit.transform.GetComponent<Target>();
+                Debug.Log(hit.transform.name);
+
+                if (target != null)
+                {
+                    //make the target take damage
+                    //Debug.Log("SHOTS SHOTS SHOTS");
+                    target.TakeDamage(damage);
+                }
+                
+            }
         }
         //Aim
         AimDownSights();
@@ -108,36 +157,6 @@ public class Gun : MonoBehaviour
         bulletsLeft = magazineSize;
         //stop reloading
         isReloading = false;
-    }
-
-    //this is called when the user presses 'fire1' or 'left mouse button'
-    //the gun will shoot a raycast which will damage the targets if hit
-    //and will only shoot if ammo is more than 0
-    void Shoot()
-    {
-        //Bullet Tracer Animation
-        Tracer.Play();
-        //increment bullets shot for accuracy 
-        GameManager.BulletsShot++;
-        bulletsLeft--;
-
-        Vector3 mouseScreenPosition = Input.mousePosition;
-        Ray ray = fpsCamera.ScreenPointToRay(mouseScreenPosition);
-
-        //if the gun is fired...
-        if (Physics.Raycast(ray, out RaycastHit raycastHit))
-        {
-            //Store Hit target into a variable
-            Target target = raycastHit.transform.GetComponent<Target>();
-
-            if (target != null)
-            {
-                //make the target take damage
-                target.TakeDamage(damage);
-            }
-        }
-
-        
     }
 
     //called when user presses 'fire2' or 'right mouse button'
