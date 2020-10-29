@@ -16553,7 +16553,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ammo: {fileID: 968968887701921032}
   damage: 10
-  range: 100
   fireRate: 15
   impactForce: 60
   magazineSize: 10
@@ -16923,7 +16922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ammo: {fileID: 968968887701921032}
   damage: 10
-  range: 100
   fireRate: 15
   impactForce: 60
   magazineSize: 30
@@ -17336,7 +17334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ammo: {fileID: 968968887701921032}
   damage: 10
-  range: 100
   fireRate: 20
   impactForce: 60
   magazineSize: 35
@@ -17440,7 +17437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3847189026421139707
 Transform:
   m_ObjectHideFlags: 0
@@ -17732,7 +17729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5392216724495043070
 Transform:
   m_ObjectHideFlags: 0
@@ -17778,7 +17775,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ammo: {fileID: 968968887701921032}
   damage: 10
-  range: 100
   fireRate: 25
   impactForce: 60
   magazineSize: 45
