@@ -206,12 +206,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 118960}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &118962 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7480656416249730694, guid: d6710a47d99bcf344ac75e12133dc2a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 118960}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &25097480
 GameObject:
   m_ObjectHideFlags: 0
@@ -17861,7 +17855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 160.00009, y: 70}
+  m_AnchoredPosition: {x: 160.00012, y: 70}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &675260432
@@ -18903,15 +18897,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 893817223}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0177cb6a131848b49bdd51a5f6acac77, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ca25951dc6e6974b835269722dc6e75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CloseEnemies: 10
-  MidEnemies: 10
-  FarEnemies: 10
+  CloseEnemies: 1
   closeTarget_Obj: {fileID: 1423844992}
-  midTarget_Obj: {fileID: 1521837191}
-  farTarget_Obj: {fileID: 118962}
 --- !u!4 &893817225
 Transform:
   m_ObjectHideFlags: 0
@@ -25172,7 +25162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -135.00009, y: -30}
+  m_AnchoredPosition: {x: -135.00012, y: -30}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1133426668
@@ -30389,12 +30379,6 @@ PrefabInstance:
 --- !u!4 &1521837190 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5397478956496480423, guid: 85909f4238cbec14fba8cd2946d4a206,
-    type: 3}
-  m_PrefabInstance: {fileID: 1521837189}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1521837191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5397478956496480413, guid: 85909f4238cbec14fba8cd2946d4a206,
     type: 3}
   m_PrefabInstance: {fileID: 1521837189}
   m_PrefabAsset: {fileID: 0}
