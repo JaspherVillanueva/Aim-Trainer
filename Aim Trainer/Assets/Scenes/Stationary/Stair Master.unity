@@ -744,17 +744,17 @@ PrefabInstance:
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.344
+      value: 5.81
       objectReference: {fileID: 0}
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.28
+      value: 104.03
       objectReference: {fileID: 0}
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -50.97
+      value: -16.22
       objectReference: {fileID: 0}
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
@@ -769,12 +769,12 @@ PrefabInstance:
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
@@ -789,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1907125988173311141, guid: 1f519283dc3dda842b4827d8e4f954b6,
         type: 3}
@@ -824,6 +824,12 @@ GameObject:
 --- !u!1 &611169922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1907125986667731775, guid: 1f519283dc3dda842b4827d8e4f954b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 611169918}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &611169923 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1907125986754141692, guid: 1f519283dc3dda842b4827d8e4f954b6,
     type: 3}
   m_PrefabInstance: {fileID: 611169918}
   m_PrefabAsset: {fileID: 0}
@@ -7369,7 +7375,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 611169923}
   m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
