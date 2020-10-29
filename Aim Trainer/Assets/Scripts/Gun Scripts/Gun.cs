@@ -36,7 +36,6 @@ public class Gun : MonoBehaviour
     public Vector3 aimPosition;
     public float adsSpeed= 8f;
 
-
     void start()
     {
         //set current ammo (bullets left) to max bullets
@@ -96,7 +95,7 @@ public class Gun : MonoBehaviour
     {
         //set reloading to true
         isReloading = true;
-        Debug.Log("Reloading...");
+        //Debug.Log("Reloading...");
 
         //set animator boolean
         animator.SetBool("Reloading", true);
@@ -122,33 +121,23 @@ public class Gun : MonoBehaviour
         GameManager.BulletsShot++;
         bulletsLeft--;
 
-        //Debug.Log("Bullet Shot");
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        Ray ray = fpsCamera.ScreenPointToRay(mouseScreenPosition);
 
-        RaycastHit hit;
         //if the gun is fired...
-        if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
+        if (Physics.Raycast(ray, out RaycastHit raycastHit))
         {
-            //Debug.Log(range);
-            //Debug.Log("\nOutter Hit " + hit
-                      //+ "\nRange: " + range);
-            //Debug.Log(hit.transform.name);
-            //if target is hit...
-            Target target = hit.transform.GetComponent<Target>();
-            //Debug.Log(target);
-            //Debug.Log(GetComponent<Target>());
+            //Store Hit target into a variable
+            Target target = raycastHit.transform.GetComponent<Target>();
+
             if (target != null)
             {
                 //make the target take damage
                 target.TakeDamage(damage);
             }
-
-            //if the object hit is rigidbody...
-            if (hit.rigidbody != null)
-            {
-                //make the object move back
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
         }
+
+        
     }
 
     //called when user presses 'fire2' or 'right mouse button'
