@@ -69,9 +69,9 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, farTarget_radius));
         }
 
-        else if (sceneName == "The Ring" && Rotating == true)
-        { 
-
+        else if (sceneName == "The Ring 2")
+        {
+            Rotating = true;
         }
 
         else if (sceneName == "Stair Master" && Respawnable == false)

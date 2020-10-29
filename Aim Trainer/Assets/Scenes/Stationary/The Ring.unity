@@ -2320,7 +2320,7 @@ MonoBehaviour:
   fireRate: 15
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   magazineSize: 30
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -20520,6 +20520,8 @@ MonoBehaviour:
   midTarget_Obj: {fileID: 2134084587}
   farTarget_Obj: {fileID: 1887579172}
   Bot1: {fileID: 0}
+  timeBetweenWaves: 0
+  waveTime: 0
 --- !u!4 &1632965811
 Transform:
   m_ObjectHideFlags: 0
@@ -20711,7 +20713,7 @@ MonoBehaviour:
   fireRate: 25
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   magazineSize: 45
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -21602,7 +21604,7 @@ MonoBehaviour:
   fireRate: 20
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}
@@ -21828,7 +21830,7 @@ MonoBehaviour:
   fireRate: 15
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   magazineSize: 10
   reloadTime: 1
   fpsCamera: {fileID: 1760247051}

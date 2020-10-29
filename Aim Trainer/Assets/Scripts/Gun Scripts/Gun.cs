@@ -106,6 +106,7 @@ public class Gun : MonoBehaviour
                     {
                         //make the target take damage
                         target.TakeDamage(damage);
+                    Debug.Log("Hello bit");
                     }
                 }
                 else

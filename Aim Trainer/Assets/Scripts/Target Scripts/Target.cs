@@ -118,10 +118,11 @@ public class Target : MonoBehaviour
             ScoreScript.scoreValue += TargetScore;
         }
 
-
-        if (sceneName == "The Ring" && GenerateEnemies.Rotating == true)
+        if (sceneName == "The Ring 2")
         {
             //spawn enemy in circle
+            ScoreScript.scoreValue += TargetScore;
+            Debug.Log("Add Score");
             return;
         }
 
@@ -143,11 +144,12 @@ public class Target : MonoBehaviour
             int randomRow = Random.Range(0, 2);
             Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
         }
-        else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == true)
+        else if (sceneName == "Stair Master 2")
         {
             Generator.SpawnRespawnableEnemy();
             Generator.ResetTimer();
             ScoreScript.scoreValue += 10;
+        Debug.Log("Target Destroyed");
         }
         else
         {
@@ -155,6 +157,5 @@ public class Target : MonoBehaviour
             Debug.Log("Failed To Find Scene");
         }
         //debug log
-        Debug.Log("Target Destroyed");
     }
 }
