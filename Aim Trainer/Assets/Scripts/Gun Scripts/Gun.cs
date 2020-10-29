@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Text Ammo;
 
     //instantiating variables
-    public float damage = 10f;
+    public float damage = 50f;
     private float range = 100f;
     public float fireRate = 15f;
     public float impactForce = 60f;

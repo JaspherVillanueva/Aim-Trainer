@@ -10,6 +10,7 @@ using Debug = UnityEngine.Debug;
 
 public class GenerateEnemies : MonoBehaviour
 {
+    public static bool Respawnable = true;
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
@@ -28,15 +29,31 @@ public class GenerateEnemies : MonoBehaviour
     private int yPos = 1;
     private Vector3 Center = new Vector3(50, 5, -50);
     private int enemyCount;
+    private String sceneName;
 
-    private Target TargetScript;
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        String sceneName = currentScene.name;
+        sceneName = currentScene.name;
 
-        if (sceneName == "The Ring")
+        if (sceneName == "Aim Trainer")
+        {
+            yPos = 1;
+            //spawn close enemies
+            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, yPos, closeTarget_Obj));
+            //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
+
+            //spawn mid enemies
+            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, yPos, midTarget_Obj));
+            //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
+
+            //spawn far enemies
+            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, yPos, farTarget_Obj));
+            //Debug.Log("Far Enemies Spawned" + FarEnemies);
+        }
+
+        else if (sceneName == "The Ring")
         {
             //Vector3 Center = new Vector3(50, 5, -50);
             //spawn close ring of enemies
@@ -47,7 +64,7 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, farTarget_radius));
         }
 
-        else if (sceneName == "Stair Master")
+        else if (sceneName == "Stair Master" && Respawnable == false)
         {
             //spawn close enemies
             StartCoroutine(SpawnRowOfTargets(CloseEnemies, 26, 104, closeTarget_Obj));
@@ -65,34 +82,13 @@ public class GenerateEnemies : MonoBehaviour
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
-        else if (sceneName == "Stairmaster2")
+        else if (sceneName == "Stair Master" && Respawnable == true)
         {
-            int randX = Random.Range(26, 44);
-            int randY = Random.Range(104, 107);
-            int randTarget = Random.Range(1, 3);
+            int RandomTarget = Random.Range(1, 3);
+            int RandomRow = Random.Range(0, 1);
 
-            if(randTarget == 1)
-            {
-                StartCoroutine(SpawnRowOfTargets(1, 26, 104, closeTarget_Obj));
-                Debug.Log("Close target spawned");
-            }
-            else if(randTarget == 2)
-            {
-                StartCoroutine(SpawnRowOfTargets(1, 34, 106, midTarget_Obj));
-                Debug.Log("Mid Target spawned");
-            }
-            else if (randTarget == 3)
-            {
-                StartCoroutine(SpawnRowOfTargets(1, 42, 108, farTarget_Obj));
-                Debug.Log("Far Target spawnedS");
-            }
-            TargetScript = GameObject.FindWithTag("CloseTarget").GetComponent<Target>();
-            TargetScript.Wait(5000);
-            Debug.Log("Waited for 5000 seconds");
-            TargetScript.TakeDamage(100);
-            Debug.Log("Die Function Called in generate");
+            SpawnSingleStairTarget(RandomTarget, RandomRow);
         }
-
 
         else
         {
@@ -172,6 +168,7 @@ public class GenerateEnemies : MonoBehaviour
         //generate random range between 
         zPos = Random.Range(5, -40);
         Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
+        Debug.Log("Spawned a new enemy");
     }
 
     // Update is called once per frame
