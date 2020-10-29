@@ -71,8 +71,11 @@ public class Target : MonoBehaviour
     public IEnumerator DieRespawn()
     {
         isRunning = 0;
-        yield return new WaitForSeconds(respawnDelay);  
+        yield return new WaitForSeconds(respawnDelay);
         //remove object
+        Debug.Log(gameObject);
+        Debug.Log(target);
+
         Destroy(gameObject);
         Destroy(target);
         Debug.Log("Destroyed Respawn Object");
