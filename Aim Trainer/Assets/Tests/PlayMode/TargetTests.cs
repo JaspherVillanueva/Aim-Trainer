@@ -14,7 +14,7 @@ public class TargetTests
     [SetUp]
     public void SetUp()
     {
-        SceneManager.LoadScene("Aim Trainer");
+        SceneManager.LoadScene("Stair Master");
     }
 
     //[UnityTest]
@@ -33,6 +33,21 @@ public class TargetTests
         target.TakeDamage(target.health);
 
         Assert.AreEqual(target.health, 0.0f);
+
+        yield return new WaitForSeconds(0.5f);
+    }
+
+    [UnityTest]
+    public IEnumerator TargetSpawnMatchesLimit()
+    {
+        target = Transform.FindObjectOfType<Target>();
+        
+        yield return new WaitForSeconds(2f);
+
+        //Debug.Log("Objects ", GenerateEnemies.closeTarget_Obj);
+        //Debug.Log("Enemies ", GenerateEnemies.CloseEnemies);
+
+        //Assert.AreEqual(GenerateEnemies.closeTarget_Obj, GenerateEnemies.CloseEnemies );
 
         yield return new WaitForSeconds(0.5f);
     }
@@ -56,6 +71,7 @@ public class TargetTests
         yield return new WaitForSeconds(0.5f);
     }
     */
+
 }
 
 

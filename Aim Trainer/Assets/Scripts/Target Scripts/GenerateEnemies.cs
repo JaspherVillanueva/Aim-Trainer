@@ -11,7 +11,7 @@ using Debug = UnityEngine.Debug;
 public class GenerateEnemies : MonoBehaviour
 {
 
-    public int CloseEnemies = 3;
+    public static int CloseEnemies = 3;
     public int MidEnemies = 3;
     public int FarEnemies = 3;
 
