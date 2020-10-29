@@ -115,7 +115,7 @@ public class GenerateEnemies : MonoBehaviour
             if (!EnemyIsAlive())
             {
                 SpawnRespawnableEnemy();
-                waveTime = timeBetweenWaves;
+                ResetTimer();
                 //Debug.Log("Reset Timer");
             }
 
@@ -134,11 +134,14 @@ public class GenerateEnemies : MonoBehaviour
                     }
                 }
                 //DestroyEnemy();
-                waveTime = timeBetweenWaves;
-            }
-            
-            
+                ResetTimer();
+            }  
         }
+    }
+
+    public void ResetTimer()
+    {
+        waveTime = timeBetweenWaves;
     }
 
     public bool EnemyIsAlive()

@@ -86,6 +86,7 @@ public class Target : MonoBehaviour
         else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == true)
         {
             Generator.SpawnRespawnableEnemy();
+            Generator.ResetTimer();
             ScoreScript.scoreValue += 10;
         }
         else
