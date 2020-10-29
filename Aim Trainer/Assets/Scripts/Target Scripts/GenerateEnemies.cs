@@ -10,7 +10,7 @@ using Debug = UnityEngine.Debug;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public static bool Respawnable = true;
+    public static bool Respawnable = false;
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;

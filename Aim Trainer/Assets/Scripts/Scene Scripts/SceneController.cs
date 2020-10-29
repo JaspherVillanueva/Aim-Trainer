@@ -84,7 +84,7 @@ public class SceneController : MonoBehaviour
     public void goToMode2()
     {
         Debug.Log("Going to Mode 2 Scene");
-        SceneManager.LoadScene("Mode 2");
+        SceneManager.LoadScene("The Ring 2");
     }
 
     public void goToMode3PreGame()
@@ -96,7 +96,7 @@ public class SceneController : MonoBehaviour
     public void goToMode3()
     {
         Debug.Log("Going to Mode 3 Scene");
-        SceneManager.LoadScene("Mode 3");
+        SceneManager.LoadScene("Stair Master 2");
     }
 
 
