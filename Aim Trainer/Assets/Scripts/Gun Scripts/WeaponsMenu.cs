@@ -20,16 +20,10 @@ public class WeaponsMenu : MonoBehaviour
             if (GameIsPaused) //if game is already paused
             {
                 Close();    //resume game
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                //wait
             }
             else
             {
-                Open();    // pasuse game
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;   //unlock cursor to use in menu
-                //wait
+                Open();    // pause game
             }
         }
     }
@@ -39,6 +33,8 @@ public class WeaponsMenu : MonoBehaviour
         WeaponsMenuUI.SetActive(true);
         GameIsPaused = true;
         Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void Close()
@@ -46,5 +42,7 @@ public class WeaponsMenu : MonoBehaviour
         WeaponsMenuUI.SetActive(false);
         GameIsPaused = false;
         Time.timeScale = 1f;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

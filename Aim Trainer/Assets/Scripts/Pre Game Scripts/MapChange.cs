@@ -7,7 +7,6 @@ public class MapChange : MonoBehaviour
 {
     public Sprite map1;
     public Sprite map2;
-    public Sprite map3;
     public Image mapPanel;
     public static int mapSelected;
 
@@ -29,10 +28,7 @@ public class MapChange : MonoBehaviour
         {
             mapPanel.sprite = map2;
         }
-        else if (mapSelected == 2)
-        {
-            mapPanel.sprite = map3;
-        }
+  
 
 
     }

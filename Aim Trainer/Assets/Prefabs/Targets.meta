@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Aim Trainer/Assets/Prefabs/Targets.meta
+guid: 146d3304571776c489b043fb76b1a794
+========
+guid: 4179f38e18043bb42b5a2949e9bf2b6c
+>>>>>>>> Jarred:Aim Trainer/Assets/Scripts/Scene Scripts.meta
+=======
 guid: c10b3a696846bdd499934cabe7d2d4ec
+>>>>>>> Jarred
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

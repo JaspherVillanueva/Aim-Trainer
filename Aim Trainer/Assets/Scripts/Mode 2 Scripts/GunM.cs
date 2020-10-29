@@ -12,7 +12,7 @@ using System.Security.Cryptography;
  * off all the firearms via aiming and firing as well
  * as the ammo/firerate
  */
-public class Gun : MonoBehaviour
+public class GunM : MonoBehaviour
 {
     [SerializeField] Text Ammo;
 
@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
 
     private Vector3 originalPosition;
     public Vector3 aimPosition;
-    public float adsSpeed= 8f;
+    public float adsSpeed = 8f;
 
 
     void start()
@@ -122,7 +122,7 @@ public class Gun : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, layerMask))
             {
                 //Store Hit target into a variable
-                Target target = hit.transform.GetComponent<Target>();
+                TargetMoving target = hit.transform.GetComponent<TargetMoving>();
                 Debug.Log(hit.transform.name);
 
                 if (target != null)
@@ -131,7 +131,7 @@ public class Gun : MonoBehaviour
                     //Debug.Log("SHOTS SHOTS SHOTS");
                     target.TakeDamage(damage);
                 }
-                
+
             }
         }
         //Aim

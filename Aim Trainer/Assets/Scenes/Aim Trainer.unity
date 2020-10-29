@@ -153,13 +153,9 @@ MonoBehaviour:
   CloseEnemies: 3
   MidEnemies: 3
   FarEnemies: 3
-  xPos: 0
-  zPos: 0
-  yPos: 2
   closeTarget_Obj: {fileID: 1849348074}
   midTarget_Obj: {fileID: 697381534}
   farTarget_Obj: {fileID: 632997197}
-  enemyCount: 0
 --- !u!4 &16923404
 Transform:
   m_ObjectHideFlags: 0
@@ -180,7 +176,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54582
+  m_Name: pb_Mesh41728
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3112,12 +3108,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &392241037 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 968968887366924969, guid: 4587a539c1fcdf94b9d870148a87f26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 968968887176013092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &392391364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,7 +3124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &392391365
 Transform:
   m_ObjectHideFlags: 0
@@ -3163,10 +3153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWeapon: {fileID: 410288377}
-  disableCrosshair: {fileID: 1316224038}
-  disableScore: {fileID: 392241037}
-  disableAmmo: {fileID: 971237966}
+  disableUI: {fileID: 0}
   disableMenu: {fileID: 1515895237}
+  disableBuyingMenu: {fileID: 0}
   Canvas: {fileID: 392391364}
 --- !u!1 &403543524
 GameObject:
@@ -5077,12 +5066,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895800882}
   m_CullTransparentMesh: 0
---- !u!1 &971237966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 968968886788280170, guid: 4587a539c1fcdf94b9d870148a87f26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 968968887176013092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &987802718
 GameObject:
   m_ObjectHideFlags: 0
@@ -6865,18 +6848,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1044611591 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 968968886677120803, guid: 4587a539c1fcdf94b9d870148a87f26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 968968887176013092}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1058373918
 GameObject:
   m_ObjectHideFlags: 0
@@ -7460,12 +7431,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303426236}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1316224038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 968968888022456578, guid: 4587a539c1fcdf94b9d870148a87f26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 968968887176013092}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1320982535
 GameObject:
   m_ObjectHideFlags: 0
@@ -7964,7 +7929,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh54298
+  m_Name: pb_Mesh41440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10167,8 +10132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2784f572aae19c54987f167e1ed08fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalTime: {fileID: 1044611591}
-  menuTime: {fileID: 1983398635}
 --- !u!1 &2037063262
 GameObject:
   m_ObjectHideFlags: 0

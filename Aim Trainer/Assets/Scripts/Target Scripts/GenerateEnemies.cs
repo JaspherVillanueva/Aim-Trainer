@@ -11,7 +11,10 @@ using Debug = UnityEngine.Debug;
 public class GenerateEnemies : MonoBehaviour
 {
     public static bool Respawnable = false;
+<<<<<<< HEAD
     public static bool Rotating = false;
+=======
+>>>>>>> origin/Tony-Jaspher
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
