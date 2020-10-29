@@ -53,7 +53,6 @@ public class TargetMoving : MonoBehaviour
     private void Update()
     {
         center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
-        
         if (isRunning == 1)
         {
             StartCoroutine(Move());

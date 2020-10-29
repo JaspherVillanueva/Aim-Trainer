@@ -5559,7 +5559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 888746120}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Targets
   m_TagString: Target
   m_Icon: {fileID: 0}
@@ -15212,7 +15212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 160.00009, y: 70}
+  m_AnchoredPosition: {x: 160.00012, y: 70}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &968968887701921047
@@ -15751,7 +15751,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -135.00009, y: -30}
+  m_AnchoredPosition: {x: -135.00012, y: -30}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &968968888062716106
@@ -16311,7 +16311,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 10
   fireRate: 15
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 10
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -16680,7 +16682,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 100
   fireRate: 15
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
   magazineSize: 30
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -17092,7 +17096,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 10
   fireRate: 20
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 35
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
@@ -17533,7 +17539,9 @@ MonoBehaviour:
   Ammo: {fileID: 968968887701921032}
   damage: 10
   fireRate: 25
-  impactForce: 60
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   magazineSize: 45
   reloadTime: 1
   fpsCamera: {fileID: 968968886978893430}
