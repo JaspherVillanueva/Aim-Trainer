@@ -10393,16 +10393,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594858732}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00003864957}
+  m_LocalRotation: {x: -2.3283064e-10, y: -2.5410917e-14, z: 7.2759134e-12, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.003948864}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 944327947}
-  m_RootOrder: 1
+  m_Father: {fileID: 1194735179}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 994.79785, y: -498.9959}
+  m_AnchoredPosition: {x: 159.79102, y: 71.00409}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &599469651
@@ -19422,7 +19422,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 2117078298}
   Tracer: {fileID: 459450063}
   animator: {fileID: 819791780}
-  aimPosition: {x: 0, y: 0, z: 0}
+  aimPosition: {x: -0.85, y: 0.01, z: -0.75}
   adsSpeed: 8
 --- !u!95 &819791780
 Animator:
@@ -20405,9 +20405,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1116988874}
-  - {fileID: 594858735}
   m_Father: {fileID: 1194735179}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -23643,6 +23642,7 @@ RectTransform:
   m_Children:
   - {fileID: 1574081191}
   - {fileID: 1185254322}
+  - {fileID: 594858735}
   - {fileID: 944327947}
   m_Father: {fileID: 2117078301}
   m_RootOrder: 2
@@ -26920,7 +26920,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 2117078298}
   Tracer: {fileID: 459450063}
   animator: {fileID: 1256387282}
-  aimPosition: {x: 0, y: 0, z: 0}
+  aimPosition: {x: -1.25, y: -0.1, z: -0.53}
   adsSpeed: 8
 --- !u!95 &1256387282
 Animator:
@@ -28079,7 +28079,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 2117078298}
   Tracer: {fileID: 459450063}
   animator: {fileID: 1445482165}
-  aimPosition: {x: 0, y: 0, z: 0}
+  aimPosition: {x: 0.89, y: 0.02, z: 0.46}
   adsSpeed: 8
 --- !u!95 &1445482165
 Animator:
@@ -34833,7 +34833,7 @@ MonoBehaviour:
   fpsCamera: {fileID: 2117078298}
   Tracer: {fileID: 459450063}
   animator: {fileID: 2110036664}
-  aimPosition: {x: 0, y: 0, z: 0}
+  aimPosition: {x: 0.593, y: -0.01, z: 0.37}
   adsSpeed: 8
 --- !u!95 &2110036664
 Animator:
