@@ -10,7 +10,8 @@ using Debug = UnityEngine.Debug;
 
 public class GenerateEnemies : MonoBehaviour
 {
-    public static bool Respawnable = true;
+    public static bool Respawnable = false;
+    public static bool Rotating = false;
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
@@ -19,6 +20,8 @@ public class GenerateEnemies : MonoBehaviour
     public GameObject closeTarget_Obj;
     public GameObject midTarget_Obj;
     public GameObject farTarget_Obj;
+
+    public GameObject Bot1;
 
     public static float closeTarget_radius = 20.0f;
     public static float midTarget_radius = 30.0f;
@@ -67,7 +70,7 @@ public class GenerateEnemies : MonoBehaviour
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
-        else if (sceneName == "The Ring")
+        else if (sceneName == "The Ring" && Rotating == false)
         {
             //Vector3 Center = new Vector3(50, 5, -50);
             //spawn close ring of enemies
@@ -101,6 +104,10 @@ public class GenerateEnemies : MonoBehaviour
             SpawnRespawnableEnemy();
         }
 
+        else if (sceneName == "The Ring" && Rotating == true)
+        {
+            SpawnSingleCircularRobot(Bot1, 13);
+        }
         else
         {
             Debug.Log("you are not in aim trainer");
@@ -304,6 +311,15 @@ public class GenerateEnemies : MonoBehaviour
         Vector3 pos = RandomCircle(Center, radius);
         Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
         Instantiate(targetSpawned, pos, rot);
+        //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
+    }
+
+    //Used to respawn target from the ring map
+    public void SpawnSingleCircularRobot(GameObject Bot, float radius)
+    {
+        Vector3 pos = RandomCircle(Center, radius);
+        Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
+        Instantiate(Bot, pos, rot);
         //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
     }
 

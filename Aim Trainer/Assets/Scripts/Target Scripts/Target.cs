@@ -24,13 +24,62 @@ public class Target : MonoBehaviour
     private GenerateEnemies Generator;
     private String sceneName;
 
+    public Transform center;
+    public Transform target1;
+
+    public float rotationSpeed;
+    public float speed;
+
+    private Quaternion qTo;
+
+    private int isRunning = 1;
+
+    private Vector3 v3 = new Vector3(2, 13, 0);
+
+
     private void Start()
     {
         //get the active scene
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
+        if (GenerateEnemies.Rotating == true)
+        {
+            //rotationSpeed = BotDifficulty.botRotationSpeed;
+            //speed = BotDifficulty.botSpeed;
+        }
+    }
+
+    private void Update()
+    {
+        if (GenerateEnemies.Rotating == true)
+        {
+            //turning point
+            center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
+            if (isRunning == 1)
+            {
+                StartCoroutine(Move());
+            }
+            //distance from center
+            target1.transform.localPosition = Vector3.MoveTowards(target1.localPosition, v3, speed * Time.deltaTime);
+        }
         
+    }
+
+    //Generates vector for target to move up and down
+    public IEnumerator Move()
+    {
+        isRunning = 0;
+        yield return new WaitForSeconds(2f);
+        v3 = new Vector3(2, RandomN(), 0);
+        isRunning = 1;
+    }
+
+    //Generate Random number
+    public float RandomN()
+    {
+        float position = Random.Range(13f, 40f);
+        return position;
     }
 
     //when target is shot by player
