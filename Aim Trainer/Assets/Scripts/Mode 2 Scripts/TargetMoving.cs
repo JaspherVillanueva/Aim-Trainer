@@ -15,12 +15,13 @@ using System;
 public class TargetMoving : MonoBehaviour
 {
     //instantiating variables
-    public float health = 50f;
+    public float health = 0f;
     public int TargetScore = 10;
     public Transform center;
     public Transform target;
 
-    public float minRotationSpeed;
+
+    public float rotationSpeed;
     public float speed;
 
     private Quaternion qTo;
@@ -31,6 +32,14 @@ public class TargetMoving : MonoBehaviour
 
     //when target is shot by player
     //target will take damage until it reaches 0
+
+    void Start()
+    {
+        rotationSpeed = BotDifficulty.botRotationSpeed;
+        speed = BotDifficulty.botSpeed;
+    }
+
+
     public void TakeDamage(float damage)
     {
         GameManager.TargetsHit++;
@@ -47,7 +56,7 @@ public class TargetMoving : MonoBehaviour
 
     private void Update()
     {
-        center.transform.RotateAround(center.position, Vector3.up, minRotationSpeed * Time.deltaTime * 0.5f);
+        center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
         
         if (isRunning == 1)
         {

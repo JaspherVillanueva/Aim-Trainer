@@ -39,14 +39,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu Scenes/Mode 3 Pre Game.unity
     guid: 53bc722ef8eb2fe44882c2a450c5b5d2
   - enabled: 1
-    path: Assets/Scenes/Peek-A-Boo/Mode 3.unity
-    guid: 3822d49944f4ca9499ae0296e21c96ba
-  - enabled: 1
     path: Assets/Scenes/MovingTarget/The Ring 2.unity
     guid: d4d28963aea980047b28c3007e6a1f97
-  - enabled: 1
-    path: Assets/Scenes/Menu Scenes/Options.unity
-    guid: b22304558f5be1f49b04c3f1219eac00
   - enabled: 1
     path: Assets/Scenes/Menu Scenes/Ranking.unity
     guid: 5aad0478cd9b0be47866164e8b96a2d1
