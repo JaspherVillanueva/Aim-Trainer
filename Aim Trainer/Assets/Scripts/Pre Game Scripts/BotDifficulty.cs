@@ -9,8 +9,8 @@ public class BotDifficulty: MonoBehaviour
 
     public Dropdown botDifficultyDropdown;
     public int botCountValue;
-    public static float botRotationSpeed = 25f;
-    public static float botSpeed = 10f;
+    public static float botRotationSpeed = 0f;
+    public static float botSpeed = 0f;
 
     void Start()
     {
