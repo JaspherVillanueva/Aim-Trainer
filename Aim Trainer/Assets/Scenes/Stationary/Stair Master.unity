@@ -17658,7 +17658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 5
-  health: 50
+  health: 10
   TargetScore: 20
   target: {fileID: 5397478957995928605}
   EnemyDistance: 2
@@ -22568,7 +22568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 5
-  health: 50
+  health: 10
   TargetScore: 10
   target: {fileID: 6174928225161779478}
   EnemyDistance: 1
@@ -22619,7 +22619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 5
-  health: 50
+  health: 10
   TargetScore: 30
   target: {fileID: 7480656416841488808}
   EnemyDistance: 3
