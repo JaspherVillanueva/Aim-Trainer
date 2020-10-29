@@ -214,7 +214,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14564
+  m_Name: pb_Mesh22432
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -701,7 +701,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14868
+  m_Name: pb_Mesh22724
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6872,7 +6872,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14752
+  m_Name: pb_Mesh22614
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12184,7 +12184,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14384
+  m_Name: pb_Mesh22252
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17593,7 +17593,7 @@ GameObject:
   - component: {fileID: 5397478957995928614}
   m_Layer: 8
   m_Name: 'MidTarget '
-  m_TagString: Target
+  m_TagString: MidTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17657,7 +17657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91c0c97a0652e4cbc01c8e364f0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  respawnDelay: 5
+  health: 10
   TargetScore: 20
   target: {fileID: 5397478957995928605}
   EnemyDistance: 2
@@ -22549,7 +22550,7 @@ GameObject:
   - component: {fileID: 6174928225161779472}
   m_Layer: 0
   m_Name: 'CloseTarget '
-  m_TagString: Target
+  m_TagString: CloseTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22566,7 +22567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91c0c97a0652e4cbc01c8e364f0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  respawnDelay: 5
+  health: 10
   TargetScore: 10
   target: {fileID: 6174928225161779478}
   EnemyDistance: 1
@@ -22585,7 +22587,7 @@ GameObject:
   - component: {fileID: 7480656416841488810}
   m_Layer: 8
   m_Name: 'FarTarget '
-  m_TagString: Target
+  m_TagString: FarTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22616,7 +22618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e91c0c97a0652e4cbc01c8e364f0d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  respawnDelay: 5
+  health: 10
   TargetScore: 30
   target: {fileID: 7480656416841488808}
   EnemyDistance: 3
