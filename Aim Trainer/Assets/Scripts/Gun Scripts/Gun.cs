@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Diagnostics;
-using Debug = UnityEngine.Debug;
 using System.Runtime.InteropServices;
 using System;
 using System.Security.Cryptography;
+//using Debug = UnityEngine.Debug;
 
 /*
  * this script is used to contain the functionality
@@ -19,8 +19,6 @@ public class Gun : MonoBehaviour
     //instantiating variables
     public float damage = 50f;
     private float range = 100f;
-    public float fireRate = 15f;
-    private float nextTimeToFire = 0f;
     public LayerMask layerMask;
 
     private bool isReloading = false;
@@ -43,7 +41,6 @@ public class Gun : MonoBehaviour
     {
         //set current ammo (bullets left) to max bullets
         bulletsLeft = magazineSize;
-
         originalPosition = transform.localPosition;
     }
 
@@ -60,7 +57,6 @@ public class Gun : MonoBehaviour
         animator.SetBool("Aim", isAiming);
     }
 
-    //Update is called once per frame
     void Update()
     {
         //change text
@@ -80,37 +76,38 @@ public class Gun : MonoBehaviour
             return;
         }
 
-        //When the fire button is pressed and they arent spamming the fire button
-        //if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        //When the fire button is pressed
         if (Input.GetButtonDown("Fire1"))
         {
-            //Debug.Log("Fire");
             //Bullet Tracer Animation
             Tracer.Play();
             //increment bullets shot for accuracy 
             GameManager.BulletsShot++;
             bulletsLeft--;
 
+            //create variable for raycasting
             Vector3 mouseScreenPosition = Input.mousePosition;
             Ray ray = fpsCamera.ScreenPointToRay(mouseScreenPosition);
             RaycastHit hit;
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+            //test in scene mode for raycast
+            //Debug.DrawRay(ray.origin, ray.direction * range, Color.red);
 
-            if (Physics.Raycast(ray, out hit, 100f, layerMask))
+            if (Physics.Raycast(ray, out hit, range, layerMask))
             {
-                //Store Hit target into a variable
+                //if in rotating mode
                 if (GenerateEnemies.Rotating == true)
                 {
+                    //get component from parent
                     Target target = hit.transform.GetComponentInParent<Target>();
                     if (target != null)
                     {
                         //make the target take damage
                         target.TakeDamage(damage);
-                        Debug.Log("Hello bit");
                     }
                 }
                 else
                 {
+                    //get component
                     Target target = hit.transform.GetComponent<Target>();
                     if (target != null)
                     {
@@ -118,7 +115,6 @@ public class Gun : MonoBehaviour
                         target.TakeDamage(damage);
                     }
                 }
-                //Debug.Log(target);
             }
         }
 
