@@ -35,8 +35,8 @@ public class TargetMoving : MonoBehaviour
 
     void Start()
     {
-        rotationSpeed = BotDifficulty.botRotationSpeed;
-        speed = BotDifficulty.botSpeed;
+        rotationSpeed = (float)BotDifficulty.botRotationSpeed;
+        speed = (float)BotDifficulty.botSpeed;
     }
 
 

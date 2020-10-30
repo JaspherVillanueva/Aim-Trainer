@@ -73,10 +73,12 @@ public class BotDifficulty: MonoBehaviour
     void setRotationSpeed(int rotationSpeed)
     {
         botRotationSpeed = rotationSpeed;
+        Debug.Log(rotationSpeed);
     }
 
     void setSpeed(int speed)
     {
         botSpeed = speed;
+        Debug.Log(speed);
     }
 }
