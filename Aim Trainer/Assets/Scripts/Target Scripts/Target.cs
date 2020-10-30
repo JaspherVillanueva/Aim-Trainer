@@ -31,28 +31,27 @@ public class Target : MonoBehaviour
     public float speed;
 
     private Quaternion qTo;
-
     private int isRunning = 1;
-
     private Vector3 v3 = new Vector3(2, 13, 0);
 
-
+    
     private void Start()
     {
         //get the active scene
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
+        //get script to generate enemies
         Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
         if (GenerateEnemies.Rotating == true)
         {
-
             rotationSpeed = 25f;
             speed = 10;
-            //rotationSpeed = BotDifficulty.botRotationSpeed;
-            //speed = BotDifficulty.botSpeed;
         }
     }
 
+    /*If the gamemode is botpractice then rotate the target
+     * around the center
+     */
     private void Update()
     {
         if (GenerateEnemies.Rotating == true)

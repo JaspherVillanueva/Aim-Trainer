@@ -10,9 +10,9 @@ using Debug = UnityEngine.Debug;
 
 public class GenerateEnemies : MonoBehaviour
 {
+    //Set the variables
     public static bool Respawnable = false;
     public static bool Rotating = false;
-
 
     public int CloseEnemies = 3;
     public int MidEnemies = 3;
@@ -47,7 +47,9 @@ public class GenerateEnemies : MonoBehaviour
     public float waveTime;
     private SpawnState state = SpawnState.WAITING;
 
-    // Start is called before the first frame update
+    /*Check what scene game is in and spawn enemies based
+     * on what scene is.
+     */
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -104,6 +106,10 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
+    /*if in gamemode PeekABoo
+     * Check every couple of seconds (Base on Difficulty)
+     * if there are targets in the scene. and destroy or make more based on it
+     */
     void Update()
     {
         if (Respawnable)
@@ -136,11 +142,13 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
+    //reset wave timer
     public void ResetTimer()
     {
         waveTime = timeBetweenWaves;
     }
 
+    //checks if there are any enemies alive
     public bool EnemyIsAlive()
     {
         searchCountDown -= Time.deltaTime;
@@ -158,6 +166,7 @@ public class GenerateEnemies : MonoBehaviour
         return true;
     }
 
+    //spawn an enemy after a second
     IEnumerator SpawnEnemy()
     {
         state = SpawnState.SPAWNING;
@@ -171,6 +180,7 @@ public class GenerateEnemies : MonoBehaviour
         yield break;
     }
 
+    //spawns a random target at a random range on stair master map
     public void SpawnRespawnableEnemy()
     {
         int RandomTarget = Random.Range(1, 4);
@@ -179,7 +189,7 @@ public class GenerateEnemies : MonoBehaviour
         LastSpawnedTarget = SpawnSingleStairTarget(RandomTarget, RandomRow);
     }
 
-    // Update is called once per frame
+    //Spawns a Row of targets on stair master map
     IEnumerator SpawnRowOfTargets(int maxEnemies, int Xposition, int Yposition, GameObject Target)
     {
         //while enemy count <= maxEnemy
@@ -197,7 +207,7 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
-    //used to repspawn targets from the stair map
+    //used to repspawn a single target on the stair map
     public GameObject SpawnSingleStairTarget(int gameObj, int randomRow)
     {
         GameObject targetSpawned = null;
@@ -256,7 +266,7 @@ public class GenerateEnemies : MonoBehaviour
         return LastSpawnedTarget;
     }
 
-    // Update is called once per frame
+    //Spawns a circle of enemies in the ring master map
     IEnumerator SpawnCircleOfEnemies(int maxEnemies, Vector3 center, GameObject Target, float radius)
     {
         //while enemy count <= maxEnemy
@@ -273,7 +283,7 @@ public class GenerateEnemies : MonoBehaviour
         }
     }
 
-    //Used to respawn target from the ring map
+    //Used to respawn a singular target on the ring map
     public void SpawnSingleCircularTarget(int gameObj)
     {
         GameObject targetSpawned = null;
@@ -301,7 +311,6 @@ public class GenerateEnemies : MonoBehaviour
         Vector3 pos = RandomCircle(Center, radius);
         Quaternion rot = Quaternion.FromToRotation(Vector3.forward, Center - pos);
         Instantiate(targetSpawned, pos, rot);
-        //Debug.Log("SPAWNING SINGLE CIRCLE TARGET");
     }
 
     //used to get random vector from a circle
