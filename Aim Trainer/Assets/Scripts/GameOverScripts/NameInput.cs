@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This class is used to handle name inputs from the game over scene.
 
 public class NameInput : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class NameInput : MonoBehaviour
     {
         playerInput = gameObject.GetComponent<InputField>();
         playerInput.onEndEdit.AddListener(getName);
-        
+    
     }
 
     void getName(string name)

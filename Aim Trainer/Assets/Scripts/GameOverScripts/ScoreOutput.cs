@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// This class is used to output score into the game over scene.
+
 public class ScoreOutput : MonoBehaviour
 {
     public Text scoreText;

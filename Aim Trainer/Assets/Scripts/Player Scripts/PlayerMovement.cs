@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class is used to handle the movement of the player model. Allowing the user to walk around the environment.
+
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;

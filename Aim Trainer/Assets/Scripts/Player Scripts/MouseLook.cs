@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class is used for camera movement allowing the user to look around the environment.
+
 public class MouseLook : MonoBehaviour
 {
     public static float mouseSensitivity = 100f;

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// This class is used to output accuracy into the game over scene.
+
 public class AccuracyOutput : MonoBehaviour
 {
     public Text accuracyText;
