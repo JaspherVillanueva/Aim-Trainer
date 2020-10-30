@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// This class is used to control map selection for mode 1.
-// The map selected by the user through the GUI is passed into the scene controller
-// Thus checking which map is selected for the that map scene to be loaded.
+// This class is ued to control game difficulty for mode 3 (Peek-A-Boo).
+// The difficulty selected by the user through the GUI is passed into the game.
+// Thus setting the time of spawn between each target before it disappears again.
 
 // Aim Trainer - 2020 - Jaspher Villanueva
 
 public class GameDifficulty : MonoBehaviour
 {
     private List<string> gameDifficulties = new List<string>() { "Easy", "Medium", "Hard" };
-   
-    private enum difficulty { Easy = 5, Medium = 3, Hard = 1};
+
+    // enum variables containing ints of each difficulty.
+    private enum difficulty { Easy = 5, Medium = 3, Hard = 1 };
 
     public Dropdown gameDifficultyDropdown;
-    
+
     private int gameDifficultyValue;
 
     public static int waveTimer = (int)difficulty.Easy;
@@ -31,30 +32,38 @@ public class GameDifficulty : MonoBehaviour
         });
 
         addDifficulty(gameDifficulties);
-     
+
     }
 
-    void addDifficulty(List <string> gameDifficulties)
+    // This function adds the list variables into the map dropdown
+    void addDifficulty(List<string> gameDifficulties)
     {
         gameDifficultyDropdown.AddOptions(gameDifficulties);
     }
 
+    // This function checks for the dropdown value (0-1) and changes the value of the game
+    // everytime the user selects a different value from the dropdown.
     void checkGameDifficulty(Dropdown selectedDifficulty)
     {
         gameDifficultyValue = selectedDifficulty.value;
 
         if (gameDifficultyValue == 0)
         {
-            waveTimer = (int)difficulty.Easy;
+            setWaveTimer((int)difficulty.Easy);
         }
         else if (gameDifficultyValue == 1)
         {
-            waveTimer = (int)difficulty.Medium;
+            setWaveTimer((int)difficulty.Medium);
         }
         else if (gameDifficultyValue == 2)
         {
-            waveTimer = (int)difficulty.Hard;
+            setWaveTimer((int)difficulty.Hard);
         }
+    }
+
+    void setWaveTimer(int timer)
+    {
+        waveTimer = timer;
     }
 
 }
