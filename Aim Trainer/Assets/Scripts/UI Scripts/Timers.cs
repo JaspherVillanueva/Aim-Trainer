@@ -8,7 +8,7 @@ public class Timers : MonoBehaviour
 {
     public Text timerText;
 
-    public float startTime;
+    private static float startTime;
 
     void Start()
     {

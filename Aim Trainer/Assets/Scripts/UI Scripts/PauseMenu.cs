@@ -47,7 +47,6 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1f;                 //resume time
         GameIsPaused = false;                //update value
-
     }
 
     void Pause()
@@ -55,20 +54,14 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;   //unlock cursor to use in menu
 
-        InGameOptionsMenu.SetActive(false);         //disable options menu if opened
-        pauseMenuUI.SetActive(true);         //bring up pause menu
-        disableGun.SetActive(false);         //disable gun
-        disableCrosshair.SetActive(false);   //disable crosshair
+        InGameOptionsMenu.SetActive(false);   //disable options menu if opened
+        pauseMenuUI.SetActive(true);          //bring up pause menu
+        disableGun.SetActive(false);          //disable gun
+        disableCrosshair.SetActive(false);    //disable crosshair
         WeaponsMenu.SetActive(false);         //disable weapon bying menu
 
-        Time.timeScale = 0f;                 //stop time, aka pause the game
-        GameIsPaused = true;                 //update value
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quitting Game....");
-        Application.Quit();                //quitting game
+        Time.timeScale = 0f;                  //stop time, aka pause the game
+        GameIsPaused = true;                  //update value
     }
 
     public void InGameOpMenu()   //bring up options menu
@@ -85,5 +78,10 @@ public class PauseMenu : MonoBehaviour
             pauseMenuUI.SetActive(true);       //bring back pause menu
             OpMenu = true;                     //update value
         }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public float speed = 12f;
-    public float jumpHeight = 3f;
-
-    public float gravity = -9.81f;
+    private float speed = 12f;
+    private float jumpHeight = 3f;
+    private float gravity = -9.81f;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -16,13 +15,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //checks if player is on ground

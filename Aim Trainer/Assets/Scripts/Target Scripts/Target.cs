@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 using System;
+using System.Security.Cryptography;
 /*
- * This class is used to instatiate 
- * Targets for the player to shoot
- * Targets either take damage,
- * or they die due to no more health
- */
+* This class is used to instatiate 
+* Targets for the player to shoot
+* Targets either take damage,
+* or they die due to no more health
+*/
 public class Target : MonoBehaviour
 {
     //instantiating variables
-    public float respawnDelay = 5f;
     public float health = 50f;
     public int TargetScore = 10;
     public GameObject target;
@@ -23,7 +23,19 @@ public class Target : MonoBehaviour
 
     private GenerateEnemies Generator;
     private String sceneName;
+
+    public Transform center;
+    public Transform Bot1;
+
+    public float rotationSpeed;
+    public float speed;
+
+    private Quaternion qTo;
+
     private int isRunning = 1;
+
+    private Vector3 v3 = new Vector3(2, 13, 0);
+
 
     private void Start()
     {
@@ -31,6 +43,52 @@ public class Target : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
+        if (GenerateEnemies.Rotating == true)
+        {
+
+            rotationSpeed = 25f;
+            speed = 10;
+            //rotationSpeed = BotDifficulty.botRotationSpeed;
+            //speed = BotDifficulty.botSpeed;
+        }
+    }
+
+    private void Update()
+    {
+        if (GenerateEnemies.Rotating == true)
+        {
+            if (Bot1 != null)
+            {
+                //turning point
+                center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
+                if (isRunning == 1)
+                {
+                    StartCoroutine(Move());
+                }
+                Bot1.transform.localPosition = Vector3.MoveTowards(Bot1.localPosition, v3, speed * Time.deltaTime);
+            }
+            else
+            {
+                Debug.Log("Bot1 Not Set");
+            }
+        }
+        
+    }
+
+    //Generates vector for target to move up and down
+    public IEnumerator Move()
+    {
+        isRunning = 0;
+        yield return new WaitForSeconds(2f);
+        v3 = new Vector3(2, -RandomN(), 0);
+        isRunning = 1;
+    }
+
+    //Generate Random number
+    public float RandomN()
+    {
+        float position = Random.Range(13f, 40f);
+        return position;
     }
 
     //when target is shot by player
@@ -48,45 +106,6 @@ public class Target : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(isRunning == 1)
-        {
-            if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == true)
-            {
-                    StartCoroutine(DieRespawn());
-                //Debug.Log("You in Da Scene");
-                /*
-                Debug.Log(GameObject.FindGameObjectsWithTag("CloseTarget").Length);
-                if (GameObject.FindGameObjectsWithTag("CloseTarget").Length == 2 ||
-                    GameObject.FindGameObjectsWithTag("MidTarget").Length == 2 ||
-                    GameObject.FindGameObjectsWithTag("FarTarget").Length == 2)
-                {
-                }
-                */
-            }
-        }
-    }
-
-    public IEnumerator DieRespawn()
-    {
-        isRunning = 0;
-        yield return new WaitForSeconds(respawnDelay);  
-        //remove object
-        Destroy(gameObject);
-        Destroy(target);
-        Debug.Log("Destroyed Respawn Object");
-
-
-        int RandomTarget = Random.Range(1, 3);
-        int RandomRow = Random.Range(0, 1);
-        Debug.Log(RandomTarget + " " +RandomRow);
-
-        Generator.SpawnSingleStairTarget(RandomTarget, RandomRow);
-
-        isRunning = 1;
-    }
-
     //when target health reaches 0
     //function is called to destroy the object
     //and adds a score to the total score
@@ -94,34 +113,43 @@ public class Target : MonoBehaviour
     void Die()
     {
         //add score
-        ScoreScript.scoreValue += TargetScore;
+        if (GenerateEnemies.Respawnable == false)
+        {
+            ScoreScript.scoreValue += TargetScore;
+        }
+
+        if (sceneName == "The Ring 2")
+        {
+            //spawn enemy in circle
+            ScoreScript.scoreValue += TargetScore;
+            Debug.Log("Add Score");
+            return;
+        }
 
         //remove object
         Destroy(gameObject);
         Destroy(target);
 
-        //get the active scene
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
-        //get the enemy generation script
-        Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
-
         //used to detect which map user has chosen
         //in order to spawn targets in the right place
-        if (sceneName == "The Ring")
+        if (sceneName == "The Ring" && GenerateEnemies.Rotating == false)
         {
             //spawn enemy in circle
             Generator.SpawnSingleCircularTarget(EnemyDistance);
         }
+
         else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == false)
         {
             //spawn a target on either row
             int randomRow = Random.Range(0, 2);
             Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
         }
-        else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == true)
+        else if (sceneName == "Stair Master 2")
         {
-            Debug.Log("ALLOCATE POINTS");
+            Generator.SpawnRespawnableEnemy();
+            Generator.ResetTimer();
+            ScoreScript.scoreValue += 10;
+        Debug.Log("Target Destroyed");
         }
         else
         {
@@ -129,6 +157,5 @@ public class Target : MonoBehaviour
             Debug.Log("Failed To Find Scene");
         }
         //debug log
-        Debug.Log("Target Destroyed");
     }
 }

@@ -11,6 +11,8 @@ using Debug = UnityEngine.Debug;
 public class GenerateEnemies : MonoBehaviour
 {
     public static bool Respawnable = false;
+    public static bool Rotating = false;
+
 
     public static int CloseEnemies = 3;
     public int MidEnemies = 3;
@@ -19,6 +21,8 @@ public class GenerateEnemies : MonoBehaviour
     public GameObject closeTarget_Obj;
     public GameObject midTarget_Obj;
     public GameObject farTarget_Obj;
+
+    public GameObject Bot1;
 
     public static float closeTarget_radius = 20.0f;
     public static float midTarget_radius = 30.0f;
@@ -30,30 +34,31 @@ public class GenerateEnemies : MonoBehaviour
     private Vector3 Center = new Vector3(50, 5, -50);
     private int enemyCount;
     private String sceneName;
+    /*
+     * RESPAWNING VARIABLES
+     */
+
+    public enum SpawnState { SPAWNING, WAITING};
+    private GameObject LastSpawnedTarget;
+
+    public float timeBetweenWaves;
+
+    private float searchCountDown;
+    public float waveTime;
+    private SpawnState state = SpawnState.WAITING;
 
     // Start is called before the first frame update
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
+        timeBetweenWaves = GameDifficulty.waveTimer;
+        Debug.Log(timeBetweenWaves);
         sceneName = currentScene.name;
+        waveTime = timeBetweenWaves;
+        searchCountDown = timeBetweenWaves;
 
-        if (sceneName == "Aim Trainer")
-        {
-            yPos = 1;
-            //spawn close enemies
-            StartCoroutine(SpawnRowOfTargets(CloseEnemies, 20, yPos, closeTarget_Obj));
-            //Debug.Log("Close Enemies Spawned: " + CloseEnemies);
-
-            //spawn mid enemies
-            StartCoroutine(SpawnRowOfTargets(MidEnemies, 30, yPos, midTarget_Obj));
-            //Debug.Log("Mid Enemies Spawned: " + MidEnemies);
-
-            //spawn far enemies
-            StartCoroutine(SpawnRowOfTargets(FarEnemies, 40, yPos, farTarget_Obj));
-            //Debug.Log("Far Enemies Spawned" + FarEnemies);
-        }
-
-        else if (sceneName == "The Ring")
+       
+        if (sceneName == "The Ring" && Rotating == false)
         {
             //Vector3 Center = new Vector3(50, 5, -50);
             //spawn close ring of enemies
@@ -62,6 +67,11 @@ public class GenerateEnemies : MonoBehaviour
             StartCoroutine(SpawnCircleOfEnemies(MidEnemies, Center, midTarget_Obj, midTarget_radius));
             //spawn far ring of enemies
             StartCoroutine(SpawnCircleOfEnemies(FarEnemies, Center, farTarget_Obj, farTarget_radius));
+        }
+
+        else if (sceneName == "The Ring 2")
+        {
+            Rotating = true;
         }
 
         else if (sceneName == "Stair Master" && Respawnable == false)
@@ -82,18 +92,91 @@ public class GenerateEnemies : MonoBehaviour
             //Debug.Log("Far Enemies Spawned" + FarEnemies);
         }
 
-        else if (sceneName == "Stair Master" && Respawnable == true)
+        else if (sceneName == "Stair Master 2")
         {
-            int RandomTarget = Random.Range(1, 3);
-            int RandomRow = Random.Range(0, 1);
-
-            SpawnSingleStairTarget(RandomTarget, RandomRow);
+            Respawnable = true;
+            SpawnRespawnableEnemy();
         }
 
         else
         {
             Debug.Log("you are not in aim trainer");
         }
+    }
+
+    void Update()
+    {
+        if (Respawnable)
+        {
+            waveTime -= Time.deltaTime;
+            if (!EnemyIsAlive())
+            {
+                SpawnRespawnableEnemy();
+                ResetTimer();
+                //Debug.Log("Reset Timer");
+            }
+
+            if (waveTime <= 0f)
+            {
+                //Debug.Log(state);
+                if (state == SpawnState.WAITING)
+                {
+                    //Check if Enemies Still Alive
+                    if (EnemyIsAlive())
+                    {
+                        Debug.Log("Enemies Are Alive");
+                        //Debug.Log(LastSpawnedTarget);
+                        Destroy(LastSpawnedTarget);
+                        SpawnRespawnableEnemy();
+                    }
+                }
+                //DestroyEnemy();
+                ResetTimer();
+            }  
+        }
+    }
+
+    public void ResetTimer()
+    {
+        waveTime = timeBetweenWaves;
+    }
+
+    public bool EnemyIsAlive()
+    {
+        searchCountDown -= Time.deltaTime;
+        if (searchCountDown <= 0f)
+        {
+
+            if (GameObject.FindGameObjectsWithTag("CloseTarget").Length == 1
+            && GameObject.FindGameObjectsWithTag("MidTarget").Length == 1
+            && GameObject.FindGameObjectsWithTag("FarTarget").Length == 1)
+            {
+                return false;
+            }
+            searchCountDown = timeBetweenWaves;
+        }
+        return true;
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        state = SpawnState.SPAWNING;
+        yield return new WaitForSeconds(1f);
+        //spawn
+        Debug.Log("Spawn an enemy");
+        SpawnRespawnableEnemy();
+
+        state = SpawnState.WAITING;
+
+        yield break;
+    }
+
+    public void SpawnRespawnableEnemy()
+    {
+        int RandomTarget = Random.Range(1, 4);
+        int RandomRow = Random.Range(0, 1);
+
+        LastSpawnedTarget = SpawnSingleStairTarget(RandomTarget, RandomRow);
     }
 
     // Update is called once per frame
@@ -115,7 +198,7 @@ public class GenerateEnemies : MonoBehaviour
     }
 
     //used to repspawn targets from the stair map
-    public void SpawnSingleStairTarget(int gameObj, int randomRow)
+    public GameObject SpawnSingleStairTarget(int gameObj, int randomRow)
     {
         GameObject targetSpawned = null;
 
@@ -167,8 +250,10 @@ public class GenerateEnemies : MonoBehaviour
         }
         //generate random range between 
         zPos = Random.Range(5, -40);
-        Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
-        Debug.Log("Spawned a new enemy");
+        GameObject LastSpawnedTarget = GameObject.Instantiate(targetSpawned, new Vector3(xPos, yPos, zPos), Quaternion.identity);
+        //Debug.Log(LastSpawnedTarget);
+        //Debug.Log("Spawned a new enemy");
+        return LastSpawnedTarget;
     }
 
     // Update is called once per frame

@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// This class is used to control scene transitions using the buttons 
+// found in each menu of each scene. Each function is named in relation
+// to the scene that it wishes to transition to.
+
+// Aim Trainer - 2020 - Jaspher Villanueva
+
 public class SceneController : MonoBehaviour
 {
-    public static int mapSelection;
+    private static int mapSelection;
 
     public void goToMainMenu()
     {
@@ -37,6 +43,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Mode 1 Pre Game");
     }
 
+    // The function checkMapSelect is used to check a map selection input from the pre game
+    // menu to transition them into the selected map using the scene controller.
+
     public void checkMapSelect()
     {
         mapSelection = MapDropdown.mapValue;
@@ -50,54 +59,46 @@ public class SceneController : MonoBehaviour
         {
             goToMap2();
         }
-
-        else if (mapSelection == 2)
-        {
-            goToMap3();
-        }
     }
 
     public void goToMap1()
     {
-        Debug.Log("Going to Map 1");
+        Debug.Log("Going to The Ring");
         SceneManager.LoadScene("The Ring");
     }
 
     public void goToMap2()
     {
-        Debug.Log("Going to Map 2");
+        Debug.Log("Going to Stair Master");
         SceneManager.LoadScene("Stair Master");
-    }
-
-    public void goToMap3()
-    {
-        Debug.Log("Going to Map 3");
-        SceneManager.LoadScene("The Shelf");
     }
 
     public void goToMode2PreGame()
     {
-        Debug.Log("Going to Pre Game Scene");
+        Debug.Log("Going to Pre Game Scene for Mode 2");
         SceneManager.LoadScene("Mode 2 Pre Game");
     }
 
     public void goToMode2()
     {
-        Debug.Log("Going to Mode 2 Scene");
+        Debug.Log("Going to the Ring 2");
         SceneManager.LoadScene("The Ring 2");
     }
 
     public void goToMode3PreGame()
     {
-        Debug.Log("Going to Pre Game Scene");
+        Debug.Log("Going to Pre Game Scene for Mode 3");
         SceneManager.LoadScene("Mode 3 Pre Game");
     }
 
     public void goToMode3()
     {
-        Debug.Log("Going to Mode 3 Scene");
+        Debug.Log("Going to Stair Master 2");
         SceneManager.LoadScene("Stair Master 2");
     }
 
-
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }
