@@ -7,37 +7,33 @@ public class PreGameMenu : MonoBehaviour
 {
     public GameObject disableWeapon;
     public GameObject disableUI;
-
     public GameObject disableMenu;
     public GameObject disableBuyingMenu;
+
     public GameObject Canvas;
 
-    // Start is called before the first frame update
-    void Start()
+    void Start()  //disable UI elements, just show the menu
     {
-        Time.timeScale = 0f;                  //stop time
-        Cursor.lockState = CursorLockMode.None;
         disableBuyingMenu.SetActive(false);
         disableWeapon.SetActive(false);
         disableUI.SetActive(false);
         disableMenu.SetActive(false);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        Time.timeScale = 0f;    //stop time
+
+        Cursor.lockState = CursorLockMode.None; //unlock the cursor to press play
     }
 
     public void StartGame()
     {
-        disableWeapon.SetActive(true);
+        disableWeapon.SetActive(true);  //enable UI elements
         disableUI.SetActive(true);
         disableBuyingMenu.SetActive(true);
         disableMenu.SetActive(true);
         Canvas.SetActive(false);
 
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; //continue time
 
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked; //lock mouse to start game
     }
 }

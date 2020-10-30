@@ -15,8 +15,7 @@ using System.Security.Cryptography;
 */
 public class Target : MonoBehaviour
 {
-    //instantiating variables
-    public float health = 50f;
+    public float health = 50f;                                                 //instantiating variables
     public int TargetScore = 10;
     public GameObject target;
     public int EnemyDistance;
@@ -36,20 +35,17 @@ public class Target : MonoBehaviour
 
     private Vector3 v3 = new Vector3(2, 13, 0);
 
-
     private void Start()
     {
-        //get the active scene
-        Scene currentScene = SceneManager.GetActiveScene();
+        Scene currentScene = SceneManager.GetActiveScene();                      //get the active scene
         sceneName = currentScene.name;
         Generator = GameObject.FindWithTag("EnemyGenerate").GetComponent<GenerateEnemies>();
         if (GenerateEnemies.Rotating == true)
         {
-
             rotationSpeed = 25f;
             speed = 10;
-            //rotationSpeed = BotDifficulty.botRotationSpeed;
-            //speed = BotDifficulty.botSpeed;
+            rotationSpeed = BotDifficulty.botRotationSpeed;
+            speed = BotDifficulty.botSpeed;
         }
     }
 
@@ -59,24 +55,25 @@ public class Target : MonoBehaviour
         {
             if (Bot1 != null)
             {
-                //turning point
-                center.transform.RotateAround(center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f);
+                center.transform.RotateAround
+                    (center.position, Vector3.up, rotationSpeed * Time.deltaTime * 0.5f); //turning point
+                Debug.Log("Moving around");
                 if (isRunning == 1)
                 {
                     StartCoroutine(Move());
                 }
-                Bot1.transform.localPosition = Vector3.MoveTowards(Bot1.localPosition, v3, speed * Time.deltaTime);
+                Bot1.transform.localPosition = Vector3.MoveTowards
+                    (Bot1.localPosition, v3, speed * Time.deltaTime);          //move the target closer and futrther from the center randomly
+                Debug.Log("Moving yaxis");
             }
             else
             {
                 Debug.Log("Bot1 Not Set");
             }
-        }
-        
+        }  
     }
 
-    //Generates vector for target to move up and down
-    public IEnumerator Move()
+    public IEnumerator Move()                                                   //Generates vector for target to move up and down
     {
         isRunning = 0;
         yield return new WaitForSeconds(2f);
@@ -84,63 +81,47 @@ public class Target : MonoBehaviour
         isRunning = 1;
     }
 
-    //Generate Random number
-    public float RandomN()
+    public float RandomN()                                                       //Generate Random number
     {
         float position = Random.Range(13f, 40f);
         return position;
     }
 
-    //when target is shot by player
-    //target will take damage until it reaches 0
-    public void TakeDamage (float damage)
-    {
+    public void TakeDamage (float damage)                                        //when target is shot by player
+    {                                                                            //target will take damage until it reaches 0
         GameManager.TargetsHit++;
-        //decrease health
-        health -= damage;
-        //if health below 0
-        if (health <= 0f)
+        health -= damage;                                                        //decrease health
+
+        if (health <= 0f)                                                        //if health below 0
         {
-            //die...
-            Die();
+            Die();                                                               //die...
         }
     }
-
-    //when target health reaches 0
-    //function is called to destroy the object
-    //and adds a score to the total score
-    //as the object is destroyed it is replaced with a new target
-    void Die()
-    {
-        //add score
-        if (GenerateEnemies.Respawnable == false)
+    
+    void Die()                                                                    //when target health reaches 0
+    {                                                                             //function is called to destroy the object
+                                                                                  //and adds a score to the total score
+        if (GenerateEnemies.Respawnable == false)                                 //as the object is destroyed it is replaced with a new target
         {
-            ScoreScript.scoreValue += TargetScore;
+            ScoreScript.scoreValue += TargetScore;                                //add score  
         }
-
 
         if (sceneName == "The Ring" && GenerateEnemies.Rotating == true)
         {
-            //spawn enemy in circle
-            return;
+            return;                                                               //spawn enemy in circle
         }
 
-        //remove object
-        Destroy(gameObject);
-        Destroy(target);
+        Destroy(target);                                                           //remove object
+        Debug.Log("Target Destroyed");                                             //debug log
 
-        //used to detect which map user has chosen
-        //in order to spawn targets in the right place
-        if (sceneName == "The Ring" && GenerateEnemies.Rotating == false)
-        {
-            //spawn enemy in circle
-            Generator.SpawnSingleCircularTarget(EnemyDistance);
+        if (sceneName == "The Ring" && GenerateEnemies.Rotating == false)          //used to detect which map user has chosen
+        {                                                                          //in order to spawn targets in the right place
+            Generator.SpawnSingleCircularTarget(EnemyDistance);                    //spawn enemy in circle
         }
 
         else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == false)
         {
-            //spawn a target on either row
-            int randomRow = Random.Range(0, 2);
+            int randomRow = Random.Range(0, 2);                                    //spawn a target on either row
             Generator.SpawnSingleStairTarget(EnemyDistance, randomRow);
         }
         else if (sceneName == "Stair Master" && GenerateEnemies.Respawnable == true)
@@ -149,12 +130,13 @@ public class Target : MonoBehaviour
             Generator.ResetTimer();
             ScoreScript.scoreValue += 10;
         }
+        else if (sceneName == "The Ring 2" && GenerateEnemies.Respawnable == false)
+        {
+            Debug.Log("No need to spawn");
+        }
         else
         {
-            //couldnt find the active scene
-            Debug.Log("Failed To Find Scene");
+            Debug.Log("Failed To Find Scene");                                      //couldnt find the active scene
         }
-        //debug log
-        Debug.Log("Target Destroyed");
     }
 }

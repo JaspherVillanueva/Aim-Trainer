@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BotDifficulty: MonoBehaviour
+public class BotDifficulty: MonoBehaviour   //change difficulty on moving target scene
 {
     List<string> botDifficulties = new List<string>() { "Easy", "Medium", "Hard"};
 
@@ -14,21 +14,22 @@ public class BotDifficulty: MonoBehaviour
 
     void Start()
     {
-        botDifficultyDropdown = GetComponent<Dropdown>();
-        botDifficultyDropdown.onValueChanged.AddListener(delegate
-        {
-            DropdownValueChanged(botDifficultyDropdown);
-        });
+        botDifficultyDropdown = GetComponent<Dropdown>();   //get the value from the dropdown in menu
+        botDifficultyDropdown.onValueChanged.AddListener
+            (delegate
+            {
+                DropdownValueChanged(botDifficultyDropdown);
+            });
+
         botDifficultyDropdown.AddOptions(botDifficulties);
         botCountValue = botDifficultyDropdown.value;
         Debug.Log("Starting Bot Count Difficulty Value "
             + botDifficultyDropdown.value);
     }
 
-    void DropdownValueChanged(Dropdown changeBot)
+    void DropdownValueChanged(Dropdown changeBot)   //set difficulty based on the value sent back from the dropdown
     {
         botCountValue = changeBot.value;
-
         if (botCountValue == 0)
         {
             botRotationSpeed = botRotationSpeed;
@@ -44,9 +45,6 @@ public class BotDifficulty: MonoBehaviour
             botRotationSpeed = 12f;
             botSpeed = 8f;
         }
-
         Debug.Log(botCountValue);
-
     }
-
 }

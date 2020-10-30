@@ -12,14 +12,12 @@ public class MapChange : MonoBehaviour
 
     void Start()
     {
-    
         mapPanel = GetComponent<Image>();
-
     }
     
     void Update()
     {
-        mapSelected = MapDropdown.mapValue;
+        mapSelected = MapDropdown.mapValue;   //display the image of the selected map
         if (mapSelected == 0)
         {
             mapPanel.sprite = map1;
@@ -28,8 +26,5 @@ public class MapChange : MonoBehaviour
         {
             mapPanel.sprite = map2;
         }
-  
-
-
     }
 }

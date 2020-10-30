@@ -13,7 +13,7 @@ public class TimerDropdown : MonoBehaviour
 
     void Start()
     {
-        timerdropDown = GetComponent<Dropdown>();
+        timerdropDown = GetComponent<Dropdown>();    //get the value from the dropdown menu
         timerdropDown.onValueChanged.AddListener(delegate
         {
             DropdownValueChanged(timerdropDown);
@@ -23,10 +23,9 @@ public class TimerDropdown : MonoBehaviour
             + timer);
         Debug.Log("Starting Dropdown Value: "
             + timerdropDown.value);
-        
     }
 
-    void DropdownValueChanged(Dropdown change)
+    void DropdownValueChanged(Dropdown change) //set the amount of time with the value from the dropdown
     {
         dropdownValue = change.value;
 
@@ -42,9 +41,7 @@ public class TimerDropdown : MonoBehaviour
         {
             timer = 300;
         }
-
         Debug.Log(timer);
         Debug.Log(timerdropDown.value);
     }
-
 }

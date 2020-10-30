@@ -12,17 +12,16 @@ public class MapDropdown : MonoBehaviour
 
     void Start()
     {
-        
-        mapdropDown = GetComponent<Dropdown>();
+        mapdropDown = GetComponent<Dropdown>();      //get the value from the dropdown
         mapValue = mapdropDown.value;
-        mapdropDown.onValueChanged.AddListener(delegate
+        mapdropDown.onValueChanged.AddListener
+        (delegate
         {
             DropdownValueChanged(mapdropDown);
         });
         mapdropDown.AddOptions(maps);
         Debug.Log("Selected Map Index: " +
         mapdropDown.value);
-
     }
 
     void DropdownValueChanged(Dropdown change)
@@ -30,7 +29,4 @@ public class MapDropdown : MonoBehaviour
         mapValue = change.value;
         Debug.Log(mapValue.ToString());
     }
-
 }
-
-

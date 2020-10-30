@@ -16527,15 +16527,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1900539469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e91c0c97a0652e4cbc01c8e364f0d26, type: 3}
+  m_Script: {fileID: 11500000, guid: 7db198fa504715945a663255be53fb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 0
   TargetScore: 10
-  target: {fileID: 1900539469}
-  EnemyDistance: 0
   center: {fileID: 939583229}
-  Bot1: {fileID: 1900539470}
+  target: {fileID: 1900539470}
   rotationSpeed: 0
   speed: 0
 --- !u!1 &1996402069
