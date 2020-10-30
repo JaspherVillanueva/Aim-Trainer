@@ -3,49 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// This class is used to control map selection for mode 1.
+// The map selected by the user through the GUI is passed into the scene controller
+// Thus checking which map is selected for the that map scene to be loaded.
+
+// Aim Trainer - 2020 - Jaspher Villanueva
+
 public class GameDifficulty : MonoBehaviour
 {
-    List<string> gameDifficulties = new List<string>() { "Easy", "Medium", "Hard" };
+    private List<string> gameDifficulties = new List<string>() { "Easy", "Medium", "Hard" };
+   
+    private enum difficulty { Easy = 5, Medium = 3, Hard = 1};
 
     public Dropdown gameDifficultyDropdown;
-    public int gameDifficultyValue;
-    public static float waveTimer = 10f;
+    
+    private int gameDifficultyValue;
+
+    public static int waveTimer = (int)difficulty.Easy;
 
     void Start()
     {
         gameDifficultyDropdown = GetComponent<Dropdown>();
+
         gameDifficultyDropdown.onValueChanged.AddListener(delegate
         {
-            DropdownValueChanged(gameDifficultyDropdown);
+            checkGameDifficulty(gameDifficultyDropdown);
         });
-        gameDifficultyDropdown.AddOptions(gameDifficulties);
-        gameDifficultyValue = gameDifficultyDropdown.value;
-        Debug.Log("Starting Difficulty Value "
-            + gameDifficultyDropdown.value);
+
+        addDifficulty(gameDifficulties);
+     
     }
 
-    void DropdownValueChanged(Dropdown changeBot)
+    void addDifficulty(List <string> gameDifficulties)
     {
-        gameDifficultyValue = changeBot.value;
+        gameDifficultyDropdown.AddOptions(gameDifficulties);
+    }
+
+    void checkGameDifficulty(Dropdown selectedDifficulty)
+    {
+        gameDifficultyValue = selectedDifficulty.value;
 
         if (gameDifficultyValue == 0)
         {
-            waveTimer = 5f;
-            Debug.Log(waveTimer);
+            waveTimer = (int)difficulty.Easy;
         }
         else if (gameDifficultyValue == 1)
         {
-            waveTimer = 2.5f;
-            Debug.Log(waveTimer);
+            waveTimer = (int)difficulty.Medium;
         }
         else if (gameDifficultyValue == 2)
         {
-            waveTimer = 1f;
-            Debug.Log(waveTimer);
+            waveTimer = (int)difficulty.Hard;
         }
-
-        Debug.Log(gameDifficultyValue);
-
     }
 
 }

@@ -7,19 +7,23 @@ using UnityEngine.UI;
 public class NameInput : MonoBehaviour
 {
     public InputField playerInput;
-    public static string playerName;
-    private static int score;
+    private static string playerName;
 
     void Start()
     {
         playerInput = gameObject.GetComponent<InputField>();
-        playerInput.onEndEdit.AddListener(updateField);
+        playerInput.onEndEdit.AddListener(getName);
         
     }
 
-    private void updateField(string arg0)
+    void getName(string name)
     {
-        playerName = arg0;
+        setName(name);
+    }
+
+    void setName(string name)
+    {
+        playerName = name;
         Debug.Log(playerName);
     }
 }

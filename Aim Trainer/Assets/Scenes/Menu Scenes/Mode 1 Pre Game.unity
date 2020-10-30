@@ -1432,8 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca2a8836ba59014c8afbe3fd779ab96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerdropDown: {fileID: 0}
-  dropdownValue: 0
+  timerdropDown: {fileID: 416963259}
 --- !u!1 &576284744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,7 +3025,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   map1: {fileID: 21300000, guid: 243b0e8d3f257f44aabec5c3aea14427, type: 3}
   map2: {fileID: 21300000, guid: b449139e8d92dee4c830eda4525569f6, type: 3}
-  map3: {fileID: 21300000, guid: 5998a3b6e3b514846a82aca823f0adc4, type: 3}
   mapPanel: {fileID: 1600451153}
 --- !u!1 &1705298638
 GameObject:

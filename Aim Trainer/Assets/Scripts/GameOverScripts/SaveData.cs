@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SaveData : MonoBehaviour
 {
-    public string saveName = NameInput.playerName;
+    private string saveName;
     public int saveScore = ScoreScript.scoreValue;
     public float saveAccuracy;
     public int saveMap;
@@ -16,12 +16,8 @@ public class SaveData : MonoBehaviour
     {
 
 
-        saveName = NameInput.playerName;
-        saveScore = ScoreScript.scoreValue;
-        saveAccuracy = GameManager.Accuracy;
-        saveMap = MapDropdown.mapValue;
-
-        player = new PlayerData(saveName, saveScore, saveAccuracy, saveMap);
+        
+       
 
         /* Debug.Log(player.name);
 

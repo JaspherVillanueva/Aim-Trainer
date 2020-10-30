@@ -276,11 +276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5760f2a76e6d074dbab0c130a40a204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveName: 
   saveScore: 0
   saveAccuracy: 0
   saveMap: 0
-  saveButton: {fileID: 1178277425}
 --- !u!1 &189515895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,11 +1168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5760f2a76e6d074dbab0c130a40a204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveName: 
   saveScore: 0
   saveAccuracy: 0
   saveMap: 0
-  saveButton: {fileID: 1178277425}
 --- !u!1 &1321739592
 GameObject:
   m_ObjectHideFlags: 0
