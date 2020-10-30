@@ -97,5 +97,8 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("Stair Master 2");
     }
 
-
+    public void quitGame()
+    {
+        Application.Quit();
+    }
 }

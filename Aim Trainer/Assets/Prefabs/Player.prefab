@@ -3153,7 +3153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1907125987066608765}
-  startTime: 10
 --- !u!1 &1907125987177410404
 GameObject:
   m_ObjectHideFlags: 0
@@ -10480,9 +10479,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1907125988173311142}
-  speed: 12
-  jumpHeight: 3
-  gravity: -25
   groundCheck: {fileID: 1907125988154592741}
   groundDistance: 0.6
   groundMask:
